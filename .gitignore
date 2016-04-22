@@ -13,7 +13,7 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-DigitalTerminal/bin/*
+DigitalTerminal\bin\*
 # Windows shortcuts
 *.lnk
 
