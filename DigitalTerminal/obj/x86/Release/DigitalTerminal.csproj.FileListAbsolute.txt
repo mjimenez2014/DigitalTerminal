@@ -1,0 +1,12 @@
+C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\bin\Release\DigitalTerminal.exe
+C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\bin\Release\DigitalTerminal.pdb
+C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\bin\Release\Vista.dll
+C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\bin\Release\Modelo.dll
+C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\bin\Release\System.Data.SQLite.dll
+C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\bin\Release\Vista.pdb
+C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\bin\Release\Modelo.pdb
+C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Release\DigitalTerminal.csprojResolveAssemblyReference.cache
+C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Release\DigitalTerminal.Properties.Resources.resources
+C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Release\DigitalTerminal.csproj.GenerateResource.Cache
+C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Release\DigitalTerminal.exe
+C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Release\DigitalTerminal.pdb
