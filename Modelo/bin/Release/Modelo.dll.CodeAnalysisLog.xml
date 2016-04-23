@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\bin\Release\Modelo.dll">
+   <Modules>
+    <Module Name="modelo.dll">
+     <Namespaces>
+      <Namespace Name="Modelo">
+       <Types>
+        <Type Name="BaseDato" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#ConnectPostgres()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Proporcionar argumentos correctos a los métodos de formato" Category="Microsoft.Usage" CheckId="CA2241" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="MissingFormatItem" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="BaseDato.cs" Line="63">El método 'BaseDato.ConnectPostgres()' llama a 'Console.WriteLine(string, object)' y no proporciona un elemento de formato para el argumento "1". La cadena de formato proporcionada es: '"Problemas al conectar a la base datos"'</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ConnectSqlite()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Proporcionar argumentos correctos a los métodos de formato" Category="Microsoft.Usage" CheckId="CA2241" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="MissingFormatItem" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="BaseDato.cs" Line="23">El método 'BaseDato.ConnectSqlite()' llama a 'Console.WriteLine(string, object)' y no proporciona un elemento de formato para el argumento "1". La cadena de formato proporcionada es: '"Problemas al conectar a la base datos"'</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CafModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#exist(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="CafModel.cs" Line="155">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'CafModel.exist(string)' podría contener las siguientes variables: 'nomxml'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#save(Modelo.CafModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="CafModel.cs" Line="123">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'CafModel.save(CafModel)' podría contener las siguientes variables: 'cafmodel.cafxml', 'cafmodel.fecha', 'cafmodel.tipoDte', 'cafmodel.dirCaf', 'cafmodel.folioInicial', 'cafmodel.folioFinal', 'cafmodel.rutEmpresa', 'cafmodel.nomXml'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CiudadesModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#getCiudadXNombre(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="CiudadesModel.cs" Line="88">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'CiudadesModel.getCiudadXNombre(string)' podría contener las siguientes variables: 'nomCiudad'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#save(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="CiudadesModel.cs" Line="31">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'CiudadesModel.save(int, string)' podría contener las siguientes variables: 'nomCiudad', 'codPais'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#updateCiudad(System.Int32,System.String,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="CiudadesModel.cs" Line="118">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'CiudadesModel.updateCiudad(int, string, int)' podría contener las siguientes variables: 'codPais', 'nomCiudad', 'codCiudad'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ClienteProductoModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#getProdClient(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ClienteProductoModel.cs" Line="29">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ClienteProductoModel.getProdClient(string)' podría contener las siguientes variables: 'rut'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getProdClientXCod(System.String,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ClienteProductoModel.cs" Line="64">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ClienteProductoModel.getProdClientXCod(string, int)' podría contener las siguientes variables: 'rut', 'idProd'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getProdClientXCod(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ClienteProductoModel.cs" Line="100">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ClienteProductoModel.getProdClientXCod(string, string)' podría contener las siguientes variables: 'rut', 'codProd'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getProdClientXNom(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ClienteProductoModel.cs" Line="136">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ClienteProductoModel.getProdClientXNom(string, string)' podría contener las siguientes variables: 'rut', 'nomProd'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#save(Modelo.ClienteProductoModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ClienteProductoModel.cs" Line="171">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ClienteProductoModel.save(ClienteProductoModel)' podría contener las siguientes variables: 'cliProdModel.idProducto', 'cliProdModel.rutCliente', 'cliProdModel.precioNeto', 'cliProdModel.precioVenta'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#searchProdxCliente(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ClienteProductoModel.cs" Line="202">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ClienteProductoModel.searchProdxCliente(int, string)' podría contener las siguientes variables: 'codProd', 'rutCliente'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#update(Modelo.ClienteProductoModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ClienteProductoModel.cs" Line="236">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ClienteProductoModel.update(ClienteProductoModel)' podría contener las siguientes variables: 'cliProdModel.precioNeto', 'cliProdModel.precioVenta', 'cliProdModel.rutCliente', 'cliProdModel.idProducto'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ComunasModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#getComunasXNombre(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ComunasModel.cs" Line="88">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ComunasModel.getComunasXNombre(string)' podría contener las siguientes variables: 'nomComuna'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#save(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ComunasModel.cs" Line="31">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ComunasModel.save(int, string)' podría contener las siguientes variables: 'nomComuna', 'codCiudad'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#updateComunas(System.Int32,System.String,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ComunasModel.cs" Line="148">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ComunasModel.updateComunas(int, string, int)' podría contener las siguientes variables: 'codCiudad', 'nomComuna', 'codComuna'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ContribuyenteModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#getClienteReader(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ContribuyenteModel.cs" Line="43">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ContribuyenteModel.getClienteReader(string)' podría contener las siguientes variables: 'rut'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getContribuyente(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ContribuyenteModel.cs" Line="75">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ContribuyenteModel.getContribuyente(string)' podría contener las siguientes variables: 'rut'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getContribuyenteXNombre(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ContribuyenteModel.cs" Line="156">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ContribuyenteModel.getContribuyenteXNombre(string)' podría contener las siguientes variables: 'nombre'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#save(Modelo.ContribuyenteModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ContribuyenteModel.cs" Line="111">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ContribuyenteModel.save(ContribuyenteModel)' podría contener las siguientes variables: 'cm.rut', 'cm.rznSoc', 'cm.giro', 'cm.direccion', 'cm.codComuna', 'cm.codCiudad', 'cm.telefono'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Detalle" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#getDetalle(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="DocumentoModel.cs" Line="512">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'Detalle.getDetalle(int, int)' podría contener las siguientes variables: 'folioDoc', 'tipoDoc'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#save(Modelo.DocumentoModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="DocumentoModel.cs" Line="490">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'Detalle.save(DocumentoModel)' podría contener las siguientes variables: 'Encoding.UTF8.GetString(stream.ToArray())', 'documento.Folio', 'documento.TipoDTE'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="DocumentoModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#getAllDocDTxFecha(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="DocumentoModel.cs" Line="381">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'DocumentoModel.getAllDocDTxFecha(string, string)' podría contener las siguientes variables: 'desde', 'hasta'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getDocumento(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="DocumentoModel.cs" Line="345">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'DocumentoModel.getDocumento(int, int)' podría contener las siguientes variables: 'folio', 'tipo'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#save(Modelo.DocumentoModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="DocumentoModel.cs" Line="301">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'DocumentoModel.save(DocumentoModel)' podría contener las siguientes variables: 'Encoding.UTF8.GetString(stream.ToArray())', 'base.ToString()'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="folioModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#exist(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="folioModel.cs" Line="174">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'folioModel.exist(int, int)' podría contener las siguientes variables: 'idCAf', 'folio'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#modificaEstado(System.String,System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="folioModel.cs" Line="59">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'folioModel.modificaEstado(string, int, int)' podría contener las siguientes variables: 'estado', 'folio', 'idCaf'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#save(Modelo.folioModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="folioModel.cs" Line="147">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'folioModel.save(folioModel)' podría contener las siguientes variables: 'foliomodel.folio', 'foliomodel.idcaf', 'foliomodel.codSucSii'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PaisesModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#getPaisXNombre(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="PaisesModel.cs" Line="85">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'PaisesModel.getPaisXNombre(string)' podría contener las siguientes variables: 'nomPais'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#save(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="PaisesModel.cs" Line="29">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'PaisesModel.save(string)' podría contener las siguientes variables: 'nomPais'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#updatepais(System.Int32,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="PaisesModel.cs" Line="115">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'PaisesModel.updatepais(int, string)' podría contener las siguientes variables: 'nomPais', 'codPais'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ProductosModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#getProdXCod(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ProductosModel.cs" Line="76">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ProductosModel.getProdXCod(string)' podría contener las siguientes variables: 'codProd'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getProdXNombre(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ProductosModel.cs" Line="136">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ProductosModel.getProdXNombre(string)' podría contener las siguientes variables: 'nombreProducto'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#save(Modelo.ProductosModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ProductosModel.cs" Line="163">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ProductosModel.save(ProductosModel)' podría contener las siguientes variables: 'producto.nombre', 'producto.codigoInt', 'producto.precioNeto', 'producto.precioventa', 'producto.exento'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#update(Modelo.ProductosModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="ProductosModel.cs" Line="199">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ProductosModel.update(ProductosModel)' podría contener las siguientes variables: 'producto.nombre', 'producto.codigoInt', 'producto.precioNeto', 'producto.precioventa', 'producto.exento', 'producto.id'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ReferenciaDoc" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#getReferencia(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="DocumentoModel.cs" Line="645">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ReferenciaDoc.getReferencia(int, int)' podría contener las siguientes variables: 'folioDoc', 'tipoDoc'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#save(Modelo.DocumentoModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="DocumentoModel.cs" Line="623">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'ReferenciaDoc.save(DocumentoModel)' podría contener las siguientes variables: 'Encoding.UTF8.GetString(stream.ToArray())', 'documento.Folio', 'documento.TipoDTE'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TipoDteModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#getNombre(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="TipoDteModel.cs" Line="54">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'TipoDteModel.getNombre(string)' podría contener las siguientes variables: 'codDte'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UsuarioModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#save(Modelo.UsuarioModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="UsuarioModel.cs" Line="95">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'UsuarioModel.save(UsuarioModel)' podría contener las siguientes variables: 'usuario.email', 'usuario.password', 'usuario.nombre', 'usuario.usuario', 'usuario.codSeguridad'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#update(Modelo.UsuarioModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="UsuarioModel.cs" Line="153">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'UsuarioModel.update(UsuarioModel)' podría contener las siguientes variables: 'usuario.email', 'usuario.nombre', 'usuario.usuario', 'usuario.password', 'usuario.id'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#validaUser(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-04-22 23:41:24Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo" File="UsuarioModel.cs" Line="33">La cadena de consulta pasada a 'OdbcCommand.CommandText.set(string)' en 'UsuarioModel.validaUser(string, string)' podría contener las siguientes variables: 'usuario', 'clave'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="Proporcionar argumentos correctos a los métodos de formato" Category="Microsoft.Usage" CheckId="CA2241">
+   <Name>Proporcionar argumentos correctos a los métodos de formato</Name>
+   <Description>Proporcione el número correcto de argumentos a las llamadas a String.Format.</Description>
+   <Resolution Name="MissingFormatItem">El método {0} llama a {1} y no proporciona un elemento de formato para el argumento {2}. La cadena de formato proporcionada es: '{3}'</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182361.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad</Name>
+   <Description>Una cadena de comando SQL compilada a partir de datos proporcionados por el usuario es vulnerable a ataques pon inyección de código SQL. Microsoft SQL Server y otros servidores de bases de datos admiten procedimientos almacenados y consultas SQL parametrizadas, que reducen el riesgo de ataques por inyección.</Description>
+   <Resolution Name="WithNonLiterals">La cadena de consulta pasada a {0} en {1} podría contener las siguientes variables: {2}. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Categoría</String>
+  <String Key="Certainty">Certeza</String>
+  <String Key="CollapseAll">Contraer todo</String>
+  <String Key="CheckId">Comprobar id.</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">errores</String>
+  <String Key="ExpandAll">Expandir todo</String>
+  <String Key="Help">Ayuda</String>
+  <String Key="Line">Línea</String>
+  <String Key="Messages">mensajes</String>
+  <String Key="LocationNotStoredInPdb">[Ubicación no almacenada en Pdb]</String>
+  <String Key="Project">Proyecto</String>
+  <String Key="Resolution">Resolución</String>
+  <String Key="Rule">Regla</String>
+  <String Key="RuleFile">Archivo de regla</String>
+  <String Key="RuleDescription">Descripción de la regla</String>
+  <String Key="Source">Origen</String>
+  <String Key="Status">Estado</String>
+  <String Key="Target">Círculos concéntricos</String>
+  <String Key="Warning">Advertencia</String>
+  <String Key="Warnings">advertencias</String>
+  <String Key="ReportTitle">Informe de análisis del código</String>
+ </Localized>
+</FxCopReport>
