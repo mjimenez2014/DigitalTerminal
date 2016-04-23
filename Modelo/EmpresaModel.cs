@@ -11,6 +11,8 @@ namespace Modelo
     [DataContract]
    public class EmpresaModel
     {
+        BaseDato con = new BaseDato();
+
         [DataMember]
         public string Rut { get; set; }
         [DataMember]
@@ -38,7 +40,7 @@ namespace Modelo
             SqlConnection sqlcon = new SqlConnection();
             try
             {
-                BaseDato con = new BaseDato();
+
                 OdbcConnection conexion = con.ConnectPostgres();
 
                 OdbcCommand select = new OdbcCommand();
@@ -76,8 +78,46 @@ namespace Modelo
             return this;
         }
 
+        public void update(EmpresaModel empresaModel)
+        {
+
+            SqlConnection sqlcon = new SqlConnection();
+            try
+            {
+                OdbcConnection conexion = con.ConnectPostgres();
+
+                OdbcCommand select = new OdbcCommand();
+                select.Connection = conexion;
+                select.CommandText = 
+                                     "UPDATE empresa "
+                                   + "SET "
+                                   + "\"razonsocial\"='" + empresaModel.RazonSocial + "',"
+                                   + "\"giroemisor\"='" + empresaModel.GiroEmisor + "',"
+                                   + "\"codigosiisucursal\"=" + empresaModel.CodigoSiiSucursal + ","
+                                   + "\"telefonoemis\"='" + empresaModel.Telefono + "',"
+                                   + "\"correoemis\"='" + empresaModel.Correo + "',"
+                                   + "\"acteco\"=" + empresaModel.Acteco + ","
+                                   + "\"direccionorigen\"='" + empresaModel.DireccionOrigen + "',"
+                                   + "\"comunaorigen\"='" + empresaModel.ComunaOrigen + "',"
+                                   + "\"ciudadorigen\"='" + empresaModel.CiudadOrigen + "'"
+                                   + "WHERE \"rutempresa\" = '" + empresaModel.Rut + "';";
+                OdbcDataReader reader = select.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error" + ex.Message);
+            }
+
+            finally
+            {
+                sqlcon.Close();
+            }
+
+        }
 
 
-        
+
+
     }
 }

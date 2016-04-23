@@ -42,11 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="digitalterminalDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>digitalterminalDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="frmCaf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,18 +270,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="digitalterminalDataSet.xsc">
-      <DependentUpon>digitalterminalDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="digitalterminalDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>digitalterminalDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="digitalterminalDataSet.xss">
-      <DependentUpon>digitalterminalDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalTerminal", "DigitalTerminal\DigitalTerminal.csproj", "{E2E2EC68-2CED-432C-826E-E96EA912490E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{CD39EC9F-785E-4552-9E6B-A0BF595FB33E}"
@@ -14,12 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador", "Instalador\Instalador.vdproj", "{FFE8CD07-3816-41E6-98EE-615043D02451}"
-EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = DigitalTerminal.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -61,14 +58,11 @@ Global
 		{77FFC94F-FA77-4656-92E2-2541D83E0AA1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{77FFC94F-FA77-4656-92E2-2541D83E0AA1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{77FFC94F-FA77-4656-92E2-2541D83E0AA1}.Release|x86.ActiveCfg = Release|Any CPU
-		{FFE8CD07-3816-41E6-98EE-615043D02451}.Debug|Any CPU.ActiveCfg = Debug
-		{FFE8CD07-3816-41E6-98EE-615043D02451}.Debug|Mixed Platforms.ActiveCfg = Debug
-		{FFE8CD07-3816-41E6-98EE-615043D02451}.Debug|x86.ActiveCfg = Debug
-		{FFE8CD07-3816-41E6-98EE-615043D02451}.Release|Any CPU.ActiveCfg = Release
-		{FFE8CD07-3816-41E6-98EE-615043D02451}.Release|Mixed Platforms.ActiveCfg = Release
-		{FFE8CD07-3816-41E6-98EE-615043D02451}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DigitalTerminal.vsmdi
 	EndGlobalSection
 EndGlobal

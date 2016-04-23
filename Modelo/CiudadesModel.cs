@@ -106,7 +106,7 @@ namespace Modelo
         
         public void updateCiudad(Int32 codPais,String nomCiudad, Int32 codCiudad)
         {
-            DataTable datatable = new DataTable();
+
             SqlConnection sqlcon = new SqlConnection();
             try
             {
@@ -120,8 +120,7 @@ namespace Modelo
                     + "\"nomCiudad\"='"+ nomCiudad+"'"
                     + "WHERE \"codCiudad\" = "+codCiudad+";";
                 OdbcDataReader reader = select.ExecuteReader();
-                datatable.Load(reader);
-
+ 
             }
             catch (Exception ex)
             {
