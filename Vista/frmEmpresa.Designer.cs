@@ -176,7 +176,7 @@
             this.labelRazonSocial.Name = "labelRazonSocial";
             this.labelRazonSocial.Size = new System.Drawing.Size(86, 13);
             this.labelRazonSocial.TabIndex = 4;
-            this.labelRazonSocial.Text = "Razon Social:";
+            this.labelRazonSocial.Text = "Razón Social:";
             // 
             // textBoxRazonSocial
             // 
@@ -252,7 +252,7 @@
             this.labelCodigoSucursal.Name = "labelCodigoSucursal";
             this.labelCodigoSucursal.Size = new System.Drawing.Size(103, 13);
             this.labelCodigoSucursal.TabIndex = 12;
-            this.labelCodigoSucursal.Text = "Codigo Sucursal:";
+            this.labelCodigoSucursal.Text = "Código Sucursal:";
             // 
             // textBoxCodigoSucursal
             // 
@@ -290,7 +290,7 @@
             this.labelTelefonoEmisor.Name = "labelTelefonoEmisor";
             this.labelTelefonoEmisor.Size = new System.Drawing.Size(102, 13);
             this.labelTelefonoEmisor.TabIndex = 16;
-            this.labelTelefonoEmisor.Text = "Telefono Emisor:";
+            this.labelTelefonoEmisor.Text = "Teléfono Emisor:";
             // 
             // textBoxTelefonoEmisor
             // 
