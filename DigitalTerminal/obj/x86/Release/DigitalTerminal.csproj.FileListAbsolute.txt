@@ -22,5 +22,3 @@ C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalT
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Release\DigitalTerminal.csprojResolveAssemblyReference.cache
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Release\DigitalTerminal.Properties.Resources.resources
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Release\DigitalTerminal.csproj.GenerateResource.Cache
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Release\DigitalTerminal.exe.CodeAnalysisLog.xml
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Release\DigitalTerminal.exe.lastcodeanalysissucceeded

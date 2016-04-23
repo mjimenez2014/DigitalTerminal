@@ -66,5 +66,3 @@ C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Vista\ob
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Vista\obj\Release\Vista.csproj.GenerateResource.Cache
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Vista\obj\Release\Vista.dll
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Vista\obj\Release\Vista.pdb
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Vista\bin\Release\Vista.dll.CodeAnalysisLog.xml
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Vista\bin\Release\Vista.dll.lastcodeanalysissucceeded
