@@ -141,6 +141,7 @@ namespace Vista
             pos.dateTimePickerFchEmis.Value = Convert.ToDateTime(documento.FchEmis);
             pos.textBoxCita.Text = documento.NroCita;
             pos.textBoxSello.Text = documento.Sello;
+            pos.textBoxFormaPago.Text = documento.formaPago;
             // Cargo Detalle
             foreach(Detalle detalle in documento.detalle)
             {

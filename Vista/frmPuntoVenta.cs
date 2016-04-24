@@ -14,6 +14,7 @@ namespace Vista
     public partial class frmPuntoVenta : Form
     {
         int n = 0;
+        EmpresaModel empresaModel = new EmpresaModel();
         ContribuyenteModel cliente= new ContribuyenteModel();
         DataTable dataTableCliente = new DataTable();
         DocumentoModel documento = new DocumentoModel();
@@ -102,11 +103,14 @@ namespace Vista
      public void frmPuntoVenta_Load(object sender, EventArgs e)
         {
             this.textBoxRutRecep.Select();
+            empresaModel = empresaModel.getEmpresa();
+            if(empresaModel.Rut == "99505200-8") { labelCita.Text = "ORDEN DE TRABAJO:"; }
+            if (empresaModel.Rut == "99505200-8") { labelSello.Text = "GUIA:";}
         }
 
 
 
-     private void dtgwDetalle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void dtgwDetalle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
      {
          try
          {
@@ -351,6 +355,7 @@ namespace Vista
                 documento.NroOrdenCompra = textBoxOC.Text;
                 documento.NroCita = textBoxCita.Text;
                 documento.Sello = textBoxSello.Text;
+                documento.formaPago = textBoxFormaPago.Text;
                 List<Detalle> detalles = new List<Detalle>();
                 //cargo detalle doc
                 for (int i = 0; i < dtgwDetalle.RowCount; i++)

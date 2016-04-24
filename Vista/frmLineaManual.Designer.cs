@@ -45,15 +45,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelPrecioBruto = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.labelPrecioNeto = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.buttonAgrega = new System.Windows.Forms.Button();
-            this.labelTotalLinea = new System.Windows.Forms.Label();
-            this.labelLineaNeto = new System.Windows.Forms.Label();
             this.labelDctMonto = new System.Windows.Forms.Label();
+            this.labelLineaNeto = new System.Windows.Forms.Label();
+            this.labelTotalLinea = new System.Windows.Forms.Label();
+            this.labelPrecioBruto = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -219,8 +219,6 @@
             // 
             this.checkBoxConImpuestos.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkBoxConImpuestos.AutoSize = true;
-            this.checkBoxConImpuestos.Checked = true;
-            this.checkBoxConImpuestos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxConImpuestos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxConImpuestos.Location = new System.Drawing.Point(553, 32);
             this.checkBoxConImpuestos.Name = "checkBoxConImpuestos";
@@ -306,15 +304,16 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(772, 80);
             this.tableLayoutPanel3.TabIndex = 20;
             // 
-            // labelPrecioBruto
+            // label8
             // 
-            this.labelPrecioBruto.AutoSize = true;
-            this.labelPrecioBruto.Location = new System.Drawing.Point(479, 0);
-            this.labelPrecioBruto.Name = "labelPrecioBruto";
-            this.labelPrecioBruto.Size = new System.Drawing.Size(62, 13);
-            this.labelPrecioBruto.TabIndex = 16;
-            this.labelPrecioBruto.Text = "PrecioBruto";
-            this.labelPrecioBruto.Visible = false;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(369, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Precio con Imp:";
+            this.label8.Visible = false;
             // 
             // labelPrecioNeto
             // 
@@ -359,15 +358,15 @@
             this.buttonAgrega.UseVisualStyleBackColor = true;
             this.buttonAgrega.Click += new System.EventHandler(this.buttonAgrega_Click);
             // 
-            // labelTotalLinea
+            // labelDctMonto
             // 
-            this.labelTotalLinea.AutoSize = true;
-            this.labelTotalLinea.Location = new System.Drawing.Point(595, 0);
-            this.labelTotalLinea.Name = "labelTotalLinea";
-            this.labelTotalLinea.Size = new System.Drawing.Size(53, 13);
-            this.labelTotalLinea.TabIndex = 7;
-            this.labelTotalLinea.Text = "totalLinea";
-            this.labelTotalLinea.Visible = false;
+            this.labelDctMonto.AutoSize = true;
+            this.labelDctMonto.Location = new System.Drawing.Point(676, 0);
+            this.labelDctMonto.Name = "labelDctMonto";
+            this.labelDctMonto.Size = new System.Drawing.Size(83, 26);
+            this.labelDctMonto.TabIndex = 9;
+            this.labelDctMonto.Text = "DescuentoMonto";
+            this.labelDctMonto.Visible = false;
             // 
             // labelLineaNeto
             // 
@@ -379,15 +378,25 @@
             this.labelLineaNeto.Text = "totalLineaNeto";
             this.labelLineaNeto.Visible = false;
             // 
-            // labelDctMonto
+            // labelTotalLinea
             // 
-            this.labelDctMonto.AutoSize = true;
-            this.labelDctMonto.Location = new System.Drawing.Point(676, 0);
-            this.labelDctMonto.Name = "labelDctMonto";
-            this.labelDctMonto.Size = new System.Drawing.Size(83, 26);
-            this.labelDctMonto.TabIndex = 9;
-            this.labelDctMonto.Text = "DescuentoMonto";
-            this.labelDctMonto.Visible = false;
+            this.labelTotalLinea.AutoSize = true;
+            this.labelTotalLinea.Location = new System.Drawing.Point(595, 0);
+            this.labelTotalLinea.Name = "labelTotalLinea";
+            this.labelTotalLinea.Size = new System.Drawing.Size(53, 13);
+            this.labelTotalLinea.TabIndex = 7;
+            this.labelTotalLinea.Text = "totalLinea";
+            this.labelTotalLinea.Visible = false;
+            // 
+            // labelPrecioBruto
+            // 
+            this.labelPrecioBruto.AutoSize = true;
+            this.labelPrecioBruto.Location = new System.Drawing.Point(479, 0);
+            this.labelPrecioBruto.Name = "labelPrecioBruto";
+            this.labelPrecioBruto.Size = new System.Drawing.Size(62, 13);
+            this.labelPrecioBruto.TabIndex = 16;
+            this.labelPrecioBruto.Text = "PrecioBruto";
+            this.labelPrecioBruto.Visible = false;
             // 
             // label7
             // 
@@ -399,17 +408,6 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "Precio Neto:";
             this.label7.Visible = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(369, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 13);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Precio con Imp:";
-            this.label8.Visible = false;
             // 
             // frmLineaManual
             // 

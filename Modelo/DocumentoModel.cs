@@ -119,7 +119,8 @@ namespace Modelo
         public string NroCita { get; set; } // Solo Dila
         [DataMember]
         public string Sello { get; set; } // solo Dila
-
+        [DataMember]
+        public string formaPago { get; set; } // solo Dila
         public string estadoDte46 { get; set; } // Estado para emitir un DTE sobre una factura de compra
 
         //este atributo es una ista la cual carga las sucursales de la empresa certificada

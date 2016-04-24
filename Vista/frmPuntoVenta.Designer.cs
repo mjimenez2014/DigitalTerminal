@@ -64,6 +64,19 @@
             this.buttonEmiteDte = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dtgwDetalle = new System.Windows.Forms.DataGridView();
+            this.elimina = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio_Neto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto_Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total_Neto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Exento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DscItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonBuscaProducto = new System.Windows.Forms.Button();
             this.textBoxCodBarra = new System.Windows.Forms.TextBox();
@@ -94,24 +107,13 @@
             this.textBoxOC = new System.Windows.Forms.TextBox();
             this.dateTimePickerFchEmis = new System.Windows.Forms.DateTimePicker();
             this.labelFecha = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelCita = new System.Windows.Forms.Label();
             this.textBoxCita = new System.Windows.Forms.TextBox();
             this.labelSello = new System.Windows.Forms.Label();
             this.textBoxSello = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxFormaPago = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.elimina = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_Neto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monto_Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_Neto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Exento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DscItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblpPuntoVenta.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -217,7 +219,7 @@
             this.buttonImprimir.ForeColor = System.Drawing.Color.Green;
             this.buttonImprimir.Image = global::Vista.Properties.Resources.printer_32;
             this.buttonImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonImprimir.Location = new System.Drawing.Point(175, 3);
+            this.buttonImprimir.Location = new System.Drawing.Point(261, 3);
             this.buttonImprimir.Name = "buttonImprimir";
             this.buttonImprimir.Size = new System.Drawing.Size(80, 63);
             this.buttonImprimir.TabIndex = 21;
@@ -234,7 +236,7 @@
             this.buttonReferencia.ForeColor = System.Drawing.Color.Green;
             this.buttonReferencia.Image = global::Vista.Properties.Resources.purchase_order_32;
             this.buttonReferencia.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonReferencia.Location = new System.Drawing.Point(261, 3);
+            this.buttonReferencia.Location = new System.Drawing.Point(175, 3);
             this.buttonReferencia.Name = "buttonReferencia";
             this.buttonReferencia.Size = new System.Drawing.Size(80, 63);
             this.buttonReferencia.TabIndex = 20;
@@ -506,6 +508,125 @@
             this.dtgwDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgwDetalle_CellContentClick);
             this.dtgwDetalle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgwDetalle_CellEndEdit);
             this.dtgwDetalle.Validated += new System.EventHandler(this.dtgwDetalle_Validated);
+            // 
+            // elimina
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Red;
+            this.elimina.DefaultCellStyle = dataGridViewCellStyle2;
+            this.elimina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.elimina.HeaderText = "Quitar";
+            this.elimina.Name = "elimina";
+            this.elimina.ReadOnly = true;
+            this.elimina.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.elimina.Text = "Quitar";
+            this.elimina.Width = 46;
+            // 
+            // item
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.item.DefaultCellStyle = dataGridViewCellStyle3;
+            this.item.HeaderText = "Item";
+            this.item.Name = "item";
+            this.item.ReadOnly = true;
+            this.item.Width = 56;
+            // 
+            // codigo
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigo.DefaultCellStyle = dataGridViewCellStyle4;
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 71;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 77;
+            // 
+            // Precio_Neto
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Precio_Neto.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Precio_Neto.HeaderText = "Prc. Neto";
+            this.Precio_Neto.Name = "Precio_Neto";
+            this.Precio_Neto.ReadOnly = true;
+            this.Precio_Neto.Width = 82;
+            // 
+            // precio
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.precio.DefaultCellStyle = dataGridViewCellStyle6;
+            this.precio.HeaderText = "Prc. Venta";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            this.precio.Width = 87;
+            // 
+            // cantidad
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle7;
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 81;
+            // 
+            // desc
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.desc.DefaultCellStyle = dataGridViewCellStyle8;
+            this.desc.HeaderText = "Dcto.%";
+            this.desc.Name = "desc";
+            this.desc.ReadOnly = true;
+            this.desc.Width = 71;
+            // 
+            // Monto_Descuento
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Monto_Descuento.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Monto_Descuento.HeaderText = "Mnt. Dcto.";
+            this.Monto_Descuento.Name = "Monto_Descuento";
+            this.Monto_Descuento.ReadOnly = true;
+            this.Monto_Descuento.Width = 87;
+            // 
+            // Total_Neto
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Total_Neto.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Total_Neto.HeaderText = "Total_Neto";
+            this.Total_Neto.Name = "Total_Neto";
+            this.Total_Neto.ReadOnly = true;
+            this.Total_Neto.Width = 92;
+            // 
+            // total
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.NullValue = null;
+            this.total.DefaultCellStyle = dataGridViewCellStyle11;
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            this.total.Width = 59;
+            // 
+            // Exento
+            // 
+            this.Exento.HeaderText = "Exento";
+            this.Exento.Name = "Exento";
+            this.Exento.ReadOnly = true;
+            this.Exento.Width = 70;
+            // 
+            // DscItem
+            // 
+            this.DscItem.HeaderText = "DscItem";
+            this.DscItem.Name = "DscItem";
+            this.DscItem.Width = 77;
             // 
             // tableLayoutPanel9
             // 
@@ -836,37 +957,41 @@
             // 
             this.tableLayoutPanel10.BackColor = System.Drawing.Color.Gainsboro;
             this.tableLayoutPanel10.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel10.ColumnCount = 4;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 193F));
+            this.tableLayoutPanel10.ColumnCount = 6;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.91892F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.22475F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.77667F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.81081F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.19488F));
             this.tableLayoutPanel10.Controls.Add(this.labelOC, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.textBoxOC, 1, 0);
             this.tableLayoutPanel10.Controls.Add(this.dateTimePickerFchEmis, 1, 1);
             this.tableLayoutPanel10.Controls.Add(this.labelFecha, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.label3, 2, 0);
+            this.tableLayoutPanel10.Controls.Add(this.labelCita, 2, 0);
             this.tableLayoutPanel10.Controls.Add(this.textBoxCita, 3, 0);
             this.tableLayoutPanel10.Controls.Add(this.labelSello, 2, 1);
             this.tableLayoutPanel10.Controls.Add(this.textBoxSello, 3, 1);
+            this.tableLayoutPanel10.Controls.Add(this.label3, 4, 0);
+            this.tableLayoutPanel10.Controls.Add(this.textBoxFormaPago, 5, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(578, 23);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(462, 23);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(588, 66);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(704, 66);
             this.tableLayoutPanel10.TabIndex = 20;
             // 
             // labelOC
             // 
             this.labelOC.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelOC.AutoSize = true;
-            this.labelOC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOC.Location = new System.Drawing.Point(4, 8);
+            this.labelOC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOC.Location = new System.Drawing.Point(4, 3);
             this.labelOC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelOC.Name = "labelOC";
-            this.labelOC.Size = new System.Drawing.Size(145, 15);
+            this.labelOC.Size = new System.Drawing.Size(76, 26);
             this.labelOC.TabIndex = 1;
             this.labelOC.Text = "ORDEN DE COMPRA:";
             // 
@@ -874,11 +999,11 @@
             // 
             this.textBoxOC.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxOC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxOC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxOC.Location = new System.Drawing.Point(157, 5);
+            this.textBoxOC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxOC.Location = new System.Drawing.Point(121, 6);
             this.textBoxOC.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOC.Name = "textBoxOC";
-            this.textBoxOC.Size = new System.Drawing.Size(149, 21);
+            this.textBoxOC.Size = new System.Drawing.Size(123, 20);
             this.textBoxOC.TabIndex = 0;
             this.textBoxOC.Text = "0";
             this.textBoxOC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -886,46 +1011,46 @@
             // dateTimePickerFchEmis
             // 
             this.dateTimePickerFchEmis.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePickerFchEmis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerFchEmis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerFchEmis.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFchEmis.Location = new System.Drawing.Point(156, 37);
+            this.dateTimePickerFchEmis.Location = new System.Drawing.Point(120, 38);
             this.dateTimePickerFchEmis.Name = "dateTimePickerFchEmis";
-            this.dateTimePickerFchEmis.Size = new System.Drawing.Size(91, 22);
+            this.dateTimePickerFchEmis.Size = new System.Drawing.Size(91, 20);
             this.dateTimePickerFchEmis.TabIndex = 1;
             // 
             // labelFecha
             // 
             this.labelFecha.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelFecha.AutoSize = true;
-            this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFecha.Location = new System.Drawing.Point(4, 40);
+            this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFecha.Location = new System.Drawing.Point(4, 42);
             this.labelFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(55, 15);
+            this.labelFecha.Size = new System.Drawing.Size(51, 13);
             this.labelFecha.TabIndex = 2;
             this.labelFecha.Text = "FECHA:";
             // 
-            // label3
+            // labelCita
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(314, 8);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "CITA Nº:";
+            this.labelCita.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelCita.AutoSize = true;
+            this.labelCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCita.Location = new System.Drawing.Point(252, 9);
+            this.labelCita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelCita.Name = "labelCita";
+            this.labelCita.Size = new System.Drawing.Size(57, 13);
+            this.labelCita.TabIndex = 5;
+            this.labelCita.Text = "CITA Nº:";
             // 
             // textBoxCita
             // 
             this.textBoxCita.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxCita.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCita.Location = new System.Drawing.Point(402, 5);
+            this.textBoxCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCita.Location = new System.Drawing.Point(352, 6);
             this.textBoxCita.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCita.Name = "textBoxCita";
-            this.textBoxCita.Size = new System.Drawing.Size(176, 21);
+            this.textBoxCita.Size = new System.Drawing.Size(108, 20);
             this.textBoxCita.TabIndex = 2;
             this.textBoxCita.Text = "0";
             this.textBoxCita.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -934,11 +1059,11 @@
             // 
             this.labelSello.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelSello.AutoSize = true;
-            this.labelSello.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSello.Location = new System.Drawing.Point(314, 40);
+            this.labelSello.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSello.Location = new System.Drawing.Point(252, 42);
             this.labelSello.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelSello.Name = "labelSello";
-            this.labelSello.Size = new System.Drawing.Size(74, 15);
+            this.labelSello.Size = new System.Drawing.Size(66, 13);
             this.labelSello.TabIndex = 6;
             this.labelSello.Text = "SELLO(S):";
             // 
@@ -946,139 +1071,44 @@
             // 
             this.textBoxSello.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxSello.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxSello.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSello.Location = new System.Drawing.Point(402, 37);
+            this.textBoxSello.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSello.Location = new System.Drawing.Point(352, 38);
             this.textBoxSello.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSello.Name = "textBoxSello";
-            this.textBoxSello.Size = new System.Drawing.Size(176, 21);
+            this.textBoxSello.Size = new System.Drawing.Size(108, 20);
             this.textBoxSello.TabIndex = 3;
             this.textBoxSello.Text = "0";
             this.textBoxSello.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(482, 3);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 26);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "FORMA DE PAGO:";
+            // 
+            // textBoxFormaPago
+            // 
+            this.textBoxFormaPago.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxFormaPago.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFormaPago.Location = new System.Drawing.Point(558, 6);
+            this.textBoxFormaPago.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFormaPago.Name = "textBoxFormaPago";
+            this.textBoxFormaPago.Size = new System.Drawing.Size(139, 20);
+            this.textBoxFormaPago.TabIndex = 8;
+            this.textBoxFormaPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // elimina
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Red;
-            this.elimina.DefaultCellStyle = dataGridViewCellStyle2;
-            this.elimina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.elimina.HeaderText = "Quitar";
-            this.elimina.Name = "elimina";
-            this.elimina.ReadOnly = true;
-            this.elimina.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.elimina.Text = "Quitar";
-            this.elimina.Width = 46;
-            // 
-            // item
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.item.DefaultCellStyle = dataGridViewCellStyle3;
-            this.item.HeaderText = "Item";
-            this.item.Name = "item";
-            this.item.ReadOnly = true;
-            this.item.Width = 56;
-            // 
-            // codigo
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigo.DefaultCellStyle = dataGridViewCellStyle4;
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 71;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 77;
-            // 
-            // Precio_Neto
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Precio_Neto.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Precio_Neto.HeaderText = "Prc. Neto";
-            this.Precio_Neto.Name = "Precio_Neto";
-            this.Precio_Neto.ReadOnly = true;
-            this.Precio_Neto.Width = 82;
-            // 
-            // precio
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "C0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.precio.DefaultCellStyle = dataGridViewCellStyle6;
-            this.precio.HeaderText = "Prc. Venta";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            this.precio.Width = 87;
-            // 
-            // cantidad
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle7;
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 81;
-            // 
-            // desc
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.desc.DefaultCellStyle = dataGridViewCellStyle8;
-            this.desc.HeaderText = "Dcto.%";
-            this.desc.Name = "desc";
-            this.desc.ReadOnly = true;
-            this.desc.Width = 71;
-            // 
-            // Monto_Descuento
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Monto_Descuento.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Monto_Descuento.HeaderText = "Mnt. Dcto.";
-            this.Monto_Descuento.Name = "Monto_Descuento";
-            this.Monto_Descuento.ReadOnly = true;
-            this.Monto_Descuento.Width = 87;
-            // 
-            // Total_Neto
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Total_Neto.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Total_Neto.HeaderText = "Total_Neto";
-            this.Total_Neto.Name = "Total_Neto";
-            this.Total_Neto.ReadOnly = true;
-            this.Total_Neto.Width = 92;
-            // 
-            // total
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.NullValue = null;
-            this.total.DefaultCellStyle = dataGridViewCellStyle11;
-            this.total.HeaderText = "Total";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
-            this.total.Width = 59;
-            // 
-            // Exento
-            // 
-            this.Exento.HeaderText = "Exento";
-            this.Exento.Name = "Exento";
-            this.Exento.ReadOnly = true;
-            this.Exento.Width = 70;
-            // 
-            // DscItem
-            // 
-            this.DscItem.HeaderText = "DscItem";
-            this.DscItem.Name = "DscItem";
-            this.DscItem.Width = 77;
             // 
             // frmPuntoVenta
             // 
@@ -1178,7 +1208,7 @@
         public System.Windows.Forms.Label labelFecha;
         public System.Windows.Forms.Button btnSalir;
         public System.Windows.Forms.Label labelSello;
-        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label labelCita;
         public System.Windows.Forms.TextBox textBoxCita;
         public System.Windows.Forms.TextBox textBoxSello;
         public System.Windows.Forms.DateTimePicker dateTimePickerFchEmis;
@@ -1197,5 +1227,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Exento;
         private System.Windows.Forms.DataGridViewTextBoxColumn DscItem;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox textBoxFormaPago;
     }
 }
