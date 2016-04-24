@@ -18,6 +18,7 @@ namespace Vista
         String nombreDoc = String.Empty;
         UsuarioModel usuarioM;
         ConfigModel configModel = new ConfigModel();
+        RegistroWin regWin = new RegistroWin();
         public frmInicio()
         {
             InitializeComponent();
@@ -32,10 +33,10 @@ namespace Vista
         public void actualizaDG()
         {
             string desde = Convert.ToDateTime(dateTimePickerDesde.Value).ToString("yyyy-MM-dd");
-            string hasta = Convert.ToDateTime(dateTimePickerHasta.Value).ToString("yyyy-MM-dd"); 
-     
+            string hasta = Convert.ToDateTime(dateTimePickerHasta.Value).ToString("yyyy-MM-dd");
+
             dataGridView1.Rows.Clear();
-            dataTable = new DocumentoModel().getAllDocDTxFecha(desde,hasta);
+            dataTable = new DocumentoModel().getAllDocDTxFecha(desde, hasta);
             foreach (DataRow fila in dataTable.Rows)
             {
                 Int32 n = this.dataGridView1.Rows.Add();
@@ -51,13 +52,14 @@ namespace Vista
             }
         }
 
-                private void frmInicio_Load(object sender, EventArgs e)
+        private void frmInicio_Load(object sender, EventArgs e)
         {
             configModel = configModel.getConfig();
-            if(configModel.abrirIat == "True")System.Diagnostics.Process.Start(@"C:\IatFiles\IatDteBridge.exe"); 
+            regWin = regWin.getRegWin();
+            if (configModel.abrirIat == "True") System.Diagnostics.Process.Start(@"" + regWin.unidadIat + ":/IatFiles/IatDteBridge.exe");
             try
             {
-                pictureBoxLogo.Image = new Bitmap(@"C:\DigitalTerminal\img\logo.jpg");
+                pictureBoxLogo.Image = new Bitmap(@"" + regWin.unidadDT + ":/DigitalTerminal/img/logo.jpg");
             }
             catch (Exception ex)
             {
@@ -65,7 +67,8 @@ namespace Vista
             }
             this.btnPedidos.Select();
             actualizaDG();
-            
+            regWin.creaRegistrosWin();
+
         }
 
 
@@ -103,20 +106,19 @@ namespace Vista
             {
                 String tipoDte = dataGridView1.Rows[e.RowIndex].Cells["Tipo_Dte"].Value.ToString();
                 String folio = dataGridView1.Rows[e.RowIndex].Cells["Folio"].Value.ToString();
-                nombreDoc = dataGridView1.Rows[e.RowIndex].Cells["Documento"].Value.ToString(); 
-                getDoc(Convert.ToInt32(tipoDte),Convert.ToInt32(folio));
+                nombreDoc = dataGridView1.Rows[e.RowIndex].Cells["Documento"].Value.ToString();
+                getDoc(Convert.ToInt32(tipoDte), Convert.ToInt32(folio));
             }
 
             if (e.ColumnIndex == dataGridView1.Columns["imprimir"].Index && e.RowIndex >= 0)
             {
-
                 String tipoDte = dataGridView1.Rows[e.RowIndex].Cells["Tipo_Dte"].Value.ToString();
                 String folio = dataGridView1.Rows[e.RowIndex].Cells["Folio"].Value.ToString();
                 DocumentoModel documento = new DocumentoModel();
-                documento = documento.getDocumento( Convert.ToInt32( tipoDte), Convert.ToInt32( folio));
+                documento = documento.getDocumento(Convert.ToInt32(tipoDte), Convert.ToInt32(folio));
                 if (documento.TipoDTE != 802)
                 {
-                    string dirPdf = @"C:\IatFiles\file\pdf\PRINT_" + documento.RUTEmisor + "_" + tipoDte + "_" + folio + ".pdf";
+                    string dirPdf = @"" + regWin.unidadIat + ":/IatFiles/file/pdf/PRINT_" + documento.RUTEmisor + "_" + tipoDte + "_" + folio + ".pdf";
                     System.Diagnostics.Process.Start(dirPdf);
                 }
 
@@ -143,33 +145,33 @@ namespace Vista
             pos.textBoxSello.Text = documento.Sello;
             pos.textBoxFormaPago.Text = documento.formaPago;
             // Cargo Detalle
-            foreach(Detalle detalle in documento.detalle)
+            foreach (Detalle detalle in documento.detalle)
             {
                 Int32 n = pos.dtgwDetalle.Rows.Add();
-               pos.dtgwDetalle.Rows[n].Cells["elimina"].Value = "-";             
-               pos.dtgwDetalle.Rows[n].Cells["item"].Value = n + 1;
-               pos.dtgwDetalle.Rows[n].Cells["codigo"].Value = detalle.VlrCodigo;
-               pos.dtgwDetalle.Rows[n].Cells["nombre"].Value = detalle.NmbItem; 
-               pos.dtgwDetalle.Rows[n].Cells["Precio_Neto"].Value = Decimal.Round(detalle.PrcItem);
-               pos.dtgwDetalle.Rows[n].Cells["precio"].Value = detalle.PrcBruItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-               pos.dtgwDetalle.Rows[n].Cells["cantidad"].Value = detalle.QtyItem;
-               pos.dtgwDetalle.Rows[n].Cells["desc"].Value = detalle.DescuentoPct;
-               pos.dtgwDetalle.Rows[n].Cells["Monto_Descuento"].Value = detalle.DescuentoMonto.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-               pos.dtgwDetalle.Rows[n].Cells["Total_Neto"].Value = detalle.MontoItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-               pos.dtgwDetalle.Rows[n].Cells["total"].Value = detalle.MontoBruItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-               if(detalle.IndExe == "1")
-               {
-                   pos.dtgwDetalle.Rows[n].Cells["exento"].Value = "True";
-                   pos.dtgwDetalle.Rows[n].Cells["Total_Neto"].Value = "";
-               }
-               else
-               {
-                   pos.dtgwDetalle.Rows[n].Cells["exento"].Value = "False";
-               }
-               if (detalle.DscItem != null)
-               {
-                   pos.dtgwDetalle.Rows[n].Cells["DscItem"].Value = detalle.DscItem.ToString();
-               }
+                pos.dtgwDetalle.Rows[n].Cells["elimina"].Value = "-";
+                pos.dtgwDetalle.Rows[n].Cells["item"].Value = n + 1;
+                pos.dtgwDetalle.Rows[n].Cells["codigo"].Value = detalle.VlrCodigo;
+                pos.dtgwDetalle.Rows[n].Cells["nombre"].Value = detalle.NmbItem;
+                pos.dtgwDetalle.Rows[n].Cells["Precio_Neto"].Value = Decimal.Round(detalle.PrcItem);
+                pos.dtgwDetalle.Rows[n].Cells["precio"].Value = detalle.PrcBruItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+                pos.dtgwDetalle.Rows[n].Cells["cantidad"].Value = detalle.QtyItem;
+                pos.dtgwDetalle.Rows[n].Cells["desc"].Value = detalle.DescuentoPct;
+                pos.dtgwDetalle.Rows[n].Cells["Monto_Descuento"].Value = detalle.DescuentoMonto.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+                pos.dtgwDetalle.Rows[n].Cells["Total_Neto"].Value = detalle.MontoItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+                pos.dtgwDetalle.Rows[n].Cells["total"].Value = detalle.MontoBruItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+                if (detalle.IndExe == "1")
+                {
+                    pos.dtgwDetalle.Rows[n].Cells["exento"].Value = "True";
+                    pos.dtgwDetalle.Rows[n].Cells["Total_Neto"].Value = "";
+                }
+                else
+                {
+                    pos.dtgwDetalle.Rows[n].Cells["exento"].Value = "False";
+                }
+                if (detalle.DscItem != null)
+                {
+                    pos.dtgwDetalle.Rows[n].Cells["DscItem"].Value = detalle.DscItem.ToString();
+                }
             }
             // Cargo Totales
             //pos.textBoxDctoGlobal.Text = documento.dscRcgGlobal; // TODO
@@ -181,7 +183,7 @@ namespace Vista
             //Cargo las referencias
 
             pos.ShowDialog();
-           
+
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)

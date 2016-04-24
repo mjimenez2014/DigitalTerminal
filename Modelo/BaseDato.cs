@@ -12,7 +12,7 @@ namespace Modelo
     {
         public SQLiteConnection ConnectSqlite()
         {
-            String strConn = @"Data Source=C:/DigitalTerminal/configDT.sqlite;Pooling=true;FailIfMissing=false;Version=3";
+            string strConn = @"Data Source="+new RegistroWin().getRegWin().unidadDT+":/DigitalTerminal/configDT.sqlite;Pooling=true;FailIfMissing=false;Version=3";
             SQLiteConnection myConn = new SQLiteConnection(strConn);
             try
             {
@@ -52,7 +52,7 @@ namespace Modelo
         public OdbcConnection ConnectPostgres()
         {
 
-            String stringConn = this.stringConn();
+            string stringConn = this.stringConn();
             OdbcConnection conn = new OdbcConnection(stringConn);
             try
             {

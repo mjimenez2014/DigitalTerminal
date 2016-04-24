@@ -14,13 +14,13 @@ namespace Modelo
   [DataContract]
  public class DocumentoModel
     {
-        public String fileName { get; set; } 
+        public string fileName { get; set; } 
         [DataMember]
         public int TipoDTE { get; set; } //
         [DataMember] 
         public int Folio{get;set;}
         [DataMember]
-        public String FchEmis { get; set; }
+        public string FchEmis { get; set; }
         [DataMember] 
         public int IndNoRebaja { get; set; }
         [DataMember]
@@ -28,7 +28,7 @@ namespace Modelo
         [DataMember] 
         public int IndTraslado { get; set; }
         [DataMember] 
-        public String TpoImpresion { get; set; }
+        public string TpoImpresion { get; set; }
         [DataMember]
         public int IndServicio { get; set; }
         [DataMember]
@@ -100,7 +100,7 @@ namespace Modelo
         public string NumResol { get; set; }
 
         // Estado de la condiciónd e entrega en pdf
-        public String CondEntrega { get; set; }
+        public string CondEntrega { get; set; }
 
         // bodega Origen
         [DataMember]
@@ -291,7 +291,7 @@ namespace Modelo
             ds.WriteObject(stream, documento);
             string jsonString = Encoding.UTF8.GetString(stream.ToArray());
             stream.Close();
-            String json = jsonString.Replace("null", "\"\"");
+            string json = jsonString.Replace("null", "\"\"");
             json =  jsonString.Replace("{", "{\"fchcreate\":\"" + DateTime.Now.ToString() + "\",");
             try
             {
@@ -320,11 +320,11 @@ namespace Modelo
                 string jsonString = Encoding.UTF8.GetString(stream.ToArray());
                 stream.Close();
 
-                 String json = jsonString.Replace("null", "\"\"");
+                string json = jsonString.Replace("null", "\"\"");
                  json = json.Replace("u000a", "n");
                  json = json.Replace("u000d", "r");
 
-                String fileNameJson = @"C:\IatFiles\cajas\caj1\" + documento.TipoDTE + "_" + documento.RUTEmisor + "_" + documento.Folio + ".json";
+                string fileNameJson = @""+new RegistroWin().getRegWin().unidadIat+":/IatFiles/cajas/caj1/" + documento.TipoDTE + "_" + documento.RUTEmisor + "_" + documento.Folio + ".json";
 
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileNameJson, false, Encoding.GetEncoding("ISO-8859-1")))
                 {
@@ -336,7 +336,7 @@ namespace Modelo
         public DocumentoModel getDocumento(int tipo, int folio)
         {
             DocumentoModel documentoModel = new DocumentoModel();
-            String documento = String.Empty;
+            string documento = string.Empty;
             try
             {
                 BaseDato con = new BaseDato();
@@ -479,7 +479,7 @@ namespace Modelo
                 detalle.WriteObject(stream, det);
                 string jsonString = Encoding.UTF8.GetString(stream.ToArray());
                 stream.Close();
-                String json = jsonString.Replace("null", "\"\"");
+                string json = jsonString.Replace("null", "\"\"");
                 json = jsonString.Replace("{", "{\"FolioDoc\":" + documento.Folio + ", \"TipoDoc\":" + documento.TipoDTE + ",");
 
                 try
@@ -503,7 +503,7 @@ namespace Modelo
         { 
             List<Detalle> detalles = new List<Detalle>();
             Detalle detalle = new Detalle();
-            String detalleJson = String.Empty;
+            string detalleJson = string.Empty;
             try
             {
                 BaseDato con = new BaseDato();
@@ -533,8 +533,8 @@ namespace Modelo
 
   public  class Sucursal
     {
-        public Sucursal(String dato) { datosucursal = dato; }
-        public String datosucursal { get; set; }
+        public Sucursal(string dato) { datosucursal = dato; }
+        public string datosucursal { get; set; }
        
     }
 
@@ -609,8 +609,8 @@ namespace Modelo
                  referencia.WriteObject(stream, det);
                  string jsonString = Encoding.UTF8.GetString(stream.ToArray());
                  stream.Close();
-                 String json = jsonString.Replace("null", "\"\"");
-                 String json0 = json.Replace("{", "{\"FolioDoc\":" + documento.Folio + ", \"TipoDoc\":" + documento.TipoDTE+ ",");
+                string json = jsonString.Replace("null", "\"\"");
+                string json0 = json.Replace("{", "{\"FolioDoc\":" + documento.Folio + ", \"TipoDoc\":" + documento.TipoDTE+ ",");
                  if (det.TpoDocRef == "SET") 
                      json0 = json0.Replace("\"TpoDocRef\":\"SET\"","\"TpoDocRef\\r\\n\":\"1000\"");
                  if (det.TpoDocRef == "1000")
@@ -636,7 +636,7 @@ namespace Modelo
          {
              List<ReferenciaDoc> referencias = new List<ReferenciaDoc>();
              ReferenciaDoc referencia = new ReferenciaDoc();
-             String referenciaJson = String.Empty;
+            string referenciaJson = string.Empty;
              try
              {
                  BaseDato con = new BaseDato();
@@ -648,8 +648,8 @@ namespace Modelo
                  while (reader.Read())
                  {
                      referenciaJson = reader.GetString(reader.GetOrdinal("row_to_json"));
-                     String referenciaJson1 = referenciaJson.Replace("null", "\"\"");
-                     String referenciaJson2 = referenciaJson1.Replace("\"TpoDocRef\\r\\n", "\"TpoDocRef");
+                    string referenciaJson1 = referenciaJson.Replace("null", "\"\"");
+                    string referenciaJson2 = referenciaJson1.Replace("\"TpoDocRef\\r\\n", "\"TpoDocRef");
                      DataContractJsonSerializer js = new DataContractJsonSerializer(typeof(ReferenciaDoc));
                      MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(referenciaJson2));
                      referencia = (ReferenciaDoc)js.ReadObject(ms);
