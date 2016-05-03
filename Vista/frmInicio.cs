@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Modelo;
 using System.Globalization;
-using System.IO;
 
 namespace Vista
 {
@@ -19,6 +14,8 @@ namespace Vista
         UsuarioModel usuarioM;
         ConfigModel configModel = new ConfigModel();
         RegistroWin regWin = new RegistroWin();
+        string desde = string.Empty;
+        string hasta = string.Empty;
         public frmInicio()
         {
             InitializeComponent();
@@ -32,8 +29,8 @@ namespace Vista
 
         public void actualizaDG()
         {
-            string desde = Convert.ToDateTime(dateTimePickerDesde.Value).ToString("yyyy-MM-dd");
-            string hasta = Convert.ToDateTime(dateTimePickerHasta.Value).ToString("yyyy-MM-dd");
+             desde = Convert.ToDateTime(dateTimePickerDesde.Value).ToString("yyyy-MM-dd");
+             hasta = Convert.ToDateTime(dateTimePickerHasta.Value).ToString("yyyy-MM-dd");
 
             dataGridView1.Rows.Clear();
             dataTable = new DocumentoModel().getAllDocDTxFecha(desde, hasta);
@@ -189,6 +186,11 @@ namespace Vista
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             actualizaDG();
+        }
+
+        private void buttonInforme_Click(object sender, EventArgs e)
+        {
+            new frmVentasXFecha(desde,hasta).ShowDialog();
         }
     }
 }

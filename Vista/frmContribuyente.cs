@@ -90,7 +90,25 @@ namespace Vista
                 string rut = textBoxRutCliente.Text.ToUpper();
                 if (clienteM.getContribuyente(rut).Rows.Count != 0)
                 {
-                    MessageBox.Show("El cliente ya esta creado.");
+                    // MessageBox.Show("El cliente ya esta creado.");
+                    clienteM.rut = rut;
+                    clienteM.rznSoc = textBoxRazonSocial.Text.ToUpper();
+                    clienteM.giro = textBoxGiro.Text.ToUpper();
+                    clienteM.direccion = textBoxDireccion.Text.ToUpper();
+                    clienteM.codComuna = Convert.ToInt32(labelCodComuna.Text);
+                    clienteM.codCiudad = Convert.ToInt32(labelCodCiudad.Text);
+                    clienteM.telefono = textBoxTelefono.Text;
+                    try
+                    {
+                        clienteM.update(clienteM);
+                        MessageBox.Show("El Cliente " + clienteM.rznSoc + " se actualizó con exito!!");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw new Exception("Error al actualizar cliente " + ex.Message);
+                    }
+
                 }
                 else
                 {
@@ -104,12 +122,12 @@ namespace Vista
                     try
                     {
                         clienteM.save(clienteM);
-                        MessageBox.Show("El Cliente " + clienteM.rznSoc + " se creo con exito");
+                        MessageBox.Show("El Cliente " + clienteM.rznSoc + " se creo con exito!!");
                     }
                     catch (Exception ex)
                     {
 
-
+                        throw new Exception("Error al crear cliente" + ex.Message);
                     }
                 }
             }

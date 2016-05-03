@@ -60,6 +60,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
             this.buttonBuscar = new System.Windows.Forms.Button();
+            this.buttonInforme = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -87,7 +88,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(950, 544);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 544);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -145,7 +146,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(942, 382);
+            this.dataGridView1.Size = new System.Drawing.Size(970, 382);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -249,7 +250,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(948, 73);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(976, 73);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel1
@@ -258,7 +259,7 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.Controls.Add(this.pictureBoxLogo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(755, 0);
+            this.panel1.Location = new System.Drawing.Point(783, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(193, 73);
@@ -335,24 +336,26 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 6;
+            this.tableLayoutPanel4.ColumnCount = 7;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 629F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.Controls.Add(this.dateTimePickerHasta, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.dateTimePickerDesde, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.buttonBuscar, 5, 0);
+            this.tableLayoutPanel4.Controls.Add(this.buttonBuscar, 4, 0);
+            this.tableLayoutPanel4.Controls.Add(this.buttonInforme, 5, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 79);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(942, 42);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(970, 42);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // dateTimePickerHasta
@@ -414,13 +417,27 @@
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
+            // buttonInforme
+            // 
+            this.buttonInforme.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.buttonInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInforme.ForeColor = System.Drawing.Color.Green;
+            this.buttonInforme.Location = new System.Drawing.Point(413, 6);
+            this.buttonInforme.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.buttonInforme.Name = "buttonInforme";
+            this.buttonInforme.Size = new System.Drawing.Size(77, 29);
+            this.buttonInforme.TabIndex = 5;
+            this.buttonInforme.Text = "REPORTE";
+            this.buttonInforme.UseVisualStyleBackColor = true;
+            this.buttonInforme.Click += new System.EventHandler(this.buttonInforme_Click);
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(950, 544);
+            this.ClientSize = new System.Drawing.Size(978, 544);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -467,5 +484,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto_Total;
         private System.Windows.Forms.DataGridViewButtonColumn Abrir;
         private System.Windows.Forms.DataGridViewButtonColumn imprimir;
+        private System.Windows.Forms.Button buttonInforme;
     }
 }

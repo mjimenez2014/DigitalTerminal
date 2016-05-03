@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using Vista;
-using System.Reflection;
 using System.Threading;
 
 
@@ -29,7 +26,7 @@ namespace DigitalTerminal
             }
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new frmInicio());
+                Application.Run(new frmLogin());
         }
 
 

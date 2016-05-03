@@ -33,6 +33,10 @@ namespace Modelo
         public string ComunaOrigen { get; set; }
         [DataMember]
         public string CiudadOrigen { get; set; }
+        [DataMember]
+        public string DirRegionalSII { get; set; }
+        [DataMember]
+        public string sucurEmisor { get; set; }
 
         public EmpresaModel getEmpresa()
         {
@@ -49,16 +53,19 @@ namespace Modelo
                 OdbcDataReader reader = select.ExecuteReader();
                 while(reader.Read())
                 {
-                    this.Rut = reader.GetString(reader.GetOrdinal("rutempresa"));
-                    this.RazonSocial = reader.GetString(reader.GetOrdinal("razonsocial"));
-                    this.GiroEmisor = reader.GetString(reader.GetOrdinal("giroemisor"));
-                    this.CodigoSiiSucursal = reader.GetInt32(reader.GetOrdinal("codigosiisucursal"));
-                    this.Telefono = reader.GetString(reader.GetOrdinal("telefonoemis"));
-                    this.Correo = reader.GetString(reader.GetOrdinal("correoemis"));
-                    this.Acteco = reader.GetInt32(reader.GetOrdinal("acteco"));
-                    this.DireccionOrigen = reader.GetString(reader.GetOrdinal("direccionorigen"));
-                    this.ComunaOrigen = reader.GetString(reader.GetOrdinal("comunaorigen"));
-                    this.CiudadOrigen = reader.GetString(reader.GetOrdinal("ciudadorigen"));
+                    Rut = reader.GetString(reader.GetOrdinal("rutempresa"));
+                    RazonSocial = reader.GetString(reader.GetOrdinal("razonsocial"));
+                    GiroEmisor = reader.GetString(reader.GetOrdinal("giroemisor"));
+                    CodigoSiiSucursal = reader.GetInt32(reader.GetOrdinal("codigosiisucursal"));
+                    Telefono = reader.GetString(reader.GetOrdinal("telefonoemis"));
+                    Correo = reader.GetString(reader.GetOrdinal("correoemis"));
+                    Acteco = reader.GetInt32(reader.GetOrdinal("acteco"));
+                    DireccionOrigen = reader.GetString(reader.GetOrdinal("direccionorigen"));
+                    ComunaOrigen = reader.GetString(reader.GetOrdinal("comunaorigen"));
+                    CiudadOrigen = reader.GetString(reader.GetOrdinal("ciudadorigen"));
+                    DirRegionalSII = reader.GetString(reader.GetOrdinal("dirregionalsii"));
+                    sucurEmisor = reader.GetString(reader.GetOrdinal("sucuremisor"));
+
                 }
 
 
@@ -67,7 +74,7 @@ namespace Modelo
             catch (Exception ex)
             {
 
-                throw new Exception("Error" + ex.Message);
+                throw new Exception("Error en la tabal empresa postgres" + ex.Message);
             }
 
             finally

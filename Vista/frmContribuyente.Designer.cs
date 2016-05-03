@@ -474,7 +474,6 @@
             this.labelCodCiudad.Size = new System.Drawing.Size(74, 16);
             this.labelCodCiudad.TabIndex = 25;
             this.labelCodCiudad.Text = "codCiudad";
-            this.labelCodCiudad.Visible = false;
             // 
             // labelCodComuna
             // 
@@ -484,7 +483,6 @@
             this.labelCodComuna.Size = new System.Drawing.Size(81, 16);
             this.labelCodComuna.TabIndex = 26;
             this.labelCodComuna.Text = "codComuna";
-            this.labelCodComuna.Visible = false;
             // 
             // tableLayoutPanel6
             // 
@@ -507,7 +505,7 @@
             this.comboBoxCiudad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxCiudad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxCiudad.FormattingEnabled = true;
-            this.comboBoxCiudad.Location = new System.Drawing.Point(4, 8);
+            this.comboBoxCiudad.Location = new System.Drawing.Point(4, 10);
             this.comboBoxCiudad.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxCiudad.Name = "comboBoxCiudad";
             this.comboBoxCiudad.Size = new System.Drawing.Size(305, 24);
@@ -550,6 +548,8 @@
             // comboBoxComuna
             // 
             this.comboBoxComuna.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxComuna.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBoxComuna.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxComuna.Enabled = false;
             this.comboBoxComuna.FormattingEnabled = true;
             this.comboBoxComuna.Location = new System.Drawing.Point(4, 9);

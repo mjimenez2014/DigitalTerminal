@@ -379,7 +379,7 @@ namespace Modelo
 
                 OdbcCommand select = new OdbcCommand();
                 select.Connection = conexion;
-                select.CommandText = "SELECT \"nombre\",\"TipoDTE\",\"Folio\",\"FchEmis\",\"RznSocRecep\",\"MntTotal\""
+                select.CommandText = " SELECT \"nombre\",\"TipoDTE\",\"Folio\",\"FchEmis\",\"RznSocRecep\",\"MntTotal\""
                                     +" FROM documento,tipodte " 
                                     + " where documento.\"fchcreate\" between '"+desde+" 00:00:00' and '"+hasta+" 23:59:00'"  
                                     + " and documento.\"TipoDTE\" = tipodte.tipo order by fchcreate DESC LIMIT 50";
@@ -401,7 +401,47 @@ namespace Modelo
             return datatable;
 
         }
+
+        public DataTable getVentasXFecha(string desde, string hasta)
+
+        {
+            DataTable datatable = new DataTable();
+            SqlConnection sqlcon = new SqlConnection();
+            try
+            {
+                BaseDato con = new BaseDato();
+                OdbcConnection conexion = con.ConnectPostgres();
+
+                OdbcCommand select = new OdbcCommand();
+                select.Connection = conexion;
+                select.CommandText = " SELECT * "
+                                    + " FROM documento,tipodte "
+                                    + " where documento.\"fchcreate\" between '" + desde + " 00:00:00' and '" + hasta + " 23:59:00'"
+                                    + " and documento.\"TipoDTE\" in ('33','61','56')"
+                                    + " and documento.\"TipoDTE\" = tipodte.tipo order by fchcreate DESC ";
+                OdbcDataReader reader = select.ExecuteReader();
+                datatable.Load(reader);
+
+            }
+            catch (Exception ex)
+            {
+                datatable = null;
+                throw new Exception("Error" + ex.Message);
+            }
+
+            finally
+            {
+                sqlcon.Close();
+            }
+
+            return datatable;
+
+        }
+
+
     }
+
+
 
 
 

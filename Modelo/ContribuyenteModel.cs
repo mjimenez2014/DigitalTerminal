@@ -60,7 +60,6 @@ namespace Modelo
             return reader;
         }
 
-
         public DataTable getContribuyente(String rut)
         {
             DataTable datatable = new DataTable();
@@ -172,6 +171,75 @@ namespace Modelo
             }
 
             return datatable;
+        }
+
+        public void update(ContribuyenteModel contribuyenteModel)
+        {
+            SqlConnection sqlcon = new SqlConnection();
+            try
+            {
+                BaseDato con = new BaseDato();
+                OdbcConnection conexion = con.ConnectPostgres();
+
+                OdbcCommand select = new OdbcCommand();
+                select.Connection = conexion;
+                select.CommandText = "UPDATE cliente SET "
+                                    + " \"rznSocRecep\" ='" + contribuyenteModel.rznSoc + "',"
+                                    + " \"giroRecep\" ='" + contribuyenteModel.giro + "',"
+                                    + " \"dirRecep\" ='" + contribuyenteModel.direccion + "',"
+                                    + " \"codCmnaRecep\" =" + contribuyenteModel.codComuna + ","
+                                    + " \"codCiudadRecep\" =" + contribuyenteModel.codCiudad + ","
+                                    + " \"telefono\" ='" + contribuyenteModel.telefono + "'"
+                                    + " WHERE \"rutRecep\" = '" + contribuyenteModel.rut + "';";
+                OdbcDataReader reader = select.ExecuteReader();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error" + ex.Message);
+            }
+
+            finally
+            {
+                sqlcon.Close();
+            }
+
+        }
+
+        public string exists(int rutConstribuyente)
+        {
+            string respuesta = "True";
+            SqlConnection sqlcon = new SqlConnection();
+            try
+            {
+                BaseDato con = new BaseDato();
+                OdbcConnection conexion = con.ConnectPostgres();
+
+                OdbcCommand select = new OdbcCommand();
+                select.Connection = conexion;
+                select.CommandText = "select * from cliente "
+                                    + "where id = '" + rutConstribuyente + "'";
+                OdbcDataReader reader = select.ExecuteReader();
+                if (reader.HasRows == false)
+                {
+                    respuesta = "False";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error" + ex.Message);
+            }
+
+            finally
+            {
+                sqlcon.Close();
+            }
+
+
+            return respuesta;
         }
 
     }

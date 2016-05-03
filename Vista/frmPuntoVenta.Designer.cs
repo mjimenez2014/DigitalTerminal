@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -48,6 +47,7 @@
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.buttonReferencia = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
+            this.buttonEmiteDte = new System.Windows.Forms.Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,7 +61,6 @@
             this.labelMtoTotal = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.textBoxDctoGlobal = new System.Windows.Forms.TextBox();
-            this.buttonEmiteDte = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dtgwDetalle = new System.Windows.Forms.DataGridView();
             this.elimina = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -113,7 +112,6 @@
             this.textBoxSello = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxFormaPago = new System.Windows.Forms.TextBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tblpPuntoVenta.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -170,7 +168,8 @@
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 6;
+            this.tableLayoutPanel5.ColumnCount = 7;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -181,8 +180,8 @@
             this.tableLayoutPanel5.Controls.Add(this.buttonImprimir, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.buttonReferencia, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.buttonGuardar, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel7, 5, 0);
             this.tableLayoutPanel5.Controls.Add(this.buttonEmiteDte, 4, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel7, 6, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(7, 503);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -261,6 +260,23 @@
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
+            // buttonEmiteDte
+            // 
+            this.buttonEmiteDte.FlatAppearance.BorderSize = 2;
+            this.buttonEmiteDte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEmiteDte.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEmiteDte.ForeColor = System.Drawing.Color.Green;
+            this.buttonEmiteDte.Image = global::Vista.Properties.Resources.check_mark_11_32;
+            this.buttonEmiteDte.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonEmiteDte.Location = new System.Drawing.Point(347, 3);
+            this.buttonEmiteDte.Name = "buttonEmiteDte";
+            this.buttonEmiteDte.Size = new System.Drawing.Size(80, 63);
+            this.buttonEmiteDte.TabIndex = 22;
+            this.buttonEmiteDte.Text = "EMITE DTE";
+            this.buttonEmiteDte.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonEmiteDte.UseVisualStyleBackColor = true;
+            this.buttonEmiteDte.Click += new System.EventHandler(this.buttonEmiteDte_Click);
+            // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 2;
@@ -279,7 +295,7 @@
             this.tableLayoutPanel7.Controls.Add(this.label15, 0, 5);
             this.tableLayoutPanel7.Controls.Add(this.textBoxDctoGlobal, 1, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(897, 3);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(860, 3);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 3, 10, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 6;
@@ -289,7 +305,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(262, 153);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(299, 153);
             this.tableLayoutPanel7.TabIndex = 18;
             // 
             // label10
@@ -345,7 +361,7 @@
             this.labelSubTotal.AutoSize = true;
             this.labelSubTotal.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSubTotal.Location = new System.Drawing.Point(245, 29);
+            this.labelSubTotal.Location = new System.Drawing.Point(282, 29);
             this.labelSubTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelSubTotal.Name = "labelSubTotal";
             this.labelSubTotal.Size = new System.Drawing.Size(14, 15);
@@ -357,7 +373,7 @@
             this.labelMtoExento.AutoSize = true;
             this.labelMtoExento.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelMtoExento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMtoExento.Location = new System.Drawing.Point(245, 48);
+            this.labelMtoExento.Location = new System.Drawing.Point(282, 48);
             this.labelMtoExento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelMtoExento.Name = "labelMtoExento";
             this.labelMtoExento.Size = new System.Drawing.Size(14, 15);
@@ -369,7 +385,7 @@
             this.labelIva.AutoSize = true;
             this.labelIva.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIva.Location = new System.Drawing.Point(245, 67);
+            this.labelIva.Location = new System.Drawing.Point(282, 67);
             this.labelIva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelIva.Name = "labelIva";
             this.labelIva.Size = new System.Drawing.Size(14, 15);
@@ -381,7 +397,7 @@
             this.labelImpAdic.AutoSize = true;
             this.labelImpAdic.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelImpAdic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelImpAdic.Location = new System.Drawing.Point(245, 86);
+            this.labelImpAdic.Location = new System.Drawing.Point(282, 86);
             this.labelImpAdic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelImpAdic.Name = "labelImpAdic";
             this.labelImpAdic.Size = new System.Drawing.Size(14, 16);
@@ -405,7 +421,7 @@
             this.labelMtoTotal.AutoSize = true;
             this.labelMtoTotal.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelMtoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMtoTotal.Location = new System.Drawing.Point(242, 106);
+            this.labelMtoTotal.Location = new System.Drawing.Point(279, 106);
             this.labelMtoTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelMtoTotal.Name = "labelMtoTotal";
             this.labelMtoTotal.Size = new System.Drawing.Size(17, 45);
@@ -428,30 +444,13 @@
             // 
             this.textBoxDctoGlobal.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBoxDctoGlobal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxDctoGlobal.Location = new System.Drawing.Point(182, 3);
+            this.textBoxDctoGlobal.Location = new System.Drawing.Point(219, 3);
             this.textBoxDctoGlobal.Name = "textBoxDctoGlobal";
             this.textBoxDctoGlobal.Size = new System.Drawing.Size(77, 21);
             this.textBoxDctoGlobal.TabIndex = 32;
             this.textBoxDctoGlobal.Text = "0";
             this.textBoxDctoGlobal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxDctoGlobal.Validated += new System.EventHandler(this.textBoxDctoGlobal_Validated);
-            // 
-            // buttonEmiteDte
-            // 
-            this.buttonEmiteDte.FlatAppearance.BorderSize = 2;
-            this.buttonEmiteDte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEmiteDte.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEmiteDte.ForeColor = System.Drawing.Color.Green;
-            this.buttonEmiteDte.Image = global::Vista.Properties.Resources.check_mark_11_32;
-            this.buttonEmiteDte.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonEmiteDte.Location = new System.Drawing.Point(347, 3);
-            this.buttonEmiteDte.Name = "buttonEmiteDte";
-            this.buttonEmiteDte.Size = new System.Drawing.Size(80, 63);
-            this.buttonEmiteDte.TabIndex = 22;
-            this.buttonEmiteDte.Text = "EMITE DTE";
-            this.buttonEmiteDte.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonEmiteDte.UseVisualStyleBackColor = true;
-            this.buttonEmiteDte.Click += new System.EventHandler(this.buttonEmiteDte_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -1104,12 +1103,6 @@
             this.textBoxFormaPago.TabIndex = 8;
             this.textBoxFormaPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // frmPuntoVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1188,7 +1181,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.TextBox textBoxRutRecep;
         private System.Windows.Forms.Button buttonBuscaCliente;

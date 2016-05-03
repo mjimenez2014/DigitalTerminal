@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Modelo;
 using System.Globalization;
+using System.Drawing.Printing;
 
 namespace Vista
 {
@@ -23,8 +20,12 @@ namespace Vista
         folioModel folio = new folioModel();
         DscRcgGlobal descuentoGlobal = new DscRcgGlobal();
         List<DscRcgGlobal> descuentosGlobales = new List<DscRcgGlobal>();
+        PdfDocumento pdfDoc = new PdfDocumento();
         frmInicio frminicio;
-        
+        PrintDocument printDocument = new PrintDocument();
+        PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+
+
         public frmPuntoVenta()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace Vista
         public frmPuntoVenta(DocumentoModel doc, frmInicio frminicio)
         {
             InitializeComponent();
-            this.documento = doc;
+            documento = doc;
             this.frminicio = frminicio;
         }
 
@@ -50,7 +51,7 @@ namespace Vista
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnBuscaProducto_Click(object sender, EventArgs e)
@@ -60,7 +61,7 @@ namespace Vista
 
         public DataGridView getDGVDetalle()
         {
-            return this.dtgwDetalle;
+            return dtgwDetalle;
         }
 
 
@@ -90,22 +91,38 @@ namespace Vista
         private void button2_Click(object sender, EventArgs e)
         {
             frminicio.actualizaDG();
-            this.Close();
+            Close();
         }
         
         private void button4_Click(object sender, EventArgs e)
         {
-            this.textBoxCodBarra.Select();
+            textBoxCodBarra.Select();
             frmBuscaProductos frmbuscaprod = new frmBuscaProductos(this);
             frmbuscaprod.ShowDialog();
         }
 
      public void frmPuntoVenta_Load(object sender, EventArgs e)
         {
-            this.textBoxRutRecep.Select();
+            textBoxRutRecep.Select();
             empresaModel = empresaModel.getEmpresa();
             if(empresaModel.Rut == "99505200-8") { labelCita.Text = "ORDEN DE TRABAJO:"; }
             if (empresaModel.Rut == "99505200-8") { labelSello.Text = "GUIA:";}
+
+            // Cargo Datos Emisor
+            empresaModel.getEmpresa();
+            documento.RUTEmisor = empresaModel.Rut;
+            documento.RznSoc = empresaModel.RazonSocial;
+            documento.GiroEmis = empresaModel.GiroEmisor;
+            documento.CdgSIISucur = empresaModel.CodigoSiiSucursal;
+            documento.Telefono = empresaModel.Telefono;
+            documento.CorreoEmisor = empresaModel.Correo;
+            documento.Acteco = empresaModel.Acteco;
+            documento.DirOrigen = empresaModel.DireccionOrigen;
+            documento.CmnaOrigen = empresaModel.ComunaOrigen;
+            documento.CiudadOrigen = empresaModel.CiudadOrigen;
+            documento.DirRegionalSII = empresaModel.DirRegionalSII;
+            documento.SucurEmisor = empresaModel.sucurEmisor;
+
         }
 
 
@@ -115,9 +132,9 @@ namespace Vista
          try
          {
             
-            decimal num1 = Convert.ToDecimal(this.dtgwDetalle.CurrentRow.Cells["precio"].Value);
-            int num2 = Convert.ToInt32(this.dtgwDetalle.CurrentRow.Cells["cantidad"].Value) ;
-            this.dtgwDetalle.CurrentRow.Cells["total"].Value = num1 * num2;
+            decimal num1 = Convert.ToDecimal(dtgwDetalle.CurrentRow.Cells["precio"].Value);
+            int num2 = Convert.ToInt32(dtgwDetalle.CurrentRow.Cells["cantidad"].Value) ;
+                dtgwDetalle.CurrentRow.Cells["total"].Value = num1 * num2;
          }
              
          catch (Exception ex)
@@ -183,20 +200,20 @@ namespace Vista
 
      public void AddProducto(ProductosModel producto, Detalle detalle)
      {
-         n = this.dtgwDetalle.Rows.Add();
-         this.dtgwDetalle.Rows[n].Cells["elimina"].Value = "-";
-         this.dtgwDetalle.Rows[n].Cells["item"].Value = n + 1;
-         this.dtgwDetalle.Rows[n].Cells[2].Value =  producto.codigoInt.ToString(); 
-         this.dtgwDetalle.Rows[n].Cells[3].Value =  producto.nombre.ToString();
-         this.dtgwDetalle.Rows[n].Cells[4].Value =  producto.precioNeto.ToString();
-         this.dtgwDetalle.Rows[n].Cells[5].Value =  producto.precioventa.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-         this.dtgwDetalle.Rows[n].Cells[6].Value =  detalle.QtyItem.ToString();
-         this.dtgwDetalle.Rows[n].Cells[7].Value =  Decimal.Round(detalle.DescuentoPct*100);
-         this.dtgwDetalle.Rows[n].Cells[8].Value = detalle.DescuentoMonto.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-         this.dtgwDetalle.Rows[n].Cells[9].Value =  detalle.MontoItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-         this.dtgwDetalle.Rows[n].Cells[10].Value = detalle.MontoBruItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-         this.dtgwDetalle.Rows[n].Cells[11].Value = producto.exento.ToString();
-         this.dtgwDetalle.Rows[n].Cells[12].Value = detalle.DscItem.ToString();
+         n = dtgwDetalle.Rows.Add();
+            dtgwDetalle.Rows[n].Cells["elimina"].Value = "-";
+            dtgwDetalle.Rows[n].Cells["item"].Value = n + 1;
+            dtgwDetalle.Rows[n].Cells[2].Value =  producto.codigoInt.ToString();
+            dtgwDetalle.Rows[n].Cells[3].Value =  producto.nombre.ToString();
+            dtgwDetalle.Rows[n].Cells[4].Value =  producto.precioNeto.ToString();
+            dtgwDetalle.Rows[n].Cells[5].Value =  producto.precioventa.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+            dtgwDetalle.Rows[n].Cells[6].Value =  detalle.QtyItem.ToString();
+            dtgwDetalle.Rows[n].Cells[7].Value =  Decimal.Round(detalle.DescuentoPct*100);
+            dtgwDetalle.Rows[n].Cells[8].Value = detalle.DescuentoMonto.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+            dtgwDetalle.Rows[n].Cells[9].Value =  detalle.MontoItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+            dtgwDetalle.Rows[n].Cells[10].Value = detalle.MontoBruItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+            dtgwDetalle.Rows[n].Cells[11].Value = producto.exento.ToString();
+            dtgwDetalle.Rows[n].Cells[12].Value = detalle.DscItem.ToString();
 
          if (producto.exento == "False")
          {
@@ -205,8 +222,8 @@ namespace Vista
          }
          else
          {
-             this.dtgwDetalle.Rows[n].Cells[4].Value = 0;
-             this.dtgwDetalle.Rows[n].Cells[9].Value = 0;
+                dtgwDetalle.Rows[n].Cells[4].Value = 0;
+                dtgwDetalle.Rows[n].Cells[9].Value = 0;
              actualizaExento();
          }
 
@@ -225,7 +242,7 @@ namespace Vista
          Decimal suma = 0;
          for (int i = 0; i < dtgwDetalle.RowCount; i++)
          {
-                 suma += Convert.ToDecimal(this.dtgwDetalle.Rows[i].Cells[9].Value.ToString().Replace(".", ""));            
+                 suma += Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[9].Value.ToString().Replace(".", ""));            
          }
          labelSubTotal.Text = suma.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
          calculaIva();
@@ -238,9 +255,9 @@ namespace Vista
          Decimal suma = 0;
          for (int i = 0; i < dtgwDetalle.RowCount; i++)
          {
-             if (this.dtgwDetalle.Rows[i].Cells[4].Value.ToString() == "0")
+             if (dtgwDetalle.Rows[i].Cells[4].Value.ToString() == "0")
              {
-                 suma += Convert.ToDecimal(this.dtgwDetalle.Rows[i].Cells[10].Value.ToString().Replace(".", ""));
+                 suma += Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[10].Value.ToString().Replace(".", ""));
              }
          }
          labelMtoExento.Text = suma.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
@@ -320,8 +337,8 @@ namespace Vista
             if (documento.estadoDte46 == "True") tipoDte = "46";
             try
             {
-                EmpresaModel empresa = new EmpresaModel();
-                empresa.getEmpresa();
+
+
 
                 documento.TipoDTE = tipo; // cod pedido TODO
                 if (tipo == 802)
@@ -332,25 +349,15 @@ namespace Vista
                 {
                     documento.Folio = folio.getUltimoFolio(codCAf);
                 }
-                // Cargo Datos Emisor
-                documento.RUTEmisor = empresa.Rut;
-                documento.RznSoc = empresa.RazonSocial;
-                documento.GiroEmis = empresa.GiroEmisor;
-                documento.CdgSIISucur = empresa.CodigoSiiSucursal;
-                documento.Telefono = empresa.Telefono;
-                documento.CorreoEmisor = empresa.Correo;
-                documento.Acteco = empresa.Acteco;
-                documento.DirOrigen = empresa.DireccionOrigen;
-                documento.CmnaOrigen = empresa.ComunaOrigen;
-                documento.CiudadOrigen = empresa.CiudadOrigen;
+
                 // Datos Receptor
-                documento.RUTRecep = this.textBoxRutRecep.Text;
-                documento.RznSocRecep = this.labelRznSocRecep.Text;
-                documento.GiroRecep = this.labelGiroRecep.Text;
-                documento.DirRecep = this.labelDireccionRecep.Text;
-                documento.CmnaRecep = this.labelComunaRecep.Text;
-                documento.CiudadRecep = this.labelCiudadRecep.Text;
-                documento.TelRecep = this.labelTelefonoRecep.Text;
+                documento.RUTRecep = textBoxRutRecep.Text;
+                documento.RznSocRecep = labelRznSocRecep.Text;
+                documento.GiroRecep = labelGiroRecep.Text;
+                documento.DirRecep = labelDireccionRecep.Text;
+                documento.CmnaRecep = labelComunaRecep.Text;
+                documento.CiudadRecep = labelCiudadRecep.Text;
+                documento.TelRecep = labelTelefonoRecep.Text;
                 documento.FchEmis = Convert.ToDateTime((dateTimePickerFchEmis.Value)).ToString("yyyy-MM-dd"); //DateTime.Today.ToString("yyyy-MM-dd");  
                 documento.NroOrdenCompra = textBoxOC.Text;
                 documento.NroCita = textBoxCita.Text;
@@ -361,26 +368,26 @@ namespace Vista
                 for (int i = 0; i < dtgwDetalle.RowCount; i++)
                 {
                     Detalle detalle = new Detalle();
-                    detalle.NroLinDet = Convert.ToInt32(this.dtgwDetalle.Rows[i].Cells[1].Value);
+                    detalle.NroLinDet = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[1].Value);
                     detalle.TpoCodigo = "PLU";
-                    detalle.VlrCodigo = this.dtgwDetalle.Rows[i].Cells[2].Value.ToString();
-                    detalle.NmbItem = this.dtgwDetalle.Rows[i].Cells[3].Value.ToString();
-                    detalle.PrcItem = Convert.ToDecimal(this.dtgwDetalle.Rows[i].Cells[4].Value.ToString());
-                    detalle.PrcBruItem = Convert.ToDecimal(this.dtgwDetalle.Rows[i].Cells[5].Value.ToString().Replace(".", ""));
-                    detalle.QtyItem = Convert.ToDecimal(this.dtgwDetalle.Rows[i].Cells[6].Value);
-                    detalle.DescuentoPct = Convert.ToInt32(this.dtgwDetalle.Rows[i].Cells[7].Value);
-                    detalle.DescuentoMonto = Convert.ToInt32(this.dtgwDetalle.Rows[i].Cells[8].Value.ToString().Replace(".", ""));
-                    detalle.DescuentoBruMonto = Convert.ToInt32(Convert.ToDouble(this.dtgwDetalle.Rows[i].Cells[8].Value.ToString().Replace(".", "")) * 1.19);
-                    detalle.MontoItem = Convert.ToInt32(this.dtgwDetalle.Rows[i].Cells[9].Value.ToString().Replace(".",""));
-                    detalle.MontoBruItem = Convert.ToInt32(this.dtgwDetalle.Rows[i].Cells[10].Value.ToString().Replace(".", ""));
+                    detalle.VlrCodigo = dtgwDetalle.Rows[i].Cells[2].Value.ToString();
+                    detalle.NmbItem = dtgwDetalle.Rows[i].Cells[3].Value.ToString();
+                    detalle.PrcItem = Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[4].Value.ToString());
+                    detalle.PrcBruItem = Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[5].Value.ToString().Replace(".", ""));
+                    detalle.QtyItem = Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[6].Value);
+                    detalle.DescuentoPct = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[7].Value);
+                    detalle.DescuentoMonto = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[8].Value.ToString().Replace(".", ""));
+                    detalle.DescuentoBruMonto = Convert.ToInt32(Convert.ToDouble(dtgwDetalle.Rows[i].Cells[8].Value.ToString().Replace(".", "")) * 1.19);
+                    detalle.MontoItem = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[9].Value.ToString().Replace(".",""));
+                    detalle.MontoBruItem = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[10].Value.ToString().Replace(".", ""));
                     if (documento.TipoDTE == 46 || tipoDte == "46") detalle.CodImpAdic = "15";// Factura Electronica de compra
-                    if (this.dtgwDetalle.Rows[i].Cells[11].Value.ToString() == "True")
+                    if (dtgwDetalle.Rows[i].Cells[11].Value.ToString() == "True")
                     {
                         detalle.IndExe = "1";
-                        detalle.MontoItem = Convert.ToInt32(this.dtgwDetalle.Rows[i].Cells[10].Value.ToString().Replace(".", ""));
-                        detalle.PrcItem = Convert.ToDecimal(this.dtgwDetalle.Rows[i].Cells[5].Value.ToString().Replace(".", ""));
+                        detalle.MontoItem = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[10].Value.ToString().Replace(".", ""));
+                        detalle.PrcItem = Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[5].Value.ToString().Replace(".", ""));
                     }
-                    detalle.DscItem = this.dtgwDetalle.Rows[i].Cells["DscItem"].Value.ToString();
+                    detalle.DscItem = dtgwDetalle.Rows[i].Cells["DscItem"].Value.ToString();
                     detalles.Add(detalle);
                 }
                 //Cargo los descuentos globales
@@ -440,7 +447,7 @@ namespace Vista
             {
 
                 MessageBox.Show("Error en carga de clase documento"+ e);
-                this.Close();
+                Close();
                 return documento;
             }
         }
@@ -481,7 +488,7 @@ namespace Vista
         {
             for (int i = 0; i < dtgwDetalle.RowCount; i++)
             {
-                this.dtgwDetalle.Rows[i].Cells[1].Value = i+1;
+                dtgwDetalle.Rows[i].Cells[1].Value = i+1;
 
             }
 
@@ -522,7 +529,23 @@ namespace Vista
         {
             new frmLineaManual(this).ShowDialog();
         }
-     
 
+        private void buttonVistaPrevia_Click(object sender, EventArgs e)
+        {
+            //pdfDoc.docModel = documento;
+            //printDocument.PrintPage += new PrintPageEventHandler(pdfDoc.OpenPdfDocument);
+            //printPreviewDialog.Document = printDocument;
+            //((Form)printPreviewDialog).WindowState = FormWindowState.Maximized;
+            //printPreviewDialog.PrintPreviewControl.Zoom = 1.0;
+            //printPreviewDialog.ShowDialog();  
+            PdfDocumento pdfdocumento = new PdfDocumento();
+            pdfdocumento.docModel = documento;
+            pdfdocumento.vistaPrevia();
+        }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
