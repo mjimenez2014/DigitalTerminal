@@ -24,6 +24,7 @@ namespace Vista
         frmInicio frminicio;
         PrintDocument printDocument = new PrintDocument();
         PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+        RegistroWin regWin = new RegistroWin();
 
 
         public frmPuntoVenta()
@@ -104,6 +105,7 @@ namespace Vista
      public void frmPuntoVenta_Load(object sender, EventArgs e)
         {
             textBoxRutRecep.Select();
+            regWin = regWin.getRegWin();
             empresaModel = empresaModel.getEmpresa();
             if(empresaModel.Rut == "99505200-8") { labelCita.Text = "ORDEN DE TRABAJO:"; }
             if (empresaModel.Rut == "99505200-8") { labelSello.Text = "GUIA:";}
@@ -122,10 +124,11 @@ namespace Vista
             documento.CiudadOrigen = empresaModel.CiudadOrigen;
             documento.DirRegionalSII = empresaModel.DirRegionalSII;
             documento.SucurEmisor = empresaModel.sucurEmisor;
+            if (regWin.itemManual == "False") buttonBuscar.Visible = false ;
 
         }
 
-
+        
 
         private void dtgwDetalle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
      {
@@ -516,8 +519,23 @@ namespace Vista
 
         private void buttonEmiteDte_Click(object sender, EventArgs e)
         {
-
-            new frmSelecVenta(this).ShowDialog();
+            if (labelRznSocRecep.Text != "NOMBRE")
+            {
+                if (dtgwDetalle.RowCount != 0)
+                {
+                    new frmSelecVenta(this).ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Tiene que ingresar al menos un producto o servicio");
+                    buttonBuscaProducto.Select();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tiene que ingresar el cliente");
+                textBoxRutRecep.Select();
+            }
         }
 
         private void dtgwDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)

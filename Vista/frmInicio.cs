@@ -149,9 +149,9 @@ namespace Vista
                 pos.dtgwDetalle.Rows[n].Cells["item"].Value = n + 1;
                 pos.dtgwDetalle.Rows[n].Cells["codigo"].Value = detalle.VlrCodigo;
                 pos.dtgwDetalle.Rows[n].Cells["nombre"].Value = detalle.NmbItem;
-                pos.dtgwDetalle.Rows[n].Cells["Precio_Neto"].Value = Decimal.Round(detalle.PrcItem);
+                pos.dtgwDetalle.Rows[n].Cells["Precio_Neto"].Value = detalle.PrcItem.ToString();
                 pos.dtgwDetalle.Rows[n].Cells["precio"].Value = detalle.PrcBruItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-                pos.dtgwDetalle.Rows[n].Cells["cantidad"].Value = detalle.QtyItem;
+                pos.dtgwDetalle.Rows[n].Cells["cantidad"].Value = detalle.QtyItem.ToString("N3", CultureInfo.CreateSpecificCulture("es-ES")).Replace(",","."); 
                 pos.dtgwDetalle.Rows[n].Cells["desc"].Value = detalle.DescuentoPct;
                 pos.dtgwDetalle.Rows[n].Cells["Monto_Descuento"].Value = detalle.DescuentoMonto.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
                 pos.dtgwDetalle.Rows[n].Cells["Total_Neto"].Value = detalle.MontoItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));

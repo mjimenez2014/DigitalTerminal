@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Modelo;
 
@@ -13,6 +7,7 @@ namespace Vista
     public partial class frmLogin : Form
     {
         UsuarioModel userModel = new UsuarioModel();
+        RegistroWin regWin = new RegistroWin();
         public frmLogin()
         {
             InitializeComponent();
@@ -21,6 +16,7 @@ namespace Vista
         private void Form1_Load(object sender, EventArgs e)
         {
            txtContrasena.PasswordChar = '*';
+            regWin.creaRegistrosWin();
 
         }
 
