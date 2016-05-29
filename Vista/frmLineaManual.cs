@@ -76,7 +76,6 @@ namespace Vista
         private void frmLineaManual_Load(object sender, EventArgs e)
         {
             txtNombre.Select();
-
         }
 
         private void txtPrecioUnitario_TextChanged(object sender, EventArgs e)

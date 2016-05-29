@@ -18,7 +18,7 @@ namespace Vista
         frmCiudades frmciudad = new frmCiudades();
         frmComunas frmcomuna = new frmComunas();
         ContribuyenteModel clienteM = new ContribuyenteModel();
-        
+        MetodosComunes metodosComunes = new MetodosComunes();
 
         public frmContribuyente()
         {
@@ -86,8 +86,10 @@ namespace Vista
             }
             else
             {
+                //valida rut
                 
                 string rut = textBoxRutCliente.Text.ToUpper();
+
                 if (clienteM.getContribuyente(rut).Rows.Count != 0)
                 {
                     // MessageBox.Show("El cliente ya esta creado.");
@@ -112,22 +114,31 @@ namespace Vista
                 }
                 else
                 {
-                    clienteM.rut = rut;
-                    clienteM.rznSoc = textBoxRazonSocial.Text.ToUpper();
-                    clienteM.giro = textBoxGiro.Text.ToUpper();
-                    clienteM.direccion = textBoxDireccion.Text.ToUpper();
-                    clienteM.codComuna = Convert.ToInt32(labelCodComuna.Text);
-                    clienteM.codCiudad = Convert.ToInt32(labelCodCiudad.Text);
-                    clienteM.telefono = textBoxTelefono.Text;
-                    try
+                    if (MetodosComunes.ValidaRut(rut) == true)
                     {
-                        clienteM.save(clienteM);
-                        MessageBox.Show("El Cliente " + clienteM.rznSoc + " se creo con exito!!");
-                    }
-                    catch (Exception ex)
-                    {
+                        clienteM.rut = rut;
+                        clienteM.rznSoc = textBoxRazonSocial.Text.ToUpper();
+                        clienteM.giro = textBoxGiro.Text.ToUpper();
+                        clienteM.direccion = textBoxDireccion.Text.ToUpper();
+                        clienteM.codComuna = Convert.ToInt32(labelCodComuna.Text);
+                        clienteM.codCiudad = Convert.ToInt32(labelCodCiudad.Text);
+                        clienteM.telefono = textBoxTelefono.Text;
+                        try
+                        {
+                            clienteM.save(clienteM);
+                            MessageBox.Show("El Cliente " + clienteM.rznSoc + " se creo con exito!!");
+                        }
+                        catch (Exception ex)
+                        {
 
-                        throw new Exception("Error al crear cliente" + ex.Message);
+                            throw new Exception("Error al crear cliente" + ex.Message);
+                        }
+                    }
+                    else{
+
+                        MessageBox.Show("Rut mal ingresado!");
+                        textBoxRutCliente.Select();
+                        textBoxRutCliente.SelectAll();
                     }
                 }
             }

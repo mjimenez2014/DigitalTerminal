@@ -6,6 +6,7 @@ C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\Modelo\o
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\bin\Release\Modelo.dll
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\bin\Release\Modelo.pdb
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\bin\Release\System.Data.SQLite.dll
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\obj\Release\Modelo.csprojResolveAssemblyReference.cache
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\obj\Release\Modelo.csproj.ResolveComReference.cache
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\obj\Release\Modelo.dll
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\obj\Release\Modelo.pdb

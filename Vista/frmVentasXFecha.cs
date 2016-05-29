@@ -36,8 +36,9 @@ namespace Vista
                 dataGridView1.Rows[n].Cells[3].Value = fila["FchEmis"].ToString();
                 dataGridView1.Rows[n].Cells[4].Value = fila["RznSocRecep"].ToString();
                 dataGridView1.Rows[n].Cells[5].Value = fila["MntNeto"].ToString();
-                dataGridView1.Rows[n].Cells[6].Value = fila["IVA"].ToString();
-                dataGridView1.Rows[n].Cells[7].Value = fila["MntTotal"].ToString();
+                dataGridView1.Rows[n].Cells[6].Value = fila["MntExe"].ToString();
+                dataGridView1.Rows[n].Cells[7].Value = fila["IVA"].ToString();
+                dataGridView1.Rows[n].Cells[8].Value = fila["MntTotal"].ToString();
             }
         }
 

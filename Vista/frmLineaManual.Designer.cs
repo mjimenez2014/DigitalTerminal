@@ -139,7 +139,7 @@
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(116, 3);
-            this.txtNombre.MaxLength = 79;
+            this.txtNombre.MaxLength = 54;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(431, 21);
             this.txtNombre.TabIndex = 0;
