@@ -21,7 +21,7 @@ namespace Modelo
 
                 OdbcCommand select = new OdbcCommand();
                 select.Connection = conexion;
-                select.CommandText = "SELECT * FROM tipodte where tipo in('33','34','52','61','801','802','1000','46') order by nombre";
+                select.CommandText = "SELECT * FROM tipodte where tipo in('35','33','34','52','61','801','802','1000','46') order by nombre";
                 OdbcDataReader reader = select.ExecuteReader();
                 datatable.Load(reader);
 

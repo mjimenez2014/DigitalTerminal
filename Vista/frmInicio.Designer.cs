@@ -116,7 +116,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Versión: 20160512_1600";
+            this.label1.Text = "Versión: 20160613_1200";
             // 
             // dataGridView1
             // 

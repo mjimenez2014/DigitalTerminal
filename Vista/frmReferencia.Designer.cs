@@ -67,7 +67,7 @@
             // 
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1086F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1087F));
             this.tableLayoutPanel1.Controls.Add(this.lblNomCliente, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 2);
@@ -91,7 +91,7 @@
             this.lblNomCliente.Location = new System.Drawing.Point(4, 3);
             this.lblNomCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lblNomCliente.Name = "lblNomCliente";
-            this.lblNomCliente.Size = new System.Drawing.Size(1080, 18);
+            this.lblNomCliente.Size = new System.Drawing.Size(1081, 18);
             this.lblNomCliente.TabIndex = 3;
             this.lblNomCliente.Text = "REFERENCIAS A OTROS DOCUMENTOS";
             this.lblNomCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -125,7 +125,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1080, 144);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1081, 144);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // buttonAgregar
@@ -220,6 +220,7 @@
             this.labelIdDocRef.Size = new System.Drawing.Size(52, 13);
             this.labelIdDocRef.TabIndex = 5;
             this.labelIdDocRef.Text = "idDocRef";
+            this.labelIdDocRef.Visible = false;
             // 
             // label3
             // 
@@ -275,6 +276,7 @@
             this.labelCodRef.Size = new System.Drawing.Size(43, 13);
             this.labelCodRef.TabIndex = 8;
             this.labelCodRef.Text = "CodRef";
+            this.labelCodRef.Visible = false;
             // 
             // checkBoxTipo46
             // 
@@ -307,7 +309,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(4, 188);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1080, 117);
+            this.dataGridView1.Size = new System.Drawing.Size(1081, 117);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
