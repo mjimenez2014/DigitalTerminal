@@ -21,6 +21,8 @@ namespace Modelo
 
         public string validaUser(string usuario, string clave)
         {
+            
+           
             string respuesta = "true";
             SqlConnection sqlcon = new SqlConnection();
             try
@@ -41,7 +43,7 @@ namespace Modelo
             catch (Exception ex)
             {
 
-                throw new Exception("Error" + ex.Message);
+                return "Error al conectar a la base de datos" + ex.Message;
             }
 
             finally

@@ -138,7 +138,7 @@ namespace Vista
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("Error en buttonModifica_Click" + ex.Message);
             }
         }
 

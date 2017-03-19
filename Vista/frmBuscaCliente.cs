@@ -64,7 +64,7 @@ namespace Vista
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("Error en click boton acepta" + ex.Message);
             }
         }
 

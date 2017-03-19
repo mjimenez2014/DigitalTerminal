@@ -14,17 +14,11 @@ namespace Modelo
         public ConfigModel getConfig()
         {
             string stringcon = string.Empty;
-            SQLiteConnection sqliteConn = new SQLiteConnection();
-            sqliteConn = new BaseDato().ConnectSqlite();
+            RegistroWin regWin = new RegistroWin();
+            regWin = regWin.getRegWin();
 
-            string sql = "SELECT * FROM config";
-            SQLiteCommand command = new SQLiteCommand(sql, sqliteConn);
-            SQLiteDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                this.clienteProducto = reader["clienteproducto"].ToString();
-                this.abrirIat = reader["abrirIat"].ToString();                    
-            }
+            this.clienteProducto = regWin.clienteProducto;
+            this.abrirIat = regWin.abrirIat;                    
 
             return this; 
         }

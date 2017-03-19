@@ -102,9 +102,9 @@ namespace Modelo
                     cafModel.cafxml = xDoc.InnerXml.ToString();
                 }
             }
-            catch (IOException ie)
+            catch (IOException)
             {
-
+                return null;
             }
 
 

@@ -60,12 +60,10 @@ namespace Vista
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Error al cargar imagen de logo " + ex.Message);
             }
             this.btnPedidos.Select();
             actualizaDG();
-            regWin.creaRegistrosWin();
-
         }
 
 

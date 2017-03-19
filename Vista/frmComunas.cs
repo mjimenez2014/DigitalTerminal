@@ -163,6 +163,7 @@ namespace Vista
            }
            catch (Exception ex)
            {
+                Console.WriteLine("Error en comboBoxCiudades_Selected" + ex.Message);
            }
        }
 

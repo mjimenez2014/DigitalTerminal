@@ -8,45 +8,29 @@ using System.Data.SQLite;
 
 namespace Modelo
 {
-    class BaseDato
+    public class BaseDato
     {
-        public SQLiteConnection ConnectSqlite()
-        {
-            string strConn = @"Data Source="+new RegistroWin().getRegWin().unidadDT+":/DigitalTerminal/configDT.sqlite;Pooling=true;FailIfMissing=false;Version=3";
-            SQLiteConnection myConn = new SQLiteConnection(strConn);
-            try
-            {
-                myConn.Open();
-            }
-            catch (SQLiteException exSqlite)
-            {
-                Console.WriteLine("Problemas al conectar a la base datos", "Error de Sqlite");
-                Console.WriteLine(exSqlite.Message + "\n\n" + "*********************StackTrace: \n\n" + exSqlite.StackTrace);
-                //Environment.Exit(0);
-                return null;
-            }
-            return myConn;
-        }
+        RegistroWin regWin = new RegistroWin();
 
         private string stringConn()
         {
+            regWin = regWin.getRegWin();
             string stringcon = string.Empty;
-            SQLiteConnection sqliteConn = new SQLiteConnection();
-            sqliteConn = this.ConnectSqlite();
-
-            string sql = "SELECT * FROM basedato";
-            SQLiteCommand command = new SQLiteCommand(sql, sqliteConn);
-            SQLiteDataReader reader = command.ExecuteReader();
-            while (reader.Read())
+            try
             {
-               stringcon = "Driver={PostgreSQL UNICODE};Server=" + reader["server"].ToString()
-                                   + ";Port=" + reader["port"].ToString()
-                                   + ";Database=" + reader["database"].ToString()
-                                   + ";Uid=" + reader["user"].ToString()
-                                   + ";Pwd=" + reader["pass"].ToString() + ";";
+                stringcon = "Driver={PostgreSQL UNICODE};Server=" + regWin.ipServer
+                                       + ";Port=" + regWin.port
+                                       + ";Database=" + regWin.dataBase
+                                       + ";Uid=" + regWin.user
+                                       + ";Pwd=" + regWin.pass + ";";
+                return stringcon;
+            }
+            catch (Exception ex)
+            {
+                return "###################### Error al crear el String de Conección: " + ex.Message;
             }
 
-            return stringcon;
+
         }
 
         public OdbcConnection ConnectPostgres()
@@ -58,13 +42,10 @@ namespace Modelo
             {
                 conn.Open();
             }
-            catch (OdbcException ex)
+            catch (OdbcException ex )
             {
-                Console.WriteLine("Problemas al conectar a la base datos", "Error de Postgres");
-                Console.WriteLine(ex.Message + "\n\n" + "*********************StackTrace: \n\n" + ex.StackTrace);
-                //Environment.Exit(0);
+                Console.WriteLine("######################## ERROR EN LA CONECCIÓN BASE DE DATOS: " + ex.Message);
                 return null;
-
             }
             return conn;
         }
