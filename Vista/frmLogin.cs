@@ -9,6 +9,7 @@ namespace Vista
         UsuarioModel userModel = new UsuarioModel();
         RegistroWin regWin = new RegistroWin();
         BaseDato baseDato = new BaseDato();
+        MetodosComunes metodosComunes = new MetodosComunes();
         public frmLogin()
         {
             InitializeComponent();
@@ -16,18 +17,23 @@ namespace Vista
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (baseDato.ConnectPostgres() == null)
+            regWin.creaRegistrosWin();
+            if (metodosComunes.getConfgRegi() == "True")
             {
-                MessageBox.Show("ERROR AL CONECTAR CON LA BASE DE DATOS: \n 1.- Revise si esta instalado el ODBC\n 2.- Las configuraciones de registro windows", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+                if (baseDato.ConnectPostgres() == null)
+                {
+                    MessageBox.Show("ERROR AL CONECTAR CON LA BASE DE DATOS: \n 1.- Revise si esta instalado el ODBC\n 2.- Las configuraciones de registro windows", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
+                else
+                {
+                    txtContrasena.PasswordChar = '*';
+                }
             }
             else
             {
-                txtContrasena.PasswordChar = '*';
-                if (regWin.getRegWin().unidadDT == null)
-                {
-                    MessageBox.Show(regWin.creaRegistrosWin(), "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                MessageBox.Show("La configuración Regional no esta configurada", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
             }
         }
 

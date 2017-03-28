@@ -311,26 +311,7 @@ namespace Modelo
 
         public void serialize(DocumentoModel documento)
         {
-            if (documento.TipoDTE != 802)
-            {
-
-                MemoryStream stream = new MemoryStream();
-                DataContractJsonSerializer ds = new DataContractJsonSerializer(typeof(DocumentoModel));
-                ds.WriteObject(stream, documento);
-                string jsonString = Encoding.UTF8.GetString(stream.ToArray());
-                stream.Close();
-
-                string json = jsonString.Replace("null", "\"\"");
-                 json = json.Replace("u000a", "n");
-                 json = json.Replace("u000d", "r");
-
-                string fileNameJson = @""+new RegistroWin().getRegWin().unidadIat+":/IatFiles/cajas/caj1/" + documento.TipoDTE + "_" + documento.RUTEmisor + "_" + documento.Folio + ".json";
-
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileNameJson, false, Encoding.GetEncoding("ISO-8859-1")))
-                {
-                    file.WriteLine(json);
-                }
-            }
+            new Json().createJson(documento);
         }
 
         public DocumentoModel getDocumento(int tipo, int folio)

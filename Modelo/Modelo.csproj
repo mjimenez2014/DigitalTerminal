@@ -61,6 +61,7 @@
     <Compile Include="EmpresaModel.cs" />
     <Compile Include="Export.cs" />
     <Compile Include="folioModel.cs" />
+    <Compile Include="Json.cs" />
     <Compile Include="PaisesModel.cs" />
     <Compile Include="ProductosModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

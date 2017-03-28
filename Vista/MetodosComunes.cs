@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -108,6 +109,20 @@ namespace Vista
             {
                 return suma.ToString();
             }
+        }
+
+        public string getConfgRegi()
+        {
+            string estado = "True";
+            CultureInfo culture = CultureInfo.CurrentCulture;
+            if (culture.NumberFormat.NumberGroupSeparator != "," || culture.NumberFormat.NumberDecimalSeparator != ".")
+            {
+                estado = "False";
+            }
+
+            return estado;
+            //Console.WriteLine("Simbolo Decimal {0} - Separador de miles:  [{1}]",
+            //                  culture.NumberFormat.NumberDecimalSeparator, culture.NumberFormat.NumberGroupSeparator);
         }
 
     }
