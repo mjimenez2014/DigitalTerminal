@@ -53,12 +53,12 @@ namespace Vista
                     producto.save(producto);
                     this.frmlistaproduc.textBoxBuscaXNo.Text = textBoxNombre.Text;//.ToUpper();
                     this.frmlistaproduc.buttonBuscar.PerformClick();
-                    MessageBox.Show(" El Producto se Guardo con Exito");                   
+                    MessageBox.Show(" El Producto se Guardo con Exito", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);                   
                     this.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al Guardar: " + ex);
+                    MessageBox.Show("Error al Guardar: " + ex, "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
@@ -132,7 +132,7 @@ namespace Vista
                 this.frmlistaproduc.buttonBuscar.PerformClick();
                 this.frmlistaproduc.textBoxBuscaXNo.Select();
                 this.frmlistaproduc.textBoxBuscaXNo.SelectAll();
-                MessageBox.Show("El Productos "+producto.nombre + " se actualizó con éxito");
+                MessageBox.Show("El Productos "+producto.nombre + " se actualizó con éxito", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
                 this.Close();
             }

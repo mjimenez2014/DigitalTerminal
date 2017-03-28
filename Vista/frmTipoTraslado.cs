@@ -46,7 +46,7 @@ namespace Vista
 
         private void buttonSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void comboBoxIndTraslado_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,13 +64,23 @@ namespace Vista
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            doc.IndTraslado = Convert.ToInt32(tipoTraslado);
-            if (tipoDespacho == "")
+            if (comboBoxIndTraslado.Text =="SELECCIONE..." || comboBoxTipoDespacho.Text == "SELECCIONE...")
             {
-                tipoDespacho = "0";
+               MessageBox.Show("Seleccione un las opciones..", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
             }
-            doc.TipoDespacho = Convert.ToInt32(tipoDespacho);
-            this.Close();
+            else
+            {
+
+                doc.IndTraslado = Convert.ToInt32(tipoTraslado);
+                if (tipoDespacho == "")
+                {
+                    tipoDespacho = "0";
+                }
+                doc.TipoDespacho = Convert.ToInt32(tipoDespacho);
+                this.Close();
+            }
+
         }
     }
 }

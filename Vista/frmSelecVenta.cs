@@ -13,10 +13,12 @@ namespace Vista
     public partial class frmSelecVenta : Form
     {
         frmPuntoVenta pos;
-        public frmSelecVenta(frmPuntoVenta pos)
+        DocumentoModel documento;
+        public frmSelecVenta(frmPuntoVenta pos, DocumentoModel doc)
         {
             InitializeComponent();
             this.pos = pos;
+            this.documento = doc;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,9 +46,17 @@ namespace Vista
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.pos.creaDte(61, new CafModel().getCafActual(61));
-            this.Close();
-            pos.btnSalir.PerformClick();
+            if (documento.Referencia.Count != 0)
+            {
+                this.pos.creaDte(61, new CafModel().getCafActual(61));
+                this.Close();
+                pos.btnSalir.PerformClick();
+            }else
+            {
+
+                MessageBox.Show("Tiene que agregar el documento de referencia","Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)

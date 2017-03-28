@@ -140,6 +140,7 @@
             this.buttonSalir.Text = "SALIR";
             this.buttonSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonSalir.UseVisualStyleBackColor = true;
+            this.buttonSalir.Visible = false;
             this.buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
             // 
             // lblNomForm

@@ -112,6 +112,7 @@
             this.textBoxSello = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxFormaPago = new System.Windows.Forms.TextBox();
+            this.labelRut = new System.Windows.Forms.Label();
             this.tblpPuntoVenta.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -654,14 +655,16 @@
             this.buttonBuscaProducto.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.buttonBuscaProducto.FlatAppearance.BorderSize = 0;
             this.buttonBuscaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBuscaProducto.Font = new System.Drawing.Font("Papyrus", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscaProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBuscaProducto.ForeColor = System.Drawing.Color.ForestGreen;
             this.buttonBuscaProducto.Image = global::Vista.Properties.Resources.search_16;
+            this.buttonBuscaProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBuscaProducto.Location = new System.Drawing.Point(286, 6);
             this.buttonBuscaProducto.Margin = new System.Windows.Forms.Padding(6);
             this.buttonBuscaProducto.Name = "buttonBuscaProducto";
-            this.buttonBuscaProducto.Size = new System.Drawing.Size(35, 27);
+            this.buttonBuscaProducto.Size = new System.Drawing.Size(138, 27);
             this.buttonBuscaProducto.TabIndex = 1;
+            this.buttonBuscaProducto.Text = "Busca Producto";
             this.buttonBuscaProducto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonBuscaProducto.UseVisualStyleBackColor = false;
             this.buttonBuscaProducto.Click += new System.EventHandler(this.button4_Click);
@@ -692,7 +695,7 @@
             this.buttonBuscar.BackColor = System.Drawing.Color.White;
             this.buttonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscar.ForeColor = System.Drawing.Color.Green;
-            this.buttonBuscar.Location = new System.Drawing.Point(330, 4);
+            this.buttonBuscar.Location = new System.Drawing.Point(433, 4);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(206, 31);
             this.buttonBuscar.TabIndex = 5;
@@ -901,11 +904,13 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.textBoxRutRecep, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonBuscaCliente, 1, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.buttonBuscaCliente, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelRut, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxRutRecep, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 23);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -919,7 +924,7 @@
             this.textBoxRutRecep.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxRutRecep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRutRecep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRutRecep.Location = new System.Drawing.Point(4, 9);
+            this.textBoxRutRecep.Location = new System.Drawing.Point(57, 9);
             this.textBoxRutRecep.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxRutRecep.Name = "textBoxRutRecep";
             this.textBoxRutRecep.Size = new System.Drawing.Size(149, 21);
@@ -933,11 +938,14 @@
             // 
             this.buttonBuscaCliente.FlatAppearance.BorderSize = 0;
             this.buttonBuscaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuscaCliente.ForeColor = System.Drawing.Color.Green;
             this.buttonBuscaCliente.Image = global::Vista.Properties.Resources.search_16;
-            this.buttonBuscaCliente.Location = new System.Drawing.Point(160, 3);
+            this.buttonBuscaCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBuscaCliente.Location = new System.Drawing.Point(213, 3);
             this.buttonBuscaCliente.Name = "buttonBuscaCliente";
-            this.buttonBuscaCliente.Size = new System.Drawing.Size(35, 34);
+            this.buttonBuscaCliente.Size = new System.Drawing.Size(165, 34);
             this.buttonBuscaCliente.TabIndex = 1;
+            this.buttonBuscaCliente.Text = "Busca por Nombre";
             this.buttonBuscaCliente.UseVisualStyleBackColor = true;
             this.buttonBuscaCliente.Click += new System.EventHandler(this.buttonBuscaCliente_Click);
             // 
@@ -1103,6 +1111,21 @@
             this.textBoxFormaPago.TabIndex = 8;
             this.textBoxFormaPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // labelRut
+            // 
+            this.labelRut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelRut.AutoSize = true;
+            this.labelRut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRut.Location = new System.Drawing.Point(3, 2);
+            this.labelRut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelRut.Name = "labelRut";
+            this.labelRut.Size = new System.Drawing.Size(47, 36);
+            this.labelRut.TabIndex = 2;
+            this.labelRut.Text = "R.U.T:";
+            this.labelRut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmPuntoVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1221,5 +1244,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DscItem;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox textBoxFormaPago;
+        private System.Windows.Forms.Label labelRut;
     }
 }

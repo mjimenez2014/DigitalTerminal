@@ -167,7 +167,7 @@ namespace Vista
                  }
                  else
                  {
-                     MessageBox.Show("No esta Registrado el cliente");
+                     MessageBox.Show("No esta Registrado el cliente", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                      textBoxRutRecep.Text = "";
                      // TODO verificar rut
                  }
@@ -523,17 +523,17 @@ namespace Vista
             {
                 if (dtgwDetalle.RowCount != 0)
                 {
-                    new frmSelecVenta(this).ShowDialog();
+                    new frmSelecVenta(this,documento).ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("Tiene que ingresar al menos un producto o servicio");
+                    MessageBox.Show("Tiene que ingresar al menos un producto o servicio", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     buttonBuscaProducto.Select();
                 }
             }
             else
             {
-                MessageBox.Show("Tiene que ingresar el cliente");
+                MessageBox.Show("Tiene que ingresar el cliente", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 textBoxRutRecep.Select();
             }
         }

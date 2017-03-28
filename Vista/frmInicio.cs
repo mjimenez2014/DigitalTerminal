@@ -133,7 +133,7 @@ namespace Vista
             pos.labelDireccionRecep.Text = documento.DirRecep;
             pos.labelCiudadRecep.Text = documento.CiudadRecep;
             pos.labelComunaRecep.Text = documento.CmnaRecep;
-            pos.lblNomForm.Text = nombreDoc;
+            pos.lblNomForm.Text = "Tipo Documento: "+ nombreDoc + " Folio: "+ folio;
             pos.textBoxOC.Text = documento.NroOrdenCompra;
             pos.dateTimePickerFchEmis.Value = Convert.ToDateTime(documento.FchEmis);
             pos.textBoxCita.Text = documento.NroCita;

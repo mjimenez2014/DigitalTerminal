@@ -46,7 +46,7 @@ namespace Vista
             }
             else
             {
-                MessageBox.Show("Usuario o Contraseña Invalido!");
+                MessageBox.Show("Usuario o Contraseña Invalido!", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNombreUsuario.Text = "";
                 txtContrasena.Text = "";
                 txtNombreUsuario.Select();
