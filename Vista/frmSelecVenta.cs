@@ -14,6 +14,9 @@ namespace Vista
     {
         frmPuntoVenta pos;
         DocumentoModel documento;
+        CafModel cafModel = new CafModel();
+        folioModel folioM = new folioModel();
+
         public frmSelecVenta(frmPuntoVenta pos, DocumentoModel doc)
         {
             InitializeComponent();
@@ -38,19 +41,35 @@ namespace Vista
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
-            this.pos.creaDte(33,new CafModel().getCafActual(33));
+            Int32 idCafActual = cafModel.getCafActual(33);
+            if(cafModel.getUltimoFolioCaf(idCafActual,33) == folioM.getUltimoFolio(idCafActual))
+            {
+                MessageBox.Show("No quedan Folios en el CAF, Comuniquese con:\n www.invoicedigital.cl", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+            
+            this.pos.creaDte(33, idCafActual);
             this.Close();
             pos.btnSalir.PerformClick();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (documento.Referencia.Count != 0)
             {
-                this.pos.creaDte(61, new CafModel().getCafActual(61));
-                this.Close();
-                pos.btnSalir.PerformClick();
+                Int32 idCafActual = cafModel.getCafActual(61);
+                if (cafModel.getUltimoFolioCaf(idCafActual, 61) == folioM.getUltimoFolio(idCafActual))
+                {
+                    MessageBox.Show("No quedan Folios en el CAF, Comuniquese con:\n  www.invoicedigital.cl", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    this.pos.creaDte(61, idCafActual);
+                    this.Close();
+                    pos.btnSalir.PerformClick();
+                }
             }else
             {
 
@@ -66,21 +85,30 @@ namespace Vista
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.pos.creaDte(56, new CafModel().getCafActual(56));
+            this.pos.creaDte(56, cafModel.getCafActual(56));
             this.Close();
             pos.btnSalir.PerformClick();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.pos.creaDte(52, new CafModel().getCafActual(52));
-            this.Close();
-            pos.btnSalir.PerformClick();
+            Int32 idCafActual = cafModel.getCafActual(52);
+            if (cafModel.getUltimoFolioCaf(idCafActual, 52) == folioM.getUltimoFolio(idCafActual))
+            {
+                MessageBox.Show("No quedan Folios en el CAF, Comuniquese con:\n www.invoicedigital.cl", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+
+                this.pos.creaDte(52, idCafActual);
+                this.Close();
+                pos.btnSalir.PerformClick();
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.pos.creaDte(46, new CafModel().getCafActual(46));
+            this.pos.creaDte(46, cafModel.getCafActual(46));
             this.Close();
             pos.btnSalir.PerformClick();
         }

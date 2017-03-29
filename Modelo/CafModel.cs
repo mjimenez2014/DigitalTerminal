@@ -196,5 +196,33 @@ namespace Modelo
            return datatable;
        }
 
+        public int getUltimoFolioCaf(int idCaf,int tipoDte)
+        {
+            int ultimo = 0;
+            try
+            {
+                BaseDato con = new BaseDato();
+                OdbcConnection conexion = con.ConnectPostgres();
+
+                OdbcCommand select = new OdbcCommand();
+                select.Connection = conexion;
+                select.CommandText = "SELECT * FROM caf where id = " + idCaf + " and  \"tipoDte\" = '" + tipoDte + "';";
+                OdbcDataReader reader = select.ExecuteReader();
+                if (reader.RecordsAffected != 0)
+                {
+                    while (reader.Read())
+                    {
+                        ultimo = reader.GetInt32(reader.GetOrdinal("folioFinal"));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error" + ex.Message);
+            }
+            return ultimo+1;
+
+        }
+
     }
 }

@@ -31,7 +31,7 @@ namespace Modelo
                {
                    ultimoFolio = Convert.ToInt32(reader.GetValue(0));
                }
-               modificaEstado("OCUPADO", ultimoFolio,idCaf);
+              // modificaEstado("OCUPADO", ultimoFolio,idCaf);
            }
            catch (Exception ex)
            {
