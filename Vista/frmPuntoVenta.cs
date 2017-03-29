@@ -12,7 +12,7 @@ namespace Vista
     {
         int n = 0;
         EmpresaModel empresaModel = new EmpresaModel();
-        ContribuyenteModel cliente= new ContribuyenteModel();
+        ContribuyenteModel cliente = new ContribuyenteModel();
         DataTable dataTableCliente = new DataTable();
         DocumentoModel documento = new DocumentoModel();
         Detalle detalle = new Detalle();
@@ -30,7 +30,7 @@ namespace Vista
         public frmPuntoVenta()
         {
             InitializeComponent();
-            
+
         }
 
         public frmPuntoVenta(frmInicio frminicio)
@@ -57,7 +57,7 @@ namespace Vista
 
         private void btnBuscaProducto_Click(object sender, EventArgs e)
         {
-            new frmBuscaProductos(this).ShowDialog();         
+            new frmBuscaProductos(this).ShowDialog();
         }
 
         public DataGridView getDGVDetalle()
@@ -75,18 +75,19 @@ namespace Vista
             }
             if (e.KeyData == Keys.F7)
             {
-                new frmBuscaProductos(this).ShowDialog();             
+                new frmBuscaProductos(this).ShowDialog();
             }
 
             if (e.KeyData == Keys.F9)
             {
-                MessageBox.Show("Agrega cliente");
+                textBoxCodBarra.Select();
+                new frmBuscaCliente(this).ShowDialog();
             }
         }
 
         private void btnGeneraDoc_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -94,7 +95,7 @@ namespace Vista
             frminicio.actualizaDG();
             Close();
         }
-        
+
         private void button4_Click(object sender, EventArgs e)
         {
             textBoxCodBarra.Select();
@@ -102,13 +103,13 @@ namespace Vista
             frmbuscaprod.ShowDialog();
         }
 
-     public void frmPuntoVenta_Load(object sender, EventArgs e)
+        public void frmPuntoVenta_Load(object sender, EventArgs e)
         {
             textBoxRutRecep.Select();
             regWin = regWin.getRegWin();
             empresaModel = empresaModel.getEmpresa();
-            if(empresaModel.Rut == "99505200-8") { labelCita.Text = "ORDEN DE TRABAJO:"; }
-            if (empresaModel.Rut == "99505200-8") { labelSello.Text = "GUIA:";}
+            if (empresaModel.Rut == "99505200-8") { labelCita.Text = "ORDEN DE TRABAJO:"; }
+            if (empresaModel.Rut == "99505200-8") { labelSello.Text = "GUIA:"; }
 
             // Cargo Datos Emisor
             empresaModel.getEmpresa();
@@ -124,169 +125,186 @@ namespace Vista
             documento.CiudadOrigen = empresaModel.CiudadOrigen;
             documento.DirRegionalSII = empresaModel.DirRegionalSII;
             documento.SucurEmisor = empresaModel.sucurEmisor;
-            if (regWin.itemManual == "False") buttonBuscar.Visible = false ;
+            if (regWin.itemManual == "False") buttonBuscar.Visible = false;
 
         }
 
-        
+
 
         private void dtgwDetalle_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-     {
-         try
-         {
-            
-            decimal num1 = Convert.ToDecimal(dtgwDetalle.CurrentRow.Cells["precio"].Value);
-            int num2 = Convert.ToInt32(dtgwDetalle.CurrentRow.Cells["cantidad"].Value) ;
+        {
+            try
+            {
+
+                decimal num1 = Convert.ToDecimal(dtgwDetalle.CurrentRow.Cells["precio"].Value);
+                int num2 = Convert.ToInt32(dtgwDetalle.CurrentRow.Cells["cantidad"].Value);
                 dtgwDetalle.CurrentRow.Cells["total"].Value = num1 * num2;
-         }
-             
-         catch (Exception ex)
-         {
-             Console.WriteLine("" + ex);
-         }
-     }
+            }
 
-     public void textBoxRut_KeyPress(object sender, KeyPressEventArgs e)
-     {
-         if (e.KeyChar == (int)13)
-         {
-             if (textBoxRutRecep.Text != "")
-             {
-                 textBoxRutRecep.Text = new MetodosComunes().formatearRut(textBoxRutRecep.Text);
-                 dataTableCliente = cliente.getContribuyente(textBoxRutRecep.Text);
-                 if (dataTableCliente.Rows.Count != 0)
-                 {
-                     labelRznSocRecep.Text = dataTableCliente.Rows[0][1].ToString();
-                     labelGiroRecep.Text = dataTableCliente.Rows[0][2].ToString();
-                     labelDireccionRecep.Text = dataTableCliente.Rows[0][3].ToString();
-                     labelCiudadRecep.Text = dataTableCliente.Rows[0][8].ToString();
-                     labelComunaRecep.Text = dataTableCliente.Rows[0][11].ToString();              
-                     labelTelefonoRecep.Text = dataTableCliente.Rows[0][6].ToString();
-                     textBoxRutRecep.Enabled = false;
-                     textBoxCodBarra.Select();
-                 }
-                 else
-                 {
-                     MessageBox.Show("No esta Registrado el cliente", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                     textBoxRutRecep.Text = "";
-                     // TODO verificar rut
-                 }
-             }
-         }
+            catch (Exception ex)
+            {
+                Console.WriteLine("" + ex);
+            }
+        }
 
-}
+        public void textBoxRut_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (int)13)
+            {
+                if (textBoxRutRecep.Text != "")
+                {
+                    textBoxRutRecep.Text = new MetodosComunes().formatearRut(textBoxRutRecep.Text);
+                    dataTableCliente = cliente.getContribuyente(textBoxRutRecep.Text);
+                    if (dataTableCliente.Rows.Count != 0)
+                    {
+                        labelRznSocRecep.Text = dataTableCliente.Rows[0][1].ToString();
+                        labelGiroRecep.Text = dataTableCliente.Rows[0][2].ToString();
+                        labelDireccionRecep.Text = dataTableCliente.Rows[0][3].ToString();
+                        labelCiudadRecep.Text = dataTableCliente.Rows[0][8].ToString();
+                        labelComunaRecep.Text = dataTableCliente.Rows[0][11].ToString();
+                        labelTelefonoRecep.Text = dataTableCliente.Rows[0][6].ToString();
+                        textBoxRutRecep.Enabled = false;
+                        textBoxCodBarra.Select();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No esta Registrado el cliente", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        textBoxRutRecep.Text = "";
+                        // TODO verificar rut
+                    }
+                }
+            }
 
-     private void textBoxRut_KeyDown(object sender, KeyEventArgs e)
-     {
+        }
 
-     }
+        private void textBoxRut_KeyDown(object sender, KeyEventArgs e)
+        {
 
-     private void textBoxRut_Validated(object sender, EventArgs e)
-     {
-         textBoxRutRecep.Text = new MetodosComunes().formatearRut(textBoxRutRecep.Text.ToUpper());
-     }
+        }
 
-
-     private void buttonBuscaCliente_Click(object sender, EventArgs e)
-     {
-         textBoxCodBarra.Select();
-         new frmBuscaCliente(this).ShowDialog(); 
-    
-     }
-
-     private void textBoxRut_TextChanged(object sender, EventArgs e)
-     {
-
-     }
+        private void textBoxRut_Validated(object sender, EventArgs e)
+        {
+            textBoxRutRecep.Text = new MetodosComunes().formatearRut(textBoxRutRecep.Text.ToUpper());
+        }
 
 
+        private void buttonBuscaCliente_Click(object sender, EventArgs e)
+        {
+            textBoxCodBarra.Select();
+            new frmBuscaCliente(this).ShowDialog();
 
-     public void AddProducto(ProductosModel producto, Detalle detalle)
-     {
-         n = dtgwDetalle.Rows.Add();
+        }
+
+        private void textBoxRut_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        public void AddProducto(ProductosModel producto, Detalle detalle)
+        {
+            n = dtgwDetalle.Rows.Add();
             dtgwDetalle.Rows[n].Cells["elimina"].Value = "-";
             dtgwDetalle.Rows[n].Cells["item"].Value = n + 1;
-            dtgwDetalle.Rows[n].Cells[2].Value =  producto.codigoInt.ToString();
-            dtgwDetalle.Rows[n].Cells[3].Value =  producto.nombre.ToString();
-            dtgwDetalle.Rows[n].Cells[4].Value =  producto.precioNeto.ToString();
-            dtgwDetalle.Rows[n].Cells[5].Value =  producto.precioventa.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-            dtgwDetalle.Rows[n].Cells[6].Value =  detalle.QtyItem.ToString();
-            dtgwDetalle.Rows[n].Cells[7].Value =  Decimal.Round(detalle.DescuentoPct*100);
+            dtgwDetalle.Rows[n].Cells[2].Value = producto.codigoInt.ToString();
+            dtgwDetalle.Rows[n].Cells[3].Value = producto.nombre.ToString();
+            dtgwDetalle.Rows[n].Cells[4].Value = producto.precioNeto.ToString();
+            dtgwDetalle.Rows[n].Cells[5].Value = producto.precioventa.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+            dtgwDetalle.Rows[n].Cells[6].Value = detalle.QtyItem.ToString();
+            dtgwDetalle.Rows[n].Cells[7].Value = Decimal.Round(detalle.DescuentoPct * 100);
             dtgwDetalle.Rows[n].Cells[8].Value = detalle.DescuentoMonto.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-            dtgwDetalle.Rows[n].Cells[9].Value =  detalle.MontoItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+            dtgwDetalle.Rows[n].Cells[9].Value = detalle.MontoItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
             dtgwDetalle.Rows[n].Cells[10].Value = detalle.MontoBruItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
             dtgwDetalle.Rows[n].Cells[11].Value = producto.exento.ToString();
             dtgwDetalle.Rows[n].Cells[12].Value = detalle.DscItem.ToString();
 
-         if (producto.exento == "False")
-         {
-             actualizaTotal();
-             actualizaDescuentos();
-         }
-         else
-         {
+            if (producto.exento == "False")
+            {
+                actualizaTotal();
+                actualizaDescuentos();
+            }
+            else
+            {
                 dtgwDetalle.Rows[n].Cells[4].Value = 0;
                 dtgwDetalle.Rows[n].Cells[9].Value = 0;
-             actualizaExento();
-         }
+                actualizaExento();
+            }
 
 
-     }
+        }
 
 
 
-     private void dtgwDetalle_Validated(object sender, EventArgs e)
-     {
-         //actualizaTotal();
-     }
+        private void dtgwDetalle_Validated(object sender, EventArgs e)
+        {
+            //actualizaTotal();
+        }
 
-     private void actualizaTotal()
-     {
-         Decimal suma = 0;
-         for (int i = 0; i < dtgwDetalle.RowCount; i++)
-         {
-                 suma += Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[9].Value.ToString().Replace(".", ""));            
-         }
-         labelSubTotal.Text = suma.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-         calculaIva();
-     }
+        private void actualizaTotal()
+        {
+            Decimal suma = 0;
+            for (int i = 0; i < dtgwDetalle.RowCount; i++)
+            {
+                suma += Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[9].Value.ToString().Replace(".", ""));
+            }
+            labelSubTotal.Text = suma.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+            calculaIva();
+        }
 
 
-     private void actualizaExento()
-     {
+        private void actualizaExento()
+        {
 
-         Decimal suma = 0;
-         for (int i = 0; i < dtgwDetalle.RowCount; i++)
-         {
-             if (dtgwDetalle.Rows[i].Cells[4].Value.ToString() == "0")
-             {
-                 suma += Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[10].Value.ToString().Replace(".", ""));
-             }
-         }
-         labelMtoExento.Text = suma.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-         actualizaDescuentos();
-        
-     }
+            Decimal suma = 0;
+            for (int i = 0; i < dtgwDetalle.RowCount; i++)
+            {
+                if (dtgwDetalle.Rows[i].Cells[4].Value.ToString() == "0")
+                {
+                    suma += Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[10].Value.ToString().Replace(".", ""));
+                }
+            }
+            labelMtoExento.Text = suma.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+            actualizaDescuentos();
+
+        }
         private void calculaIva()
         {
             string subtotal = labelSubTotal.Text.Replace(".", "");
-            Int32 exento = Convert.ToInt32(labelMtoExento.Text.Replace(".",""));
+            Int32 exento = Convert.ToInt32(labelMtoExento.Text.Replace(".", ""));
             labelIva.Text = (Convert.ToDecimal(subtotal) * Convert.ToDecimal(0.19)).ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-            labelMtoTotal.Text = (Convert.ToInt32(subtotal) + exento + Convert.ToInt32(labelIva.Text.Replace(".", ""))).ToString("N0", CultureInfo.CreateSpecificCulture("es-ES")); 
+            labelMtoTotal.Text = (Convert.ToInt32(subtotal) + exento + Convert.ToInt32(labelIva.Text.Replace(".", ""))).ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                documento.serialize(cargaDocumento(802,0));
-                documento.save(documento); //TEST
-                detalle.save(documento);
-                referencia.save(documento);
-                MessageBox.Show("El Pedido se guardo con Folio: " + documento.Folio);
-                btnSalir.PerformClick();
+                if (labelRznSocRecep.Text != "NOMBRE")
+                {
+                    if (dtgwDetalle.RowCount != 0)
+                    {
+
+                        documento.serialize(cargaDocumento(802, 0));
+                        documento.save(documento); //TEST
+                        detalle.save(documento);
+                        referencia.save(documento);
+                        MessageBox.Show("El Pedido se guardo con Folio: " + documento.Folio, "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        btnSalir.PerformClick();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tiene que ingresar al menos un producto o servicio", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        buttonBuscaProducto.Select();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tiene que ingresar el cliente", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    textBoxRutRecep.Select();
+                }
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 MessageBox.Show("" + err);
             }
@@ -308,7 +326,7 @@ namespace Vista
                 detalle.save(documento);
                 referencia.save(documento);
                 folio.modificaEstado("JSON CREADO", documento.Folio, codCaf);
-                MessageBox.Show("El Documento Con folio: "+ documento.Folio+" se guardo");
+                MessageBox.Show("El Documento Con folio: " + documento.Folio + " se guardo");
 
 
             }
@@ -381,7 +399,7 @@ namespace Vista
                     detalle.DescuentoPct = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[7].Value);
                     detalle.DescuentoMonto = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[8].Value.ToString().Replace(".", ""));
                     detalle.DescuentoBruMonto = Convert.ToInt32(Convert.ToDouble(dtgwDetalle.Rows[i].Cells[8].Value.ToString().Replace(".", "")) * 1.19);
-                    detalle.MontoItem = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[9].Value.ToString().Replace(".",""));
+                    detalle.MontoItem = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[9].Value.ToString().Replace(".", ""));
                     detalle.MontoBruItem = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[10].Value.ToString().Replace(".", ""));
                     if (documento.TipoDTE == 46 || tipoDte == "46") detalle.CodImpAdic = "15";// Factura Electronica de compra
                     if (dtgwDetalle.Rows[i].Cells[11].Value.ToString() == "True")
@@ -394,7 +412,7 @@ namespace Vista
                     detalles.Add(detalle);
                 }
                 //Cargo los descuentos globales
-                if (textBoxDctoGlobal.Text != "0" )//|| textBoxDctoGlobal.Text != "")
+                if (textBoxDctoGlobal.Text != "0")//|| textBoxDctoGlobal.Text != "")
                 {
                     descuentoGlobal.NroLinDR = 1;
                     descuentoGlobal.TpoMov = "D";
@@ -446,10 +464,10 @@ namespace Vista
                 if (documento.TipoDTE == 46 || tipoDte == "46") documento.MntTotal = documento.MntNeto;
                 return documento;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
-                MessageBox.Show("Error en carga de clase documento"+ e);
+                MessageBox.Show("Error en carga de clase documento" + e);
                 Close();
                 return documento;
             }
@@ -457,7 +475,10 @@ namespace Vista
 
         private void buttonReferencia_Click(object sender, EventArgs e)
         {
-            new frmReferencia(documento).ShowDialog();
+            if (dtgwDetalle.RowCount != 0)
+            {
+                new frmReferencia(documento).ShowDialog();
+            }
         }
 
         private void buttonImprimir_Click(object sender, EventArgs e)
@@ -491,7 +512,7 @@ namespace Vista
         {
             for (int i = 0; i < dtgwDetalle.RowCount; i++)
             {
-                dtgwDetalle.Rows[i].Cells[1].Value = i+1;
+                dtgwDetalle.Rows[i].Cells[1].Value = i + 1;
 
             }
 
@@ -504,16 +525,16 @@ namespace Vista
                 DialogResult result1 = MessageBox.Show("Esta seguro de eliminar? ",
     "ELIMINA",
     MessageBoxButtons.YesNo);
-                                if (result1.ToString() == "No")
-                                {
+                if (result1.ToString() == "No")
+                {
 
-                                }
-                                else
-                                {
-                                    dtgwDetalle.Rows.RemoveAt(e.RowIndex);
-                                    actlizaRowItem();
-                                    actualizaDescuentos();
-                                }
+                }
+                else
+                {
+                    dtgwDetalle.Rows.RemoveAt(e.RowIndex);
+                    actlizaRowItem();
+                    actualizaDescuentos();
+                }
             }
         }
 
@@ -523,7 +544,7 @@ namespace Vista
             {
                 if (dtgwDetalle.RowCount != 0)
                 {
-                    new frmSelecVenta(this,documento).ShowDialog();
+                    new frmSelecVenta(this, documento).ShowDialog();
                 }
                 else
                 {
@@ -561,9 +582,6 @@ namespace Vista
             pdfdocumento.vistaPrevia();
         }
 
-        private void printPreviewDialog1_Load(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
 }

@@ -84,8 +84,20 @@ namespace Vista
             if (e.KeyChar == (int)13)
             {
                 // MessageBox.Show("Busca Cliente");
-                dataGridView1.DataSource = cliente.getContribuyenteXNombre(textBoxNombreCliente.Text.ToUpper());
-                dataGridView1.Select();
+               // dataGridView1.DataSource = cliente.getContribuyenteXNombre(textBoxNombreCliente.Text.ToUpper());
+                DataTable dataCliente = cliente.getContribuyenteXNombre(textBoxNombreCliente.Text.ToUpper());
+                if(dataCliente.Rows.Count != 0)
+                {
+                    dataGridView1.DataSource = dataCliente;
+                    dataGridView1.Select();
+
+                }
+                else
+                {
+                    MessageBox.Show("No esta Registrado el cliente", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+
                 
             }
         }

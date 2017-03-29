@@ -103,7 +103,7 @@ namespace Vista
                     try
                     {
                         clienteM.update(clienteM);
-                        MessageBox.Show("El Cliente " + clienteM.rznSoc + " se actualizó con exito!!");
+                        MessageBox.Show("El Cliente " + clienteM.rznSoc + " se actualizó con exito!!", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     catch (Exception ex)
                     {
@@ -126,7 +126,7 @@ namespace Vista
                         try
                         {
                             clienteM.save(clienteM);
-                            MessageBox.Show("El Cliente " + clienteM.rznSoc + " se creo con exito!!");
+                            MessageBox.Show("El Cliente " + clienteM.rznSoc + " se creo con exito!!", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         }
                         catch (Exception ex)
                         {
@@ -136,7 +136,7 @@ namespace Vista
                     }
                     else{
 
-                        MessageBox.Show("Rut mal ingresado!");
+                        MessageBox.Show("Rut mal ingresado!", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         textBoxRutCliente.Select();
                         textBoxRutCliente.SelectAll();
                     }
@@ -168,18 +168,32 @@ namespace Vista
             {
                 textBoxRutCliente.Text = new MetodosComunes().formatearRut(textBoxRutCliente.Text);
                 OdbcDataReader reader = clienteM.getClienteReader(textBoxRutCliente.Text.ToUpper());
-                while (reader.Read())
+                if (MetodosComunes.ValidaRut(textBoxRutCliente.Text) == true)
                 {
-                    textBoxRutCliente.Text = reader.GetString(reader.GetOrdinal("rutRecep"));
-                    textBoxRazonSocial.Text = reader.GetString(reader.GetOrdinal("rznSocRecep"));
-                    textBoxGiro.Text = reader.GetString(reader.GetOrdinal("giroRecep"));
-                    textBoxDireccion.Text = reader.GetString(reader.GetOrdinal("dirRecep"));
-                    labelCodComuna.Text = reader.GetString(reader.GetOrdinal("codComuna"));
-                    labelCodCiudad.Text = reader.GetInt32(reader.GetOrdinal("codCiudad")).ToString();
-                    comboBoxCiudad.Text = reader.GetString(reader.GetOrdinal("nomCiudad"));
-                    textBoxTelefono.Text = reader.GetString(reader.GetOrdinal("telefono"));
-                    comboBoxComuna.Text = reader.GetString(reader.GetOrdinal("nomComuna"));
+                    if (reader.RecordsAffected != 0)
+                     {
+                        while (reader.Read())
+                        {
+                            textBoxRutCliente.Text = reader.GetString(reader.GetOrdinal("rutRecep"));
+                            textBoxRazonSocial.Text = reader.GetString(reader.GetOrdinal("rznSocRecep"));
+                            textBoxGiro.Text = reader.GetString(reader.GetOrdinal("giroRecep"));
+                            textBoxDireccion.Text = reader.GetString(reader.GetOrdinal("dirRecep"));
+                            labelCodComuna.Text = reader.GetString(reader.GetOrdinal("codComuna"));
+                            labelCodCiudad.Text = reader.GetInt32(reader.GetOrdinal("codCiudad")).ToString();
+                            comboBoxCiudad.Text = reader.GetString(reader.GetOrdinal("nomCiudad"));
+                            textBoxTelefono.Text = reader.GetString(reader.GetOrdinal("telefono"));
+                            comboBoxComuna.Text = reader.GetString(reader.GetOrdinal("nomComuna"));
 
+                        }
+                    }
+                    else
+                    {
+                       MessageBox.Show("No esta Registrado el cliente", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Rut Mal Ingresado!", "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
