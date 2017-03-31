@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Modelo
 {
-   public class folioModel
+   public class FolioModel
     {
        public string estado { get; set; }
        public int folio { get; set; }
@@ -133,7 +133,7 @@ namespace Modelo
            return datatable;
        }
 
-       public void save(folioModel foliomodel)
+       public void save(FolioModel foliomodel)
 
 
        {

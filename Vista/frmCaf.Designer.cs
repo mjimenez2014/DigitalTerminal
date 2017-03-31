@@ -58,9 +58,9 @@
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edita = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.buttonSalir = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -94,7 +94,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.30887F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.69113F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189F));
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.labelTipoDte, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.labelFolioFinal, 3, 1);
@@ -143,7 +143,7 @@
             this.labelFolioFinal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelFolioFinal.AutoSize = true;
             this.labelFolioFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFolioFinal.Location = new System.Drawing.Point(567, 36);
+            this.labelFolioFinal.Location = new System.Drawing.Point(566, 36);
             this.labelFolioFinal.Name = "labelFolioFinal";
             this.labelFolioFinal.Size = new System.Drawing.Size(57, 15);
             this.labelFolioFinal.TabIndex = 7;
@@ -154,7 +154,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(323, 36);
+            this.label2.Location = new System.Drawing.Point(322, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 15);
             this.label2.TabIndex = 6;
@@ -165,7 +165,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(323, 5);
+            this.label3.Location = new System.Drawing.Point(322, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 15);
             this.label3.TabIndex = 2;
@@ -199,7 +199,7 @@
             this.labelFchCaf.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelFchCaf.AutoSize = true;
             this.labelFchCaf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFchCaf.Location = new System.Drawing.Point(567, 5);
+            this.labelFchCaf.Location = new System.Drawing.Point(566, 5);
             this.labelFchCaf.Name = "labelFchCaf";
             this.labelFchCaf.Size = new System.Drawing.Size(41, 15);
             this.labelFchCaf.TabIndex = 3;
@@ -364,11 +364,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(584, 74);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
             // buttonSalir
             // 
             this.buttonSalir.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -400,6 +395,11 @@
             this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "c";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // frmCaf
             // 

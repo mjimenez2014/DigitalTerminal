@@ -16,3 +16,4 @@ C:\Sites\DigitalTerminal\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.
 C:\Sites\DigitalTerminal\Modelo\obj\Debug\Modelo.csproj.ResolveComReference.cache
 C:\Sites\DigitalTerminal\Modelo\obj\Debug\Modelo.dll
 C:\Sites\DigitalTerminal\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache

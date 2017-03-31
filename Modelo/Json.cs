@@ -9,10 +9,20 @@ namespace Modelo
     {
         public void createJson(DocumentoModel documento)
         {
+            RegistroWin regWin = new RegistroWin();
+            string fileNameJson = string.Empty;
 
             if (documento.TipoDTE != 802)
             {
-                string fileNameJson = @"" + new RegistroWin().getRegWin().unidadIat + ":/IatFiles/cajas/caj1/" + documento.TipoDTE + "_" + documento.RUTEmisor + "_" + documento.Folio + ".json";
+                regWin = regWin.getRegWin();
+                try
+                {
+                     fileNameJson = @"" + regWin.rutaPrint +"\\"+ documento.TipoDTE + "_" + documento.RUTEmisor + "_" + documento.Folio + ".json";
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine("#####  error al guardar JSON #############"+ ex);
+                }
 
                 using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileNameJson, false, Encoding.GetEncoding("ISO-8859-1")))
                 {

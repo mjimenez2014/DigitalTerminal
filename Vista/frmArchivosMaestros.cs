@@ -65,5 +65,10 @@ namespace Vista
         {
             new frmEmpresa().ShowDialog();
         }
+
+        private void buttonConfigPos_Click(object sender, EventArgs e)
+        {
+            new frmConfigPos().ShowDialog();
+        }
     }
 }

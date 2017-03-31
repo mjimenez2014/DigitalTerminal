@@ -39,6 +39,7 @@
             this.buttonConfig = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.buttonConfigPos = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,13 +53,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.btnClientes, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonProductos, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button5, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.buttonComunas, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.buttonPaises, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonCiudades, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonConfig, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.button1, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.button2, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.buttonConfigPos, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.button5, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -206,6 +208,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // buttonConfigPos
+            // 
+            this.buttonConfigPos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfigPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConfigPos.Image = global::Vista.Properties.Resources.settings_5_32;
+            this.buttonConfigPos.Location = new System.Drawing.Point(335, 225);
+            this.buttonConfigPos.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonConfigPos.Name = "buttonConfigPos";
+            this.buttonConfigPos.Size = new System.Drawing.Size(100, 100);
+            this.buttonConfigPos.TabIndex = 9;
+            this.buttonConfigPos.Text = "P.O.S";
+            this.buttonConfigPos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonConfigPos.UseVisualStyleBackColor = true;
+            this.buttonConfigPos.Click += new System.EventHandler(this.buttonConfigPos_Click);
+            // 
             // frmArchivosMaestros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,5 +251,6 @@
         private System.Windows.Forms.Button buttonConfig;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonConfigPos;
     }
 }

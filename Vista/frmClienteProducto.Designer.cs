@@ -92,7 +92,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.2816F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.71841F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
             this.tableLayoutPanel2.Controls.Add(this.textBoxPrcNeto, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.textBoxNomProd, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.labelCodIntProd, 0, 1);
@@ -222,7 +222,7 @@
             // labelIdProducto
             // 
             this.labelIdProducto.AutoSize = true;
-            this.labelIdProducto.Location = new System.Drawing.Point(511, 0);
+            this.labelIdProducto.Location = new System.Drawing.Point(510, 0);
             this.labelIdProducto.Name = "labelIdProducto";
             this.labelIdProducto.Size = new System.Drawing.Size(58, 13);
             this.labelIdProducto.TabIndex = 10;
@@ -235,7 +235,7 @@
             this.buttonCalcula.FlatAppearance.BorderSize = 2;
             this.buttonCalcula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCalcula.ForeColor = System.Drawing.Color.Green;
-            this.buttonCalcula.Location = new System.Drawing.Point(511, 91);
+            this.buttonCalcula.Location = new System.Drawing.Point(510, 91);
             this.buttonCalcula.Name = "buttonCalcula";
             this.buttonCalcula.Size = new System.Drawing.Size(80, 24);
             this.buttonCalcula.TabIndex = 11;

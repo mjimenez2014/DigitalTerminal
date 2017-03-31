@@ -14,7 +14,7 @@ namespace Vista
     {
         frmCaf frmcaf;
         Int32 idCafs;
-        folioModel folioM = new folioModel();
+        FolioModel folioM = new FolioModel();
         public frmFolio()
         {
             InitializeComponent();
@@ -68,7 +68,7 @@ namespace Vista
         private void actDataG()
         {
             dataGridView1.Rows.Clear();
-            DataTable dt = new folioModel().getFolioXId(idCafs);
+            DataTable dt = new FolioModel().getFolioXId(idCafs);
             foreach (DataRow row in dt.Rows)
             {
                 Int32 n = this.dataGridView1.Rows.Add();

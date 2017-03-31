@@ -18,6 +18,7 @@ namespace Modelo
         public string pass { get; set; }
         public string clienteProducto { get; set; }
         public string abrirIat { get; set; }
+        public string rutaPrint { get; set; }
 
 
 
@@ -35,6 +36,7 @@ namespace Modelo
                 if ((Registry.GetValue(@"HKEY_CURRENT_USER\DigitalTerminal\BD", "pass", null) == null)) Registry.SetValue(@"HKEY_CURRENT_USER\DigitalTerminal\BD", "pass", "elpreciosodt3");
                 if ((Registry.GetValue(@"HKEY_CURRENT_USER\DigitalTerminal\Config", "clienteProducto", null) == null)) Registry.SetValue(@"HKEY_CURRENT_USER\DigitalTerminal\Config", "clienteProducto", "False");
                 if ((Registry.GetValue(@"HKEY_CURRENT_USER\DigitalTerminal\Config", "abrirIat", null) == null)) Registry.SetValue(@"HKEY_CURRENT_USER\DigitalTerminal\Config", "abrirIat", "False");
+                if ((Registry.GetValue(@"HKEY_CURRENT_USER\DigitalTerminal\Config", "rutaPrint", null) == null)) Registry.SetValue(@"HKEY_CURRENT_USER\DigitalTerminal\Config", "rutaPrint", "SIN RUTA");
                 return "los registros fueron creados";
             } catch(Exception ex)
             {
@@ -56,7 +58,7 @@ namespace Modelo
                 regWin.pass = Registry.GetValue(@"HKEY_CURRENT_USER\DigitalTerminal\BD", "pass", null).ToString();
                 regWin.clienteProducto = Registry.GetValue(@"HKEY_CURRENT_USER\DigitalTerminal\Config", "clienteProducto", null).ToString();
                 regWin.abrirIat = Registry.GetValue(@"HKEY_CURRENT_USER\DigitalTerminal\Config", "clienteProducto", null).ToString();
-
+                regWin.rutaPrint = Registry.GetValue(@"HKEY_CURRENT_USER\DigitalTerminal\Config", "rutaPrint", null).ToString();
 
                 return regWin;
             }

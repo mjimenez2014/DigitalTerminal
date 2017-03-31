@@ -17,7 +17,7 @@ namespace Vista
         DocumentoModel documento = new DocumentoModel();
         Detalle detalle = new Detalle();
         ReferenciaDoc referencia = new ReferenciaDoc();
-        folioModel folio = new folioModel();
+        FolioModel folio = new FolioModel();
         DscRcgGlobal descuentoGlobal = new DscRcgGlobal();
         List<DscRcgGlobal> descuentosGlobales = new List<DscRcgGlobal>();
         PdfDocumento pdfDoc = new PdfDocumento();

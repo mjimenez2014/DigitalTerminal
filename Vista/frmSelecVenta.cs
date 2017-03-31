@@ -15,7 +15,7 @@ namespace Vista
         frmPuntoVenta pos;
         DocumentoModel documento;
         CafModel cafModel = new CafModel();
-        folioModel folioM = new folioModel();
+        FolioModel folioM = new FolioModel();
 
         public frmSelecVenta(frmPuntoVenta pos, DocumentoModel doc)
         {

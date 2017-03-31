@@ -53,14 +53,14 @@
     <Compile Include="BaseDato.cs" />
     <Compile Include="CafModel.cs" />
     <Compile Include="ClienteProductoModel.cs" />
-    <Compile Include="configModel.cs" />
+    <Compile Include="ConfigModel.cs" />
     <Compile Include="ContribuyenteModel.cs" />
     <Compile Include="CiudadesModel.cs" />
     <Compile Include="ComunasModel.cs" />
     <Compile Include="DocumentoModel.cs" />
     <Compile Include="EmpresaModel.cs" />
     <Compile Include="Export.cs" />
-    <Compile Include="folioModel.cs" />
+    <Compile Include="FolioModel.cs" />
     <Compile Include="Json.cs" />
     <Compile Include="PaisesModel.cs" />
     <Compile Include="ProductosModel.cs" />
