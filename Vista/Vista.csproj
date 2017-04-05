@@ -73,6 +73,12 @@
     <Compile Include="frmClienteProducto.Designer.cs">
       <DependentUpon>frmClienteProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListaCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListaCompras.Designer.cs">
+      <DependentUpon>frmListaCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmComunas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,12 @@
     <Compile Include="frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentas.Designer.cs">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLineaManual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,11 +181,11 @@
     <Compile Include="frmProductos.Designer.cs">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPuntoVenta.cs">
+    <Compile Include="frmNewVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPuntoVenta.Designer.cs">
-      <DependentUpon>frmPuntoVenta.cs</DependentUpon>
+    <Compile Include="frmNewVenta.Designer.cs">
+      <DependentUpon>frmNewVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReferencia.cs">
       <SubType>Form</SubType>
@@ -229,6 +241,9 @@
     <EmbeddedResource Include="frmClienteProducto.resx">
       <DependentUpon>frmClienteProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListaCompras.resx">
+      <DependentUpon>frmListaCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmComunas.resx">
       <DependentUpon>frmComunas.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +275,9 @@
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLineaManual.resx">
       <DependentUpon>frmLineaManual.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,8 +296,8 @@
     <EmbeddedResource Include="frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPuntoVenta.resx">
-      <DependentUpon>frmPuntoVenta.cs</DependentUpon>
+    <EmbeddedResource Include="frmNewVenta.resx">
+      <DependentUpon>frmNewVenta.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReferencia.resx">

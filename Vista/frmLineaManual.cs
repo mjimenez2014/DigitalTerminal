@@ -12,7 +12,7 @@ namespace Vista
 {
     public partial class frmLineaManual : Form
     {
-        private frmPuntoVenta frmPos;
+        private frmNewVenta frmPos;
         ProductosModel producto = new ProductosModel();
         Detalle detalle = new Detalle();
         public frmLineaManual()
@@ -20,7 +20,7 @@ namespace Vista
             InitializeComponent();
         }
 
-        public frmLineaManual(frmPuntoVenta frmPOS)
+        public frmLineaManual(frmNewVenta frmPOS)
         {
             InitializeComponent();
             this.frmPos = frmPOS;

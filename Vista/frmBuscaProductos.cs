@@ -12,7 +12,7 @@ namespace Vista
 {
     public partial class frmBuscaProductos : Form
     {
-       private frmPuntoVenta frmPos; 
+       private frmNewVenta frmPos; 
        ProductosModel producto = new ProductosModel();
        Detalle detalle = new Detalle();
        ConfigModel config = new ConfigModel();
@@ -23,7 +23,7 @@ namespace Vista
        {
            InitializeComponent();
        }
-        public frmBuscaProductos(frmPuntoVenta frmPOS)
+        public frmBuscaProductos(frmNewVenta frmPOS)
         {
             InitializeComponent();
             this.frmPos = frmPOS;

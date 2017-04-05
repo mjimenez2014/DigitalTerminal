@@ -12,12 +12,12 @@ namespace Vista
 {
     public partial class frmSelecVenta : Form
     {
-        frmPuntoVenta pos;
+        frmNewVenta pos;
         DocumentoModel documento;
         CafModel cafModel = new CafModel();
         FolioModel folioM = new FolioModel();
 
-        public frmSelecVenta(frmPuntoVenta pos, DocumentoModel doc)
+        public frmSelecVenta(frmNewVenta pos, DocumentoModel doc)
         {
             InitializeComponent();
             this.pos = pos;

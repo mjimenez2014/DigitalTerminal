@@ -12,11 +12,11 @@ namespace Vista
 {
     public partial class frmBuscaCliente : Form
     {
-       frmPuntoVenta frm;
+       frmNewVenta frm;
        ContribuyenteModel cliente = new ContribuyenteModel();
        frmContribuyente frmconstribuyente = new frmContribuyente();
             
-        public frmBuscaCliente(frmPuntoVenta frmPOS)
+        public frmBuscaCliente(frmNewVenta frmPOS)
         {
            InitializeComponent();
            frm = frmPOS;
