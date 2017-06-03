@@ -63,19 +63,6 @@
             this.textBoxDctoGlobal = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dtgwDetalle = new System.Windows.Forms.DataGridView();
-            this.elimina = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_Neto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monto_Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_Neto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Exento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DscItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonBuscaProducto = new System.Windows.Forms.Button();
             this.textBoxCodBarra = new System.Windows.Forms.TextBox();
@@ -98,8 +85,9 @@
             this.labelGiroRecep = new System.Windows.Forms.Label();
             this.labelRznSocRecep = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxRutRecep = new System.Windows.Forms.TextBox();
             this.buttonBuscaCliente = new System.Windows.Forms.Button();
+            this.labelRut = new System.Windows.Forms.Label();
+            this.textBoxRutRecep = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.labelOC = new System.Windows.Forms.Label();
@@ -112,7 +100,20 @@
             this.textBoxSello = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxFormaPago = new System.Windows.Forms.TextBox();
-            this.labelRut = new System.Windows.Forms.Label();
+            this.elimina = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio_Neto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unmditem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto_Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total_Neto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Exento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DscItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblpPuntoVenta.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -491,6 +492,7 @@
             this.Precio_Neto,
             this.precio,
             this.cantidad,
+            this.unmditem,
             this.desc,
             this.Monto_Descuento,
             this.Total_Neto,
@@ -508,125 +510,6 @@
             this.dtgwDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgwDetalle_CellContentClick);
             this.dtgwDetalle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgwDetalle_CellEndEdit);
             this.dtgwDetalle.Validated += new System.EventHandler(this.dtgwDetalle_Validated);
-            // 
-            // elimina
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Red;
-            this.elimina.DefaultCellStyle = dataGridViewCellStyle2;
-            this.elimina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.elimina.HeaderText = "Quitar";
-            this.elimina.Name = "elimina";
-            this.elimina.ReadOnly = true;
-            this.elimina.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.elimina.Text = "Quitar";
-            this.elimina.Width = 46;
-            // 
-            // item
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.item.DefaultCellStyle = dataGridViewCellStyle3;
-            this.item.HeaderText = "Item";
-            this.item.Name = "item";
-            this.item.ReadOnly = true;
-            this.item.Width = 56;
-            // 
-            // codigo
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigo.DefaultCellStyle = dataGridViewCellStyle4;
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 71;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 77;
-            // 
-            // Precio_Neto
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Precio_Neto.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Precio_Neto.HeaderText = "Prc. Neto";
-            this.Precio_Neto.Name = "Precio_Neto";
-            this.Precio_Neto.ReadOnly = true;
-            this.Precio_Neto.Width = 82;
-            // 
-            // precio
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "C0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.precio.DefaultCellStyle = dataGridViewCellStyle6;
-            this.precio.HeaderText = "Prc. Venta";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            this.precio.Width = 87;
-            // 
-            // cantidad
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle7;
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 81;
-            // 
-            // desc
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.desc.DefaultCellStyle = dataGridViewCellStyle8;
-            this.desc.HeaderText = "Dcto.%";
-            this.desc.Name = "desc";
-            this.desc.ReadOnly = true;
-            this.desc.Width = 71;
-            // 
-            // Monto_Descuento
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Monto_Descuento.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Monto_Descuento.HeaderText = "Mnt. Dcto.";
-            this.Monto_Descuento.Name = "Monto_Descuento";
-            this.Monto_Descuento.ReadOnly = true;
-            this.Monto_Descuento.Width = 87;
-            // 
-            // Total_Neto
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Total_Neto.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Total_Neto.HeaderText = "Total_Neto";
-            this.Total_Neto.Name = "Total_Neto";
-            this.Total_Neto.ReadOnly = true;
-            this.Total_Neto.Width = 92;
-            // 
-            // total
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.NullValue = null;
-            this.total.DefaultCellStyle = dataGridViewCellStyle11;
-            this.total.HeaderText = "Total";
-            this.total.Name = "total";
-            this.total.ReadOnly = true;
-            this.total.Width = 59;
-            // 
-            // Exento
-            // 
-            this.Exento.HeaderText = "Exento";
-            this.Exento.Name = "Exento";
-            this.Exento.ReadOnly = true;
-            this.Exento.Width = 70;
-            // 
-            // DscItem
-            // 
-            this.DscItem.HeaderText = "DscItem";
-            this.DscItem.Name = "DscItem";
-            this.DscItem.Width = 77;
             // 
             // tableLayoutPanel9
             // 
@@ -907,7 +790,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 241F));
             this.tableLayoutPanel1.Controls.Add(this.buttonBuscaCliente, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelRut, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxRutRecep, 1, 0);
@@ -918,21 +801,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(451, 40);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // textBoxRutRecep
-            // 
-            this.textBoxRutRecep.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxRutRecep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxRutRecep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRutRecep.Location = new System.Drawing.Point(57, 9);
-            this.textBoxRutRecep.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxRutRecep.Name = "textBoxRutRecep";
-            this.textBoxRutRecep.Size = new System.Drawing.Size(149, 21);
-            this.textBoxRutRecep.TabIndex = 0;
-            this.textBoxRutRecep.TextChanged += new System.EventHandler(this.textBoxRut_TextChanged);
-            this.textBoxRutRecep.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxRut_KeyDown);
-            this.textBoxRutRecep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRut_KeyPress);
-            this.textBoxRutRecep.Validated += new System.EventHandler(this.textBoxRut_Validated);
             // 
             // buttonBuscaCliente
             // 
@@ -948,6 +816,36 @@
             this.buttonBuscaCliente.Text = "Busca por Nombre";
             this.buttonBuscaCliente.UseVisualStyleBackColor = true;
             this.buttonBuscaCliente.Click += new System.EventHandler(this.buttonBuscaCliente_Click);
+            // 
+            // labelRut
+            // 
+            this.labelRut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelRut.AutoSize = true;
+            this.labelRut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRut.Location = new System.Drawing.Point(3, 2);
+            this.labelRut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelRut.Name = "labelRut";
+            this.labelRut.Size = new System.Drawing.Size(47, 36);
+            this.labelRut.TabIndex = 2;
+            this.labelRut.Text = "R.U.T:";
+            this.labelRut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxRutRecep
+            // 
+            this.textBoxRutRecep.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxRutRecep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxRutRecep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRutRecep.Location = new System.Drawing.Point(57, 9);
+            this.textBoxRutRecep.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxRutRecep.Name = "textBoxRutRecep";
+            this.textBoxRutRecep.Size = new System.Drawing.Size(149, 21);
+            this.textBoxRutRecep.TabIndex = 0;
+            this.textBoxRutRecep.TextChanged += new System.EventHandler(this.textBoxRut_TextChanged);
+            this.textBoxRutRecep.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxRut_KeyDown);
+            this.textBoxRutRecep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRut_KeyPress);
+            this.textBoxRutRecep.Validated += new System.EventHandler(this.textBoxRut_Validated);
             // 
             // label6
             // 
@@ -1111,22 +1009,132 @@
             this.textBoxFormaPago.TabIndex = 8;
             this.textBoxFormaPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // labelRut
+            // elimina
             // 
-            this.labelRut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelRut.AutoSize = true;
-            this.labelRut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRut.Location = new System.Drawing.Point(3, 2);
-            this.labelRut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.labelRut.Name = "labelRut";
-            this.labelRut.Size = new System.Drawing.Size(47, 36);
-            this.labelRut.TabIndex = 2;
-            this.labelRut.Text = "R.U.T:";
-            this.labelRut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Red;
+            this.elimina.DefaultCellStyle = dataGridViewCellStyle2;
+            this.elimina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.elimina.HeaderText = "Quitar";
+            this.elimina.Name = "elimina";
+            this.elimina.ReadOnly = true;
+            this.elimina.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.elimina.Text = "Quitar";
+            this.elimina.Width = 46;
             // 
-            // frmPuntoVenta
+            // item
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.item.DefaultCellStyle = dataGridViewCellStyle3;
+            this.item.HeaderText = "Item";
+            this.item.Name = "item";
+            this.item.ReadOnly = true;
+            this.item.Width = 56;
+            // 
+            // codigo
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigo.DefaultCellStyle = dataGridViewCellStyle4;
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 71;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 77;
+            // 
+            // Precio_Neto
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Precio_Neto.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Precio_Neto.HeaderText = "Prc. Neto";
+            this.Precio_Neto.Name = "Precio_Neto";
+            this.Precio_Neto.ReadOnly = true;
+            this.Precio_Neto.Width = 82;
+            // 
+            // precio
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.precio.DefaultCellStyle = dataGridViewCellStyle6;
+            this.precio.HeaderText = "Prc. Venta";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            this.precio.Width = 87;
+            // 
+            // cantidad
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle7;
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 81;
+            // 
+            // unmditem
+            // 
+            this.unmditem.HeaderText = "Unidad";
+            this.unmditem.Name = "unmditem";
+            this.unmditem.Width = 72;
+            // 
+            // desc
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.desc.DefaultCellStyle = dataGridViewCellStyle8;
+            this.desc.HeaderText = "Dcto.%";
+            this.desc.Name = "desc";
+            this.desc.ReadOnly = true;
+            this.desc.Width = 71;
+            // 
+            // Monto_Descuento
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Monto_Descuento.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Monto_Descuento.HeaderText = "Mnt. Dcto.";
+            this.Monto_Descuento.Name = "Monto_Descuento";
+            this.Monto_Descuento.ReadOnly = true;
+            this.Monto_Descuento.Width = 87;
+            // 
+            // Total_Neto
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Total_Neto.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Total_Neto.HeaderText = "Total_Neto";
+            this.Total_Neto.Name = "Total_Neto";
+            this.Total_Neto.ReadOnly = true;
+            this.Total_Neto.Width = 92;
+            // 
+            // total
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.NullValue = null;
+            this.total.DefaultCellStyle = dataGridViewCellStyle11;
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            this.total.Width = 59;
+            // 
+            // Exento
+            // 
+            this.Exento.HeaderText = "Exento";
+            this.Exento.Name = "Exento";
+            this.Exento.ReadOnly = true;
+            this.Exento.Width = 70;
+            // 
+            // DscItem
+            // 
+            this.DscItem.HeaderText = "DscItem";
+            this.DscItem.Name = "DscItem";
+            this.DscItem.Width = 77;
+            // 
+            // frmNewVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1137,7 +1145,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "frmPuntoVenta";
+            this.Name = "frmNewVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPuntoVenta_Load);
@@ -1229,6 +1237,9 @@
         public System.Windows.Forms.DateTimePicker dateTimePickerFchEmis;
         public System.Windows.Forms.Button buttonBuscaProducto;
         private System.Windows.Forms.Button buttonBuscar;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox textBoxFormaPago;
+        private System.Windows.Forms.Label labelRut;
         private System.Windows.Forms.DataGridViewButtonColumn elimina;
         private System.Windows.Forms.DataGridViewTextBoxColumn item;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
@@ -1236,14 +1247,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio_Neto;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unmditem;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto_Descuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total_Neto;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.DataGridViewTextBoxColumn Exento;
         private System.Windows.Forms.DataGridViewTextBoxColumn DscItem;
-        public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox textBoxFormaPago;
-        private System.Windows.Forms.Label labelRut;
     }
 }

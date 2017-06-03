@@ -112,5 +112,12 @@ namespace Vista
             this.Close();
             pos.btnSalir.PerformClick();
         }
+
+        private void btnFacExe_Click(object sender, EventArgs e)
+        {
+            this.pos.creaDte(34, cafModel.getCafActual(34));
+            this.Close();
+            pos.btnSalir.PerformClick();
+        }
     }
 }

@@ -15,7 +15,8 @@ namespace Modelo
         public String codigoInt { get; set; }
         public decimal precioNeto { get; set; }
         public Int32 precioventa { get; set; }
-        public string exento { get; set; }
+        public string exento { get; set; } 
+        public string unmditem { get; set; }
         List<Impuesto> impuesto { get; set; }
 
         public ProductosModel()

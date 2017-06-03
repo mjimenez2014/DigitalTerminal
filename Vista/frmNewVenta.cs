@@ -207,17 +207,18 @@ namespace Vista
             n = dtgwDetalle.Rows.Add();
             dtgwDetalle.Rows[n].Cells["elimina"].Value = "-";
             dtgwDetalle.Rows[n].Cells["item"].Value = n + 1;
-            dtgwDetalle.Rows[n].Cells[2].Value = producto.codigoInt.ToString();
-            dtgwDetalle.Rows[n].Cells[3].Value = producto.nombre.ToString();
-            dtgwDetalle.Rows[n].Cells[4].Value = producto.precioNeto.ToString();
-            dtgwDetalle.Rows[n].Cells[5].Value = producto.precioventa.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-            dtgwDetalle.Rows[n].Cells[6].Value = detalle.QtyItem.ToString();
-            dtgwDetalle.Rows[n].Cells[7].Value = Decimal.Round(detalle.DescuentoPct * 100);
-            dtgwDetalle.Rows[n].Cells[8].Value = detalle.DescuentoMonto.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-            dtgwDetalle.Rows[n].Cells[9].Value = detalle.MontoItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-            dtgwDetalle.Rows[n].Cells[10].Value = detalle.MontoBruItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
-            dtgwDetalle.Rows[n].Cells[11].Value = producto.exento.ToString();
-            dtgwDetalle.Rows[n].Cells[12].Value = detalle.DscItem.ToString();
+            dtgwDetalle.Rows[n].Cells["codigo"].Value = producto.codigoInt.ToString();
+            dtgwDetalle.Rows[n].Cells["nombre"].Value = producto.nombre.ToString();
+            dtgwDetalle.Rows[n].Cells["Precio_Neto"].Value = producto.precioNeto.ToString();
+            dtgwDetalle.Rows[n].Cells["precio"].Value = producto.precioventa.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+            dtgwDetalle.Rows[n].Cells["cantidad"].Value = detalle.QtyItem.ToString();
+            dtgwDetalle.Rows[n].Cells["unmditem"].Value = producto.unmditem.ToString();
+            dtgwDetalle.Rows[n].Cells["desc"].Value = Decimal.Round(detalle.DescuentoPct * 100);
+            dtgwDetalle.Rows[n].Cells["Monto_Descuento"].Value = detalle.DescuentoMonto.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+            dtgwDetalle.Rows[n].Cells["Total_Neto"].Value = detalle.MontoItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+            dtgwDetalle.Rows[n].Cells["total"].Value = detalle.MontoBruItem.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
+            dtgwDetalle.Rows[n].Cells["Exento"].Value = producto.exento.ToString();
+            dtgwDetalle.Rows[n].Cells["DscItem"].Value = detalle.DscItem.ToString();
 
             if (producto.exento == "False")
             {
@@ -226,8 +227,8 @@ namespace Vista
             }
             else
             {
-                dtgwDetalle.Rows[n].Cells[4].Value = 0;
-                dtgwDetalle.Rows[n].Cells[9].Value = 0;
+                dtgwDetalle.Rows[n].Cells["Precio_Neto"].Value = 0;
+                dtgwDetalle.Rows[n].Cells["Total_Neto"].Value = 0;
                 actualizaExento();
             }
 
@@ -246,7 +247,7 @@ namespace Vista
             Decimal suma = 0;
             for (int i = 0; i < dtgwDetalle.RowCount; i++)
             {
-                suma += Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[9].Value.ToString().Replace(".", ""));
+                suma += Convert.ToDecimal(dtgwDetalle.Rows[i].Cells["Total_Neto"].Value.ToString().Replace(".", ""));
             }
             labelSubTotal.Text = suma.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
             calculaIva();
@@ -259,9 +260,9 @@ namespace Vista
             Decimal suma = 0;
             for (int i = 0; i < dtgwDetalle.RowCount; i++)
             {
-                if (dtgwDetalle.Rows[i].Cells[4].Value.ToString() == "0")
+                if (dtgwDetalle.Rows[i].Cells["Precio_Neto"].Value.ToString() == "0")
                 {
-                    suma += Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[10].Value.ToString().Replace(".", ""));
+                    suma += Convert.ToDecimal(dtgwDetalle.Rows[i].Cells["total"].Value.ToString().Replace(".", ""));
                 }
             }
             labelMtoExento.Text = suma.ToString("N0", CultureInfo.CreateSpecificCulture("es-ES"));
@@ -392,21 +393,22 @@ namespace Vista
                     detalle.NroLinDet = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[1].Value);
                     detalle.TpoCodigo = "PLU";
                     detalle.VlrCodigo = dtgwDetalle.Rows[i].Cells[2].Value.ToString();
-                    detalle.NmbItem = dtgwDetalle.Rows[i].Cells[3].Value.ToString();
-                    detalle.PrcItem = Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[4].Value.ToString());
-                    detalle.PrcBruItem = Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[5].Value.ToString().Replace(".", ""));
-                    detalle.QtyItem = Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[6].Value);
-                    detalle.DescuentoPct = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[7].Value);
-                    detalle.DescuentoMonto = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[8].Value.ToString().Replace(".", ""));
-                    detalle.DescuentoBruMonto = Convert.ToInt32(Convert.ToDouble(dtgwDetalle.Rows[i].Cells[8].Value.ToString().Replace(".", "")) * 1.19);
-                    detalle.MontoItem = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[9].Value.ToString().Replace(".", ""));
-                    detalle.MontoBruItem = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[10].Value.ToString().Replace(".", ""));
+                    detalle.NmbItem = dtgwDetalle.Rows[i].Cells["nombre"].Value.ToString();
+                    detalle.PrcItem = Convert.ToDecimal(dtgwDetalle.Rows[i].Cells["Precio_Neto"].Value.ToString());
+                    detalle.PrcBruItem = Convert.ToDecimal(dtgwDetalle.Rows[i].Cells["precio"].Value.ToString().Replace(".", ""));
+                    detalle.QtyItem = Convert.ToDecimal(dtgwDetalle.Rows[i].Cells["cantidad"].Value);
+                    detalle.UnmdItem = dtgwDetalle.Rows[i].Cells["unmditem"].Value.ToString();
+                    detalle.DescuentoPct = Convert.ToInt32(dtgwDetalle.Rows[i].Cells["desc"].Value);
+                    detalle.DescuentoMonto = Convert.ToInt32(dtgwDetalle.Rows[i].Cells["Monto_Descuento"].Value.ToString().Replace(".", ""));
+                    detalle.DescuentoBruMonto = Convert.ToInt32(Convert.ToDouble(dtgwDetalle.Rows[i].Cells["Monto_Descuento"].Value.ToString().Replace(".", "")) * 1.19);
+                    detalle.MontoItem = Convert.ToInt32(dtgwDetalle.Rows[i].Cells["Total_Neto"].Value.ToString().Replace(".", ""));
+                    detalle.MontoBruItem = Convert.ToInt32(dtgwDetalle.Rows[i].Cells["total"].Value.ToString().Replace(".", ""));
                     if (documento.TipoDTE == 46 || tipoDte == "46") detalle.CodImpAdic = "15";// Factura Electronica de compra
-                    if (dtgwDetalle.Rows[i].Cells[11].Value.ToString() == "True")
+                    if (dtgwDetalle.Rows[i].Cells["Exento"].Value.ToString() == "True")
                     {
                         detalle.IndExe = "1";
-                        detalle.MontoItem = Convert.ToInt32(dtgwDetalle.Rows[i].Cells[10].Value.ToString().Replace(".", ""));
-                        detalle.PrcItem = Convert.ToDecimal(dtgwDetalle.Rows[i].Cells[5].Value.ToString().Replace(".", ""));
+                        detalle.MontoItem = Convert.ToInt32(dtgwDetalle.Rows[i].Cells["total"].Value.ToString().Replace(".", ""));
+                        detalle.PrcItem = Convert.ToDecimal(dtgwDetalle.Rows[i].Cells["precio"].Value.ToString().Replace(".", ""));
                     }
                     detalle.DscItem = dtgwDetalle.Rows[i].Cells["DscItem"].Value.ToString();
                     detalles.Add(detalle);
@@ -432,7 +434,14 @@ namespace Vista
                 }
                 descuentosGlobales.Add(descuentoGlobal);
                 documento.detalle = detalles;
-                documento.TasaIVA = 19;
+                if (tipo != 34)
+                {
+                    documento.TasaIVA = 19;
+                }
+                else
+                {
+                    documento.TasaIVA = 0;
+                }
                 documento.MntExe = Convert.ToInt32(labelMtoExento.Text.ToString().Replace(".", ""));
                 documento.dscRcgGlobal = descuentosGlobales;
                 documento.MntNeto = Convert.ToInt32(labelSubTotal.Text.ToString().Replace(".", ""));

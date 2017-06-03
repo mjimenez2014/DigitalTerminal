@@ -164,6 +164,7 @@ namespace Vista
             producto.precioNeto = Convert.ToDecimal(this.dtgwBuscaProductos.CurrentRow.Cells["PrecioNeto"].Value);
             producto.precioventa = Convert.ToInt32(this.dtgwBuscaProductos.CurrentRow.Cells["precioVenta"].Value);
             producto.exento = (String)this.dtgwBuscaProductos.CurrentRow.Cells["exento"].Value;
+            producto.unmditem = (String)this.dtgwBuscaProductos.CurrentRow.Cells["unmditem"].Value;
             detalle.QtyItem = Convert.ToDecimal(textBoxCantidad.Text);
 
             if (textBoxDctoPrc.Text == "" || textBoxDctoPrc.Text == "0")
@@ -243,20 +244,9 @@ namespace Vista
             }
         }
 
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
 
-
- 
-    
- 
-
- 
-
-
-
-
-
-
-
-
+        }
     }
 }

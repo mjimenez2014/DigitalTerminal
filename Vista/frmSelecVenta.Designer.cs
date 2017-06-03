@@ -37,6 +37,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.btnFacExe = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,13 +47,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonSalir, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button4, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.button5, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button6, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.button6, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button4, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSalir, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnFacExe, 2, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -60,7 +62,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(444, 323);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(444, 429);
             this.tableLayoutPanel1.TabIndex = 12;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -74,7 +76,7 @@
             this.button2.ForeColor = System.Drawing.Color.Brown;
             this.button2.Image = global::Vista.Properties.Resources.add_list_64__2_;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(10, 132);
+            this.button2.Location = new System.Drawing.Point(302, 132);
             this.button2.Margin = new System.Windows.Forms.Padding(10);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(126, 102);
@@ -112,7 +114,7 @@
             this.buttonSalir.ForeColor = System.Drawing.Color.Green;
             this.buttonSalir.Image = global::Vista.Properties.Resources.exit_32;
             this.buttonSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonSalir.Location = new System.Drawing.Point(33, 252);
+            this.buttonSalir.Location = new System.Drawing.Point(33, 273);
             this.buttonSalir.Name = "buttonSalir";
             this.buttonSalir.Size = new System.Drawing.Size(80, 63);
             this.buttonSalir.TabIndex = 14;
@@ -190,7 +192,7 @@
             this.button6.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.button6.Image = global::Vista.Properties.Resources.add_list_64__1_;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(302, 132);
+            this.button6.Location = new System.Drawing.Point(10, 132);
             this.button6.Margin = new System.Windows.Forms.Padding(10);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(126, 100);
@@ -200,13 +202,33 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // btnFacExe
+            // 
+            this.btnFacExe.BackColor = System.Drawing.Color.LightGray;
+            this.btnFacExe.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnFacExe.FlatAppearance.BorderSize = 2;
+            this.btnFacExe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacExe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacExe.ForeColor = System.Drawing.Color.Brown;
+            this.btnFacExe.Image = ((System.Drawing.Image)(resources.GetObject("btnFacExe.Image")));
+            this.btnFacExe.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFacExe.Location = new System.Drawing.Point(302, 254);
+            this.btnFacExe.Margin = new System.Windows.Forms.Padding(10);
+            this.btnFacExe.Name = "btnFacExe";
+            this.btnFacExe.Size = new System.Drawing.Size(126, 102);
+            this.btnFacExe.TabIndex = 18;
+            this.btnFacExe.Text = "FACTURA EXENTA";
+            this.btnFacExe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFacExe.UseVisualStyleBackColor = false;
+            this.btnFacExe.Click += new System.EventHandler(this.btnFacExe_Click);
+            // 
             // frmSelecVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonSalir;
-            this.ClientSize = new System.Drawing.Size(443, 323);
+            this.ClientSize = new System.Drawing.Size(443, 382);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmSelecVenta";
@@ -227,5 +249,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnFacExe;
     }
 }
