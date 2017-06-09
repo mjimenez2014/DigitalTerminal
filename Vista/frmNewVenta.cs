@@ -385,6 +385,14 @@ namespace Vista
                 documento.NroCita = textBoxCita.Text;
                 documento.Sello = textBoxSello.Text;
                 documento.formaPago = textBoxFormaPago.Text;
+                if (tipo != 34)
+                {
+                    documento.TasaIVA = 19;
+                }
+                else
+                {
+                    documento.TasaIVA = 0;
+                }
                 List<Detalle> detalles = new List<Detalle>();
                 //cargo detalle doc
                 for (int i = 0; i < dtgwDetalle.RowCount; i++)
@@ -434,14 +442,6 @@ namespace Vista
                 }
                 descuentosGlobales.Add(descuentoGlobal);
                 documento.detalle = detalles;
-                if (tipo != 34)
-                {
-                    documento.TasaIVA = 19;
-                }
-                else
-                {
-                    documento.TasaIVA = 0;
-                }
                 documento.MntExe = Convert.ToInt32(labelMtoExento.Text.ToString().Replace(".", ""));
                 documento.dscRcgGlobal = descuentosGlobales;
                 documento.MntNeto = Convert.ToInt32(labelSubTotal.Text.ToString().Replace(".", ""));

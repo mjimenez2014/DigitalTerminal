@@ -44,6 +44,7 @@
             this.textBoxDctoPrc = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBoxExento = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.labelPrecioNeto = new System.Windows.Forms.Label();
@@ -111,6 +112,7 @@
             this.tableLayoutPanel2.Controls.Add(this.textBoxDctoPrc, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.textBox1, 3, 2);
+            this.tableLayoutPanel2.Controls.Add(this.checkBoxExento, 2, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 27);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -139,7 +141,6 @@
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(116, 3);
-            this.txtNombre.MaxLength = 54;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(431, 21);
             this.txtNombre.TabIndex = 0;
@@ -273,6 +274,18 @@
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // checkBoxExento
+            // 
+            this.checkBoxExento.AutoSize = true;
+            this.checkBoxExento.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBoxExento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxExento.Location = new System.Drawing.Point(553, 87);
+            this.checkBoxExento.Name = "checkBoxExento";
+            this.checkBoxExento.Size = new System.Drawing.Size(148, 134);
+            this.checkBoxExento.TabIndex = 16;
+            this.checkBoxExento.Text = "Exento";
+            this.checkBoxExento.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
@@ -457,5 +470,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox checkBoxExento;
     }
 }

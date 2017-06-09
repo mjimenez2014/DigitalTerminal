@@ -93,7 +93,7 @@ namespace Modelo
                     int lineaFinalDetalle = 0;
                     foreach (var fila in documento.detalle)
                     {
-                        file.Write("   {\"NroLinDet\": "+fila.NroLinDet+", \"TpoCodigo\": \"PLU\", \"VlrCodigo\": "+fila.VlrCodigo+", \"CodCatalog\": \"\", \"TpoDocLiq\": \"\", \"IndExe\": "+fila.IndExe+", \"NmbItem\": \""+fila.NmbItem+"\", \"UnmdItem\": \""+fila.UnmdItem+"\", \"QtyItem\": "+fila.QtyItem+", \"PrcItem\": "+fila.PrcItem+", \"PrcBruItem\": "+fila.PrcBruItem+", \"DescuentoPct\": "+fila.DescuentoPct+", \"DescuentoMonto\": "+fila.DescuentoMonto+", \"DescuentoBruMonto\": "+fila.DescuentoBruMonto+", \"CodImpAdic\": \""+fila.CodImpAdic+"\", \"MontoItem\": "+fila.MontoItem+",\"MontoBruItem\": "+fila.MontoBruItem);
+                        file.Write("   {\"NroLinDet\": "+fila.NroLinDet+", \"TpoCodigo\": \"PLU\", \"VlrCodigo\": "+fila.VlrCodigo+", \"CodCatalog\": \"\", \"TpoDocLiq\": \"\", \"IndExe\": \""+fila.IndExe+"\", \"NmbItem\": \""+fila.NmbItem+ "\", \"DscItem\": \"" + fila.DscItem + "\", \"UnmdItem\": \"" + fila.UnmdItem+"\", \"QtyItem\": "+fila.QtyItem+", \"PrcItem\": "+fila.PrcItem+", \"PrcBruItem\": "+fila.PrcBruItem+", \"DescuentoPct\": "+fila.DescuentoPct+", \"DescuentoMonto\": "+fila.DescuentoMonto+", \"DescuentoBruMonto\": "+fila.DescuentoBruMonto+", \"CodImpAdic\": \""+fila.CodImpAdic+"\", \"MontoItem\": "+fila.MontoItem+",\"MontoBruItem\": "+fila.MontoBruItem);
                         if (lineaFinalDetalle != documento.detalle.Count - 1)
                         {
                             file.WriteLine(" },");

@@ -36,9 +36,22 @@ namespace Vista
                 producto.codigoInt = "0";
                 producto.nombre = this.txtNombre.Text;
                 producto.precioventa = Convert.ToInt32(decimal.Round(Convert.ToDecimal(labelPrecioBruto.Text), MidpointRounding.AwayFromZero));
-                producto.precioNeto = Decimal.Round(Convert.ToDecimal(labelPrecioNeto.Text),4); // TODO
-                producto.exento = "False";// TODO
+                producto.precioNeto = Decimal.Round(Convert.ToDecimal(labelPrecioNeto.Text), 4);
+                producto.unmditem = "C/U";
+                if (checkBoxExento.Checked != true)
+                {
+                    producto.exento = "False";
+                    detalle.IndExe = "0";
+                }
+                else
+                {
+                    producto.exento = "True";
+                    producto.precioNeto = 0;
+                    detalle.IndExe = "1";
+                }
+
                 detalle.QtyItem = Convert.ToDecimal(textBoxCantidad.Text);
+                detalle.DscItem = textBoxDscItem.Text;
 
                 if (textBoxDctoPrc.Text == "" || textBoxDctoPrc.Text == "0")
                 {
