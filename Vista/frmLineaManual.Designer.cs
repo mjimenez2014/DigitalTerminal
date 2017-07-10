@@ -76,7 +76,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(780, 353);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 353);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // lblProductos
@@ -87,7 +87,7 @@
             this.lblProductos.Location = new System.Drawing.Point(5, 3);
             this.lblProductos.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lblProductos.Name = "lblProductos";
-            this.lblProductos.Size = new System.Drawing.Size(770, 18);
+            this.lblProductos.Size = new System.Drawing.Size(924, 18);
             this.lblProductos.TabIndex = 19;
             this.lblProductos.Text = "INGRESO DE PRODUCTO MANUAL";
             this.lblProductos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -121,7 +121,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(772, 224);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(926, 224);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label2
@@ -141,6 +141,7 @@
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(116, 3);
+            this.txtNombre.MaxLength = 79;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(431, 21);
             this.txtNombre.TabIndex = 0;
@@ -286,6 +287,7 @@
             this.checkBoxExento.TabIndex = 16;
             this.checkBoxExento.Text = "Exento";
             this.checkBoxExento.UseVisualStyleBackColor = true;
+            this.checkBoxExento.CheckedChanged += new System.EventHandler(this.checkBoxExento_CheckedChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -296,10 +298,10 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel3.Controls.Add(this.label8, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelPrecioNeto, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnSalir, 0, 0);
@@ -314,7 +316,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(772, 80);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(926, 80);
             this.tableLayoutPanel3.TabIndex = 20;
             // 
             // label8
@@ -374,9 +376,9 @@
             // labelDctMonto
             // 
             this.labelDctMonto.AutoSize = true;
-            this.labelDctMonto.Location = new System.Drawing.Point(676, 0);
+            this.labelDctMonto.Location = new System.Drawing.Point(791, 0);
             this.labelDctMonto.Name = "labelDctMonto";
-            this.labelDctMonto.Size = new System.Drawing.Size(83, 26);
+            this.labelDctMonto.Size = new System.Drawing.Size(89, 13);
             this.labelDctMonto.TabIndex = 9;
             this.labelDctMonto.Text = "DescuentoMonto";
             this.labelDctMonto.Visible = false;
@@ -384,9 +386,9 @@
             // labelLineaNeto
             // 
             this.labelLineaNeto.AutoSize = true;
-            this.labelLineaNeto.Location = new System.Drawing.Point(656, 0);
+            this.labelLineaNeto.Location = new System.Drawing.Point(695, 0);
             this.labelLineaNeto.Name = "labelLineaNeto";
-            this.labelLineaNeto.Size = new System.Drawing.Size(14, 156);
+            this.labelLineaNeto.Size = new System.Drawing.Size(76, 13);
             this.labelLineaNeto.TabIndex = 4;
             this.labelLineaNeto.Text = "totalLineaNeto";
             this.labelLineaNeto.Visible = false;
@@ -427,7 +429,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(780, 353);
+            this.ClientSize = new System.Drawing.Size(934, 353);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmLineaManual";
             this.Text = "frmLineaManual";

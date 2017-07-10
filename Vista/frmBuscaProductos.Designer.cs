@@ -73,7 +73,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(657, 354);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(915, 354);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblProductos
@@ -84,7 +84,7 @@
             this.lblProductos.Location = new System.Drawing.Point(5, 3);
             this.lblProductos.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lblProductos.Name = "lblProductos";
-            this.lblProductos.Size = new System.Drawing.Size(647, 18);
+            this.lblProductos.Size = new System.Drawing.Size(905, 18);
             this.lblProductos.TabIndex = 19;
             this.lblProductos.Text = "PRODUCTOS";
             this.lblProductos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -95,7 +95,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.3125F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.6875F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
             this.tableLayoutPanel2.Controls.Add(this.textBoxDctoPrc, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtNombre, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
@@ -116,7 +116,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(649, 89);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(907, 89);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // textBoxDctoPrc
@@ -124,7 +124,7 @@
             this.textBoxDctoPrc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxDctoPrc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDctoPrc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDctoPrc.Location = new System.Drawing.Point(495, 3);
+            this.textBoxDctoPrc.Location = new System.Drawing.Point(751, 3);
             this.textBoxDctoPrc.Name = "textBoxDctoPrc";
             this.textBoxDctoPrc.Size = new System.Drawing.Size(53, 21);
             this.textBoxDctoPrc.TabIndex = 11;
@@ -134,9 +134,9 @@
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(81, 31);
+            this.txtNombre.Location = new System.Drawing.Point(133, 31);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(300, 21);
+            this.txtNombre.Size = new System.Drawing.Size(455, 21);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
@@ -171,7 +171,7 @@
             this.buttonBuscar.ForeColor = System.Drawing.Color.Green;
             this.buttonBuscar.Image = global::Vista.Properties.Resources.search_16;
             this.buttonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBuscar.Location = new System.Drawing.Point(387, 30);
+            this.buttonBuscar.Location = new System.Drawing.Point(643, 30);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(65, 23);
             this.buttonBuscar.TabIndex = 4;
@@ -184,7 +184,7 @@
             // 
             this.textBoxCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCantidad.Location = new System.Drawing.Point(81, 59);
+            this.textBoxCantidad.Location = new System.Drawing.Point(133, 59);
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.Size = new System.Drawing.Size(88, 24);
             this.textBoxCantidad.TabIndex = 5;
@@ -206,7 +206,7 @@
             // labelLineaNeto
             // 
             this.labelLineaNeto.AutoSize = true;
-            this.labelLineaNeto.Location = new System.Drawing.Point(495, 56);
+            this.labelLineaNeto.Location = new System.Drawing.Point(751, 56);
             this.labelLineaNeto.Name = "labelLineaNeto";
             this.labelLineaNeto.Size = new System.Drawing.Size(76, 13);
             this.labelLineaNeto.TabIndex = 8;
@@ -216,7 +216,7 @@
             // labelTotalLinea
             // 
             this.labelTotalLinea.AutoSize = true;
-            this.labelTotalLinea.Location = new System.Drawing.Point(387, 56);
+            this.labelTotalLinea.Location = new System.Drawing.Point(643, 56);
             this.labelTotalLinea.Name = "labelTotalLinea";
             this.labelTotalLinea.Size = new System.Drawing.Size(53, 13);
             this.labelTotalLinea.TabIndex = 7;
@@ -226,7 +226,7 @@
             // labelDctMonto
             // 
             this.labelDctMonto.AutoSize = true;
-            this.labelDctMonto.Location = new System.Drawing.Point(495, 27);
+            this.labelDctMonto.Location = new System.Drawing.Point(751, 27);
             this.labelDctMonto.Name = "labelDctMonto";
             this.labelDctMonto.Size = new System.Drawing.Size(89, 13);
             this.labelDctMonto.TabIndex = 9;
@@ -238,7 +238,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(387, 7);
+            this.label4.Location = new System.Drawing.Point(643, 7);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 10;
@@ -249,7 +249,7 @@
             this.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(81, 3);
+            this.txtCodigo.Location = new System.Drawing.Point(133, 3);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(139, 21);
             this.txtCodigo.TabIndex = 0;
@@ -294,7 +294,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgwBuscaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgwBuscaProductos.RowHeadersVisible = false;
-            this.dtgwBuscaProductos.Size = new System.Drawing.Size(649, 142);
+            this.dtgwBuscaProductos.Size = new System.Drawing.Size(907, 142);
             this.dtgwBuscaProductos.TabIndex = 0;
             this.dtgwBuscaProductos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgwBuscaProductos_CellEnter);
             this.dtgwBuscaProductos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgwBuscaProductos_KeyDown);
@@ -305,7 +305,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 323F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 610F));
             this.tableLayoutPanel3.Controls.Add(this.btnSalir, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonAgrega, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -313,7 +313,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(649, 80);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(907, 80);
             this.tableLayoutPanel3.TabIndex = 20;
             // 
             // btnSalir
@@ -354,7 +354,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(657, 354);
+            this.ClientSize = new System.Drawing.Size(915, 354);
             this.Controls.Add(this.tableLayoutPanel1);
             this.KeyPreview = true;
             this.Name = "frmBuscaProductos";

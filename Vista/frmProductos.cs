@@ -35,6 +35,7 @@ namespace Vista
             if (textBoxCodInt.Text == "") validate = "false";
             if (textBoxPrecioBruto.Text == "0") validate = "false";
             if (textBoxPrecioNeto.Text == "0") validate = "false";
+            if (textBoxUnMdItem.Text == "") validate = "false";
             return validate;
         }
 
@@ -47,6 +48,7 @@ namespace Vista
                     ProductosModel producto = new ProductosModel();
                     producto.nombre = textBoxNombre.Text;// ToUpper();
                     producto.codigoInt = textBoxCodInt.Text;
+                    producto.unmditem = textBoxUnMdItem.Text;
                     producto.precioNeto = Convert.ToDecimal(textBoxPrecioNeto.Text);
                     producto.precioventa = Convert.ToInt32(textBoxPrecioBruto.Text);
                     producto.exento = checkBoxExento.Checked.ToString();
@@ -88,8 +90,13 @@ namespace Vista
                     labelIdSistema.Text = fila["id"].ToString();
                     textBoxNombre.Text = fila["nombre"].ToString();
                     textBoxCodInt.Text = fila["codigoInt"].ToString();
+                    textBoxUnMdItem.Text = fila["unmditem"].ToString();
                     textBoxPrecioNeto.Text = fila["precioNeto"].ToString();
                     textBoxPrecioBruto.Text = fila["precioVenta"].ToString();
+                    if(fila["exento"].ToString() == "True")
+                    {
+                        checkBoxExento.Checked = true;
+                    }
                 }
             }
         }
@@ -122,6 +129,7 @@ namespace Vista
             producto.id = Convert.ToInt32(labelIdSistema.Text);
             producto.nombre = textBoxNombre.Text;// ToUpper();
             producto.codigoInt = textBoxCodInt.Text;
+            producto.unmditem = textBoxUnMdItem.Text;
             producto.precioNeto =  Convert.ToDecimal(textBoxPrecioNeto.Text);
             producto.precioventa = Convert.ToInt32( textBoxPrecioBruto.Text);
             producto.exento = checkBoxExento.Checked.ToString();
@@ -138,7 +146,8 @@ namespace Vista
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error en buttonModifica_Click" + ex.Message);
+               // Console.WriteLine("Error en buttonModifica_Click" + ex.Message);
+                MessageBox.Show("Error en buttonModifica_Click: " + ex, "Digital Terminal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

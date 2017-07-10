@@ -99,8 +99,8 @@ namespace Modelo
                 select.Connection = conexion;
                 select.CommandText = "select producto.\"id\",producto.nombre,producto.\"codigoInt\", "
 			                         +"clienteproducto.\"precioNeto\",clienteproducto.\"precioVenta\", "
-			                         +"producto.codimpuesto,producto.exento "
-                                     +"from   clienteproducto,producto,cliente "
+			                         + "producto.codimpuesto,producto.unmditem,producto.exento "
+                                     + "from   clienteproducto,producto,cliente "
                                      +"where  clienteproducto.\"idProducto\" = producto.\"id\" "
                                      +"and    clienteproducto.\"rutCliente\" = cliente.\"rutRecep\" "
                                      +"and    clienteproducto.\"rutCliente\" = '" + rut + "'"
@@ -135,7 +135,7 @@ namespace Modelo
                 select.Connection = conexion;
                 select.CommandText = "select producto.\"id\",producto.nombre,producto.\"codigoInt\", "
                                      + "clienteproducto.\"precioNeto\",clienteproducto.\"precioVenta\", "
-                                     + "producto.codimpuesto,producto.exento "
+                                     + "producto.codimpuesto,producto.unmditem,producto.exento "
                                      + "from   clienteproducto,producto,cliente "
                                      + "where  clienteproducto.\"idProducto\" = producto.\"id\" "
                                      + "and    clienteproducto.\"rutCliente\" = cliente.\"rutRecep\" "

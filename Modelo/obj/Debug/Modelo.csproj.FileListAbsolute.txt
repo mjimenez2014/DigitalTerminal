@@ -4,16 +4,16 @@ C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\Modelo\b
 C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
 C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\Modelo\obj\Debug\Modelo.dll
 C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\Modelo\obj\Debug\Modelo.pdb
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\bin\Debug\Modelo.dll
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\bin\Debug\Modelo.pdb
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\bin\Debug\System.Data.SQLite.dll
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\obj\Debug\Modelo.csproj.ResolveComReference.cache
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\obj\Debug\Modelo.dll
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\obj\Debug\Modelo.pdb
 C:\Sites\DigitalTerminal\Modelo\bin\Debug\Modelo.dll
 C:\Sites\DigitalTerminal\Modelo\bin\Debug\Modelo.pdb
 C:\Sites\DigitalTerminal\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
 C:\Sites\DigitalTerminal\Modelo\obj\Debug\Modelo.csproj.ResolveComReference.cache
 C:\Sites\DigitalTerminal\Modelo\obj\Debug\Modelo.dll
 C:\Sites\DigitalTerminal\Modelo\obj\Debug\Modelo.pdb
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\bin\Debug\Modelo.dll
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\bin\Debug\Modelo.pdb
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\bin\Debug\System.Data.SQLite.dll
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\obj\Debug\Modelo.csproj.ResolveComReference.cache
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\obj\Debug\Modelo.dll
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\obj\Debug\Modelo.pdb
 C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache

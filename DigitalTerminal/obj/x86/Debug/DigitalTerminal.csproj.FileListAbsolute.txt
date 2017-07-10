@@ -10,19 +10,6 @@ C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalT
 C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.csproj.GenerateResource.Cache
 C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.exe
 C:\Users\Mauricio\Documents\Visual Studio 2010\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.pdb
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\DigitalTerminal.exe
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\DigitalTerminal.pdb
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\Vista.dll
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\Modelo.dll
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\PdfSharp-WPF.dll
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\Vista.pdb
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\Modelo.pdb
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\PdfSharp-WPF.xml
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.csprojResolveAssemblyReference.cache
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.Properties.Resources.resources
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.csproj.GenerateResource.Cache
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.exe
-C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.pdb
 C:\Sites\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.exe
 C:\Sites\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.pdb
 C:\Sites\DigitalTerminal\DigitalTerminal\bin\Debug\DigitalTerminal.exe
@@ -36,3 +23,15 @@ C:\Sites\DigitalTerminal\DigitalTerminal\bin\Debug\PdfSharp-WPF.xml
 C:\Sites\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.csprojResolveAssemblyReference.cache
 C:\Sites\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.Properties.Resources.resources
 C:\Sites\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.csproj.GenerateResource.Cache
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\DigitalTerminal.exe
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\DigitalTerminal.pdb
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\Vista.dll
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\Modelo.dll
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\PdfSharp-WPF.dll
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\Vista.pdb
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\bin\Debug\Modelo.pdb
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.csprojResolveAssemblyReference.cache
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.Properties.Resources.resources
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.csproj.GenerateResource.Cache
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.exe
+C:\Users\Mauricio\Documents\Visual Studio 2015\Projects\DigitalTerminal\DigitalTerminal\obj\x86\Debug\DigitalTerminal.pdb

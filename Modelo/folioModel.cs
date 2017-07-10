@@ -27,6 +27,7 @@ namespace Modelo
                select.Connection = conexion;
                select.CommandText = "select min(folio) from folio where estado = 'DISPONIBLE' and idcaf = " + idCaf + ";";
                OdbcDataReader reader = select.ExecuteReader();
+               //no quedan folios no recorrer
                while (reader.Read())
                {
                    ultimoFolio = Convert.ToInt32(reader.GetValue(0));

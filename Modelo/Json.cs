@@ -70,7 +70,10 @@ namespace Modelo
                     file.WriteLine("\"Patente\": \"\",");
                     file.WriteLine("\"DirDest\": \"\",");
                     file.WriteLine("\"CmnaDest\": \"\",");
-                    file.WriteLine("\"MntNeto\": "+documento.MntNeto+",");
+                    file.WriteLine("\"NroOrdenCompra\": " + documento.NroOrdenCompra+",");
+                    file.WriteLine("\"NroCita\": " + documento.NroCita+ ",");
+                    file.WriteLine("\"Sello\": " + documento.Sello + ",");
+                    file.WriteLine("\"MntNeto\": " + documento.MntNeto + ",");
                     file.WriteLine("\"MntExe\": "+documento.MntExe+",");
                     file.WriteLine("\"MntBase\": 0,");
                     file.WriteLine("\"MntMargenCom\": 0,");

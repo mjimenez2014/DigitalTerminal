@@ -2,8 +2,11 @@ ALTER TABLE empresa add column dirregionalsii VARCHAR(255) DEFAULT 'S.I.I. - SAN
 ALTER TABLE empresa add column sucuremisor VARCHAR(255) DEFAULT 'DIRECCION';
 ALTER TABLE documento add column formaPago VARCHAR(255);
 
-ALTER TABLE cliente add CONSTRAINT cliente_pkey PRIMARY KEY ("rutRecep")
+ALTER TABLE cliente add CONSTRAINT cliente_pkey PRIMARY KEY ("rutRecep");
 
 ALTER TABLE producto add column UnmdItem VARCHAR(255) DEFAULT 'C/U';
+
+update detalle set "UnmdItem" = 'C/U';
+update detalle set "DscItem" = '';
 
 

@@ -35,6 +35,7 @@ namespace Vista
             {
                 producto.codigoInt = "0";
                 producto.nombre = this.txtNombre.Text;
+                //si es exento no hacer nada
                 producto.precioventa = Convert.ToInt32(decimal.Round(Convert.ToDecimal(labelPrecioBruto.Text), MidpointRounding.AwayFromZero));
                 producto.precioNeto = Decimal.Round(Convert.ToDecimal(labelPrecioNeto.Text), 4);
                 producto.unmditem = "C/U";
@@ -101,19 +102,27 @@ namespace Vista
         {
             if (textBoxCantidad.Text != "" && txtPrecioUnitario.Text != "")
             {
-                if (checkBoxConImpuestos.Checked == false)
+                if (checkBoxExento.Checked != true)
                 {
-                    Double brutoUnitario = 0;
-                    brutoUnitario = Convert.ToDouble(txtPrecioUnitario.Text) * 1.19;
-                    labelPrecioBruto.Text = decimal.Round(Convert.ToDecimal(brutoUnitario.ToString()), 4).ToString();
-                    labelPrecioNeto.Text = txtPrecioUnitario.Text;
-                }
+                    if (checkBoxConImpuestos.Checked == false)
+                    {
+                        Double brutoUnitario = 0;
+                        brutoUnitario = Convert.ToDouble(txtPrecioUnitario.Text) * 1.19;
+                        labelPrecioBruto.Text = decimal.Round(Convert.ToDecimal(brutoUnitario.ToString()), 4).ToString();
+                        labelPrecioNeto.Text = txtPrecioUnitario.Text;
+                    }
 
-                if (checkBoxConImpuestos.Checked == true)
+                    if (checkBoxConImpuestos.Checked == true)
+                    {
+                        Double netoUnitario = 0;
+                        netoUnitario = Convert.ToDouble(txtPrecioUnitario.Text) / 1.19;
+                        labelPrecioNeto.Text = decimal.Round(Convert.ToDecimal(netoUnitario.ToString()), 4).ToString();
+                        labelPrecioBruto.Text = txtPrecioUnitario.Text;
+                    }
+                }
+                else
                 {
-                    Double netoUnitario = 0;
-                    netoUnitario = Convert.ToDouble(txtPrecioUnitario.Text) / 1.19;
-                    labelPrecioNeto.Text = decimal.Round(Convert.ToDecimal(netoUnitario.ToString()), 4).ToString();
+                    labelPrecioNeto.Text = txtPrecioUnitario.Text;
                     labelPrecioBruto.Text = txtPrecioUnitario.Text;
                 }
 
@@ -153,5 +162,9 @@ namespace Vista
             actualizaMontos();
         }
 
+        private void checkBoxExento_CheckedChanged(object sender, EventArgs e)
+        {
+            actualizaMontos();
+        }
     }
 }
